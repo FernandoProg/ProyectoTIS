@@ -1,0 +1,9 @@
+.img-fondo{
+    background-image: url("crud/img/Ataque\ Pintura.jpg");
+    background-position: center;
+    opacity: 90%;
+}
+
+.fondo-redondeado{
+    border-radius: 8%;
+}

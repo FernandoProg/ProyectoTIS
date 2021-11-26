@@ -9,10 +9,10 @@ require("../../conexion.php");
     $rubro_emprendedor = $_POST["rubro_emprendedor"];
     $image = $_FILES['imagen_emprendedor']['tmp_name'];
     $tipo_imagen = $_FILES['imagen_emprendedor']['type'];
-    $imagen_emprendedor = addslashes(file_get_contents($image));
 
 
-    if($imagen_emprendedor){
+    if($tipo_imagen){
+        $imagen_emprendedor = addslashes(file_get_contents($image));
         $sql = "UPDATE  emprendedor SET nombre_emprendedor ='$nombre_emprendedor', direccion_emprendedor='$direccion_emprendedor', celular_emprendedor='$celular_emprendedor',
         telefono_emprendedor='$telefono_emprendedor',correo_emprendedor='$correo_emprendedor',rubro_emprendedor='$rubro_emprendedor',imagen_emprendedor='$imagen_emprendedor',
         tipo_imagen='$tipo_imagen' WHERE id_emprendedor=$id";
@@ -23,3 +23,5 @@ require("../../conexion.php");
 
     $query = mysqli_query($conexion,$sql);
     header('location: ../index.php');
+ 
+    ?>

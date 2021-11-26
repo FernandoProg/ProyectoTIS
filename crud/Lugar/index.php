@@ -42,7 +42,7 @@
                 <input type="text"
                     class="form-control" required name="longitudLugar" id="longitudLugar" aria-describedby="helpId" placeholder="56.52525" maxlength="9">
                 </div>
-                <div id="map" style="height: 180px;"></div>
+                <div id="map" style="height: 380px;"></div>
                 <div class="mb-3">
                     <label for="categoriaLugar" class="form-label fw-bolder">Categoría:</label>
                     <select class="form-select" name="categoriaLugar">

@@ -25,6 +25,9 @@
                 </li>
             </ul>
             <ul class="nav justify-content-end">
+            <li class="nav-item">
+                    <a class="nav-link text-white"  href="../../logout.php">Cerrar Sesión</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link text-white"  href="../..">Acceso Funcionarios</a>
                 </li>

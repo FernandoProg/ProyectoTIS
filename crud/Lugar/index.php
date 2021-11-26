@@ -50,7 +50,7 @@
                 <div class="mb-3">
                 <label for="nombreAdmin" class="form-label fw-bolder">Nombre administrador:</label>
                 <input type="text"
-                    class="form-control" required name="nombreAdmin" id="nombreAdmin" aria-describedby="helpId" placeholder="Juan Perez" maxlength="50">
+                    class="form-control" required name="nombreUsuario" id="nombreUsuario" aria-describedby="helpId" placeholder="Juan Perez" maxlength="50">
                 </div>
                 <input name="" id="" class="btn btn-secondary" type="submit" value="Agregar">
                 <!-- <a name="" id="" class="btn btn-primary mx-3" href="?controlador=lugares&accion=inicio" role="button">Volver al inicio</a> -->

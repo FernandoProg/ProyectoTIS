@@ -38,6 +38,7 @@
                             <tr>
                                 <th>Nombre de Usuario</th>
                                 <th>Rol</th>
+                                <th>Opciones</th>
                             </tr>
                         </thead>
                         <tbody>

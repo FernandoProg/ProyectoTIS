@@ -66,7 +66,7 @@
                             <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Password" rows="3" name="contraseña">
                         </div>
                         <input type="submit" class="btn btn-secondary" value="Ingresar">
-                        <p class="text-white mt-3">No estas registrado aún? <a href='registo_usuario.php'>Registrate Aquí</a></p>
+                        <p class="text-white mt-3">No estas registrado aún? <a href='registro_usuario.php'>Registrate Aquí</a></p>
                     </form>
                 </div>
             </div>

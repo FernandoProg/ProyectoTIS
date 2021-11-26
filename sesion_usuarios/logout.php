@@ -1,7 +1,7 @@
 <?php
 session_start();
-if(session_destroy()) 
-{
-header("Location: login_usuario.php"); 
-}
+    if(session_destroy()) 
+    {
+        header("Location: login_usuario.php"); 
+    }
 ?>

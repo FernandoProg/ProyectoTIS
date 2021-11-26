@@ -55,18 +55,18 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center mt-4">
-                <h1 class="text-center text-white">Ingreso - Administrador</h1>
+                <h1 class="text-center text-white">Ingreso Usuarios</h1>
                     <form action="" method="POST">
                         <div class="mb-3">
-                            <label class="form-label fw-bolder text-white">Nombre de administrador:</label>
+                            <label class="form-label fw-bolder text-white">Nombre de Usuario:</label>
                             <input class="form-control" rows="3" maxlength="50" placeholder="Admin" name="nombreUsuario">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label fw-bolder text-white">Contraseña de administrador:</label>
+                            <label class="form-label fw-bolder text-white">Contraseña :</label>
                             <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Password" rows="3" name="contraseña">
                         </div>
                         <input type="submit" class="btn btn-secondary" value="Ingresar">
-                        <p class="text-white mt-3">No estas registrado aún? <a href='registro_usuario.php'>Registrate Aquí</a></p>
+                        <p class="text-white mt-3">¿No estás registrado? <a href='registro_usuario.php'>Registrate Aquí</a></p>
                     </form>
                 </div>
             </div>

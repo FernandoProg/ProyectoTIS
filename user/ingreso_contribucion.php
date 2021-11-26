@@ -27,7 +27,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-bolder">Descripción:</label>
-                            <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="descripcion_contribucion">
+                            <input class="form-control" rows="3" maxlength="1000" placeholder="Usuario" name="descripcion_contribucion">
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-bolder">Departamento:</label>

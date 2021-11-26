@@ -21,8 +21,8 @@
 			.setLatLng(e.latlng)
 			.setContent("Haz clickeado aquí")
 			.openOn(mymap);
-            latitud.value = e.latlng['lat'].toString().slice(0,7);
-            longitud.value = e.latlng['lng'].toString().slice(0,7);
+            latitud.value = e.latlng['lat'].toString().slice(0,8);
+            longitud.value = e.latlng['lng'].toString().slice(0,8);
 	}
 
     var greenIcon = L.icon({

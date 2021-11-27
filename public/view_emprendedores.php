@@ -28,7 +28,7 @@
     <?php
         while($row = mysqli_fetch_assoc($data)){
     ?>
-        <div class="col text-center mt-4">
+        <div class="col text-center mt-4 mb-4">
             <span style="justify-content: center;" class="d-flex fs-5 fw-bolder"><?php echo$row["rubro_emprendedor"] ?></span>
             <img style="height: 300px; width: 300px;" src="data:<?php echo$row["tipo_imagen"]?>;base64,<?php echo base64_encode($row["imagen_emprendedor"])?>">
             <span style="justify-content: center;"  class="d-flex fw-bolder">Nombre: <?php echo$row["nombre_emprendedor"]?></span>

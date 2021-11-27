@@ -112,7 +112,7 @@
       <div class="col-6">
         <div class="row row-cols-1 row-cols-md-2 g-4">
         <?php 
-        $consulta = "SELECT nombre_evento,descripcion_evento,imagen_evento FROM evento";
+        $consulta = "SELECT nombre_evento,descripcion_evento,imagen_evento FROM evento LIMIT 0,4";
         $data = mysqli_query($conexion,$consulta);
         while($row=mysqli_fetch_assoc($data)){
             $nombreEvento = $row['nombre_evento'];

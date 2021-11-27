@@ -51,43 +51,58 @@
       
   <div class="row container-fluid">
       <div class="col-6 ">
+  
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <?php 
+              $consulta = "SELECT nombre_evento,descripcion_evento,imagen_evento FROM evento  LIMIT 0,1 ";
+              $info = mysqli_query($conexion,$consulta);
+              $result=mysqli_fetch_assoc($info);
+            
+            ?>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="https://fundacioncompartir.org/sites/default/files/estos-son-algunos-de-los-edificios-construidos-en-madera.jpg" class="d-block w-100" alt="...">
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;height:500px;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h5><?php echo $result['nombre_evento'];?></h5>
+                <!-- <p><?php echo $result['descripcion_evento'];?></p> -->
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://fundacioncompartir.org/sites/default/files/estos-son-algunos-de-los-edificios-construidos-en-madera.jpg" class="d-block w-100" alt="...">
+
+            <?php 
+            $consulta = "SELECT nombre_evento,descripcion_evento,imagen_evento FROM evento ORDER BY fecha_evento ASC LIMIT 1,2";
+            $data = mysqli_query($conexion,$consulta);
+            while($row=mysqli_fetch_assoc($data)){
+              $nombreEvento = $row['nombre_evento'];
+              $descripcionEvento = $row['descripcion_evento'];
+              $imagenEvento = $row['imagen_evento']; 
+            
+            ?>
+             <div class="carousel-item ">
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;height:500px;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+                <h5><?php echo $nombreEvento ?></h5>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://fundacioncompartir.org/sites/default/files/estos-son-algunos-de-los-edificios-construidos-en-madera.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
-              </div>
-            </div>
+
+
+            <?php } ?>
+
+            
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+   
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
       </div>
 

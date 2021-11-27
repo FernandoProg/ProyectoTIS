@@ -25,20 +25,20 @@
               <br>
               <!-- INSERT -->
               <form action="Consultas/insert_noticia.php" enctype="multipart/form-data" method="POST">
-                <input type="hidden" class="form-control" name="insert_nombre_admin" maxlength="50" value="Admin" placeholder="Juan Perez" required>
+                <input type="hidden" class="form-control" name="insert_nombre_usuario" maxlength="50" value="Admin" placeholder="Juan Perez" required>
                 <div class="mb-3">
                   <label class="form-label fw-bolder">Fecha:</label>
                   <input type="date" class="form-control" name="insert_fecha_noticia" required>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label fw-bolder" >Titulo:</label>
-                  <input type="text" class="form-control" name="insert_titulo_noticia" maxlength="100" placeholder="Elecciones presidenciales 2021 " required>
+                  <label class="form-label fw-bolder" >Título:</label>
+                  <input type="text" class="form-control" name="insert_titulo_noticia" maxlength="100" placeholder="Elecciones presidenciales 2021" required>
                 </div>
                 <div class="mb-3">
                   <label class="form-label fw-bolder" >Bajada:</label>
                   <!--<input type="text" class="form-control" name="insert_bajada_noticia">-->
                   <textarea name="insert_bajada_noticia" class="form-control" cols="30" rows="2" maxlength="200" 
-                  placeholder=" Este domingo se llevó a cabo la primera vuelta de las Elecciones Presidenciales, instancia en la que avanzaron Kast y Boric. ¿Cuánta gente sufragó?" 
+                  placeholder="Este domingo se llevó a cabo la primera vuelta de las Elecciones Presidenciales, instancia en la que avanzaron Kast y Boric. ¿Cuánta gente sufragó?" 
                   required ></textarea>
                 </div>
                 <div class="mb-3">
@@ -56,7 +56,7 @@
                   required></textarea>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label fw-bolder" >Categoria:</label>
+                  <label class="form-label fw-bolder" >Categoría:</label>
                   <!--<input type="text" class="form-control" name="insert_categoria_noticia">-->
                   <select class="form-select" name="insert_categoria_noticia" >
                         <option hidden selected required>Seleccione la categoria</option>
@@ -88,13 +88,13 @@
                   <thead  class="table-dark">
                     <tr>
                       <th scope="col">Admin</th>
-                      <th scope="col">Titulo noticia</th>
+                      <th scope="col">Título noticia</th>
                       <th scope="col">Fecha </th>
                       <th scope="col">Lead</th>
                       <th scope="col">Bajada</th>
                       <th scope="col">Cuerpo</th>
                       <th scope="col">Imagen</th>
-                      <th scope="col">Categoria</th>
+                      <th scope="col">Categoría</th>
                       <th scope="col" >Opciones</th>
                     </tr>
                   </thead>
@@ -105,7 +105,7 @@
                       $resultado = mysqli_query($conexion, $consulta);
 
                       while($row = mysqli_fetch_assoc($resultado)){
-                        $get_nombre_admin = $row["nombre_admin"];
+                        $get_nombre_usuario = $row["nombre_usuario"];
                         $get_titulo_noticia = $row["titulo_noticia"];
                         $get_fecha_noticia = $row["fecha_noticia"];
                         $get_lead_noticia = $row["lead_noticia"];
@@ -115,7 +115,7 @@
                         $get_categoria_noticia = $row["categoria_noticia"];
                         $id = $row["id_noticia"];
                         echo "<tr>";
-                        echo "<td>".$get_nombre_admin."</td>";    
+                        echo "<td>".$get_nombre_usuario."</td>";    
                         echo "<td>".$get_titulo_noticia."</td>"; 
                         echo "<td>".$get_fecha_noticia."</td>"; 
                         echo "<td>".$get_lead_noticia."</td>"; 

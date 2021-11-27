@@ -50,7 +50,7 @@
     </nav>
       
   <div class="row container-fluid">
-      <div class="col-6 ">
+      <div class="col-7 ">
   
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -59,33 +59,45 @@
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <?php 
-              $consulta = "SELECT nombre_evento,descripcion_evento,imagen_evento FROM evento  LIMIT 0,1 ";
+              $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar FROM evento  LIMIT 0,1 ";
               $info = mysqli_query($conexion,$consulta);
               $result=mysqli_fetch_assoc($info);
-            
+              $IDlugar = $result['id_lugar'];
+              
+              $consulta2 = "SELECT nombre_lugar FROM lugar WHERE id_lugar = $IDlugar";
+              $info2 = mysqli_query($conexion,$consulta2);
+              $result2=mysqli_fetch_assoc($info2);
+
+
             ?>
           <div class="carousel-inner">
             <div class="carousel-item active">
-            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;height:500px;"></td>' ?>
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;height:100%;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
-                <h5><?php echo $result['nombre_evento'];?></h5>
-                <!-- <p><?php echo $result['descripcion_evento'];?></p> -->
+                <span class="fs-5 bg-dark"><?php echo $result['nombre_evento'];?></span> <br>
+                <span class="bg-dark" >Será realizado el día <?php echo $result['fecha_evento'];?> en <?php echo $result2['nombre_lugar'];?></span>
               </div>
             </div>
 
             <?php 
-            $consulta = "SELECT nombre_evento,descripcion_evento,imagen_evento FROM evento ORDER BY fecha_evento ASC LIMIT 1,2";
+            $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar,nombre_lugar FROM evento join lugar using(id_lugar) ORDER BY fecha_evento ASC LIMIT 0,3";
             $data = mysqli_query($conexion,$consulta);
+            $result2=mysqli_fetch_assoc($data);
+    
+            
+            
             while($row=mysqli_fetch_assoc($data)){
               $nombreEvento = $row['nombre_evento'];
-              $descripcionEvento = $row['descripcion_evento'];
               $imagenEvento = $row['imagen_evento']; 
+              $lugarEvento = $row['nombre_lugar'];
+              $fechaEvento = $row['fecha_evento'];
             
             ?>
              <div class="carousel-item ">
-            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;height:500px;"></td>' ?>
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;height:100%;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
-                <h5><?php echo $nombreEvento ?></h5>
+                <span class="fs-5 bg-dark" ><?php echo $nombreEvento ?></span> <br>
+                <span class="bg-dark" >Será realizado el día <?php echo $fechaEvento;?> en <?php echo $lugarEvento;?></span>
               </div>
             </div>
 
@@ -109,22 +121,22 @@
   
      
 
-      <div class="col-6">
+      <div class="col-5">
         <div class="row row-cols-1 row-cols-md-2 g-4">
         <?php 
-        $consulta = "SELECT nombre_evento,descripcion_evento,imagen_evento FROM evento LIMIT 0,4";
+        $consulta = "SELECT titulo_noticia,bajada_noticia,imagen_noticia FROM noticia  LIMIT 0,4"; //HACER ORDER BY fecha_noticia ASC/DESC
         $data = mysqli_query($conexion,$consulta);
         while($row=mysqli_fetch_assoc($data)){
-            $nombreEvento = $row['nombre_evento'];
-            $descripcionEvento = $row['descripcion_evento'];
-            $imagenEvento = $row['imagen_evento']; 
+            $tituloNoticia = $row['titulo_noticia'];
+            $bajadaNoticia = $row['bajada_noticia'];
+            $imagenNoticia = $row['imagen_noticia']; 
          ?>
             <div class="col">
                 <div class="card">
-                <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;height:100%;"></td>' ?>
+                <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenNoticia).'"/ style="width:100%;height:100%;"></td>' ?>
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $nombreEvento; ?></h5>
-                    <p class="card-text"><?php echo $descripcionEvento; ?></p>
+                    <h5 class="card-title"><?php echo $tituloNoticia; ?></h5>
+                    <p class="card-text"><?php echo $bajadaNoticia; ?></p>
                 </div>
                 </div>
             </div> 
@@ -132,7 +144,23 @@
       </div>
     </div>
   </div>
-  
+  <div class="container-fluid">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-6 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="">Municipalidad de Chiguayante - Dirección: Orozimbo Barbosa, 104, Chiguayante - Fono: 250 81 00</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+    </ul>
+  </footer>
+</div>
+
   
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

@@ -25,10 +25,10 @@
                             <label class="form-label fw-bolder">Contraseña de administrador:</label>
                             <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Contraseña" rows="3" name="contrasena">
                         </div>
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <label class="form-label fw-bolder">Rol del usuario:</label>
                             <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Rol del usuario" rows="3" name="rolUsuario">
-                        </div>
+                        </div> -->
                         <input type="submit" class="btn btn-secondary" value="Guardar">
                     </form>
                     <hr>

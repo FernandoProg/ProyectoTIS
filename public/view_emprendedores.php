@@ -27,17 +27,18 @@
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col">
-                <label class="form-label fw-bolder">Filtrar por rubro:</label>
-                <select class="w-25 form-select" name="rubro_emprendedor">
-                    <option hidden selected>Seleccione el Rubro</option>
-                    <option value="Alimentos y bebestibles">Alimentos y bebestibles</option>
-                    <option value="Ropa">Ropa</option>
-                    <option value="Acicalamiento">Acicalamiento</option>
-                    <option value="Entretenimiento">Entretenimiento</option>
-                    <option value="Oficinas">Oficinas</option>
-                    <option value="Administración de Viviendas">Administración de Viviendas</option>
-                    <option value="Productora de eventos">Productora de eventos</option>
-                </select>
+                    <label class="form-label fw-bolder">Filtrar por rubro:</label>
+                    <select class="w-25 form-select" name="rubro_emprendedor">
+                        <option hidden selected>Seleccione el Rubro</option>
+                        <option value="Alimentos y bebestibles">Alimentos y bebestibles</option>
+                        <option value="Ropa">Ropa</option>
+                        <option value="Acicalamiento">Acicalamiento</option>
+                        <option value="Entretenimiento">Entretenimiento</option>
+                        <option value="Oficinas">Oficinas</option>
+                        <option value="Administración de Viviendas">Administración de Viviendas</option>
+                        <option value="Productora de eventos">Productora de eventos</option>
+                    </select>
+                    <a class="btn btn-secondary d-inline" href="view_emprendedor?rubro=<?php echo$_REQUEST['rubro_emprendedor']?>">Filtrar</a>
             </div>
         </div>
         <div class="row pe-1">

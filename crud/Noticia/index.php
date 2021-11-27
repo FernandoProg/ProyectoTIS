@@ -87,13 +87,11 @@
                 <table class="table table-hover table-bordered table-light">
                   <thead  class="table-dark">
                     <tr>
-                      <th scope="col">Admin</th>
                       <th scope="col">Título noticia</th>
                       <th scope="col">Fecha </th>
-                      <th scope="col">Lead</th>
                       <th scope="col">Bajada</th>
+                      <th scope="col">Lead</th>
                       <th scope="col">Cuerpo</th>
-                      <th scope="col">Imagen</th>
                       <th scope="col">Categoría</th>
                       <th scope="col" >Opciones</th>
                     </tr>
@@ -105,23 +103,19 @@
                       $resultado = mysqli_query($conexion, $consulta);
 
                       while($row = mysqli_fetch_assoc($resultado)){
-                        $get_nombre_usuario = $row["nombre_usuario"];
                         $get_titulo_noticia = $row["titulo_noticia"];
                         $get_fecha_noticia = $row["fecha_noticia"];
                         $get_lead_noticia = $row["lead_noticia"];
                         $get_bajada_noticia = $row["bajada_noticia"];
                         $get_cuerpo_noticia = $row["cuerpo_noticia"];
-                        $get_imagen_noticia = $row["imagen_noticia"];
                         $get_categoria_noticia = $row["categoria_noticia"];
                         $id = $row["id_noticia"];
-                        echo "<tr>";
-                        echo "<td>".$get_nombre_usuario."</td>";    
+                        echo "<tr>";   
                         echo "<td>".$get_titulo_noticia."</td>"; 
-                        echo "<td>".$get_fecha_noticia."</td>"; 
-                        echo "<td>".$get_lead_noticia."</td>"; 
+                        echo "<td>".$get_fecha_noticia."</td>";
                         echo "<td>".$get_bajada_noticia."</td>"; 
-                        echo "<td>".$get_cuerpo_noticia."</td>";
-                        echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $get_imagen_noticia).'"/ style="width:128px;height:128px;"></td>';     
+                        echo "<td>".$get_lead_noticia."</td>"; 
+                        echo "<td >".$get_cuerpo_noticia."</td>"; 
                         echo "<td>".$get_categoria_noticia."</td>"; 
                         //  DELETE AND UPDATE
                         

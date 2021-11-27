@@ -10,11 +10,9 @@
 </head>
 <body>
     <?php
-        $sql = 'SELECT * FROM emprendedor';
+        $flag = isset($_GET["page"]) ? $_GET["page"]*4 : 0;
+        $sql = "SELECT * FROM emprendedor LIMIT $flag,4";
         $data = mysqli_query($conexion,$sql);
-        $emprendedores = mysqli_fetch_all($data);
-        // echo count($emprendedores); length
-
     ?>
     <div>
         <div class="container mt-4">
@@ -27,27 +25,36 @@
     </div>
     <div class="container-fluid mt-4">
         <div class="row">
-            <div class="col">
-                <span class="d-flex fs-4 fw-bolder"><?php echo$emprendedores[0][7] ?></span>
-                <img style="width: 70%;" src="data:<?php echo$emprendedores[0][9]?>;base64,<?php echo base64_encode($emprendedores[0][8])?>">
-                <span class="d-flex fw-bolder">Nombre: </span>
-                <span class="d-flex  fw-bolder">Número: </span>
-                <span class="d-flex  fw-bolder">Fono: </span>
-                <span class="d-flex  fw-bolder">Correo: </span>
-                <span class="d-flex  fw-bolder">Dirección: </span>
-            </div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
+    <?php
+        while($row = mysqli_fetch_assoc($data)){
+    ?>
+        <div class="col text-center mt-4">
+            <span style="justify-content: center;" class="d-flex fs-5 fw-bolder"><?php echo$row["rubro_emprendedor"] ?></span>
+            <img style="height: 300px; width: 300px;" src="data:<?php echo$row["tipo_imagen"]?>;base64,<?php echo base64_encode($row["imagen_emprendedor"])?>">
+            <span style="justify-content: center;"  class="d-flex fw-bolder">Nombre: <?php echo$row["nombre_emprendedor"]?></span>
+            <span style="justify-content: center;"  class="d-flex  fw-bolder">Número: <?php echo$row["celular_emprendedor"]?> </span>
+            <span style="justify-content: center;" class="d-flex  fw-bolder">Fono: <?php echo$row["telefono_emprendedor"]?> </span>
+            <span style="justify-content: center;" class="d-flex  fw-bolder">Correo: <?php echo$row["correo_emprendedor"]?> </span>
+            <span style="justify-content: center;" class=" text-center d-flex  fw-bolder">Dirección: <?php echo$row["direccion_emprendedor"]?> </span>
+        </div>
+    <?php }?>
         </div>
     </div>
     <div class="footer mt-4">
         <div class="container">
             <div class="row">
-                <div class="btn-group">
-                    <a class="btn btn-secondary" href="#">Anterior Página</a>
-                    <a class="btn btn-secondary" href="#">Siguiente Página</a>
+            <?php if($flag!=0){?>
+                <div class="col">
+                    <a class="btn btn-secondary w-100" href="view_emprendedores.php?page=<?php echo($_GET["page"]-1)?>">Anterior Página</a>
                 </div>
+            <?php }
+                $prox =$flag+4;
+                if(mysqli_num_rows(mysqli_query($conexion,"SELECT * FROM emprendedor LIMIT $prox ,4"))){
+            ?>
+                <div class="col">
+                        <a class="btn btn-secondary w-100" href="view_emprendedores.php?page=<?php echo$_GET["page"]+1?>">Siguiente Página</a>
+                </div>
+            <?php }?>
             </div>
         </div>
     </div>

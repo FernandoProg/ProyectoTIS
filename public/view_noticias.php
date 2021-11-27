@@ -6,6 +6,7 @@
         <?php require("header.php")?>
     </head>
     <body>
+        <?php require("navbar.php")?>
 
         <div class="container">
             <div class="row col-lg-12">

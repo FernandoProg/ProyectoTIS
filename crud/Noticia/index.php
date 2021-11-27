@@ -83,17 +83,17 @@
               <div class="mb-4 text-center">
                 <h5>Noticias ingresadas</h5>
               </div>
-              <div>
+              <div class="table-responsive ">
                 <table class="table table-hover table-bordered table-light">
                   <thead  class="table-dark">
                     <tr>
                       <th scope="col">Título noticia</th>
-                      <th scope="col">Fecha </th>
-                      <th scope="col">Bajada</th>
-                      <th scope="col">Lead</th>
-                      <th scope="col">Cuerpo</th>
+                      <th style="width: 100px" scope="col">Fecha </th>
+                      <th class="d-none d-sm-table-cell" scope="col">Bajada</th>
+                      <th class="d-none d-sm-table-cell" scope="col">Lead</th>
+                      <th class="d-none d-sm-table-cell" scope="col">Cuerpo</th>
                       <th scope="col">Categoría</th>
-                      <th scope="col" >Opciones</th>
+                      <th style="width: 100px;" scope="col" >Opciones</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -110,17 +110,21 @@
                         $get_cuerpo_noticia = $row["cuerpo_noticia"];
                         $get_categoria_noticia = $row["categoria_noticia"];
                         $id = $row["id_noticia"];
-                        echo "<tr>";   
-                        echo "<td>".$get_titulo_noticia."</td>"; 
-                        echo "<td>".$get_fecha_noticia."</td>";
-                        echo "<td>".$get_bajada_noticia."</td>"; 
-                        echo "<td>".$get_lead_noticia."</td>"; 
-                        echo "<td >".$get_cuerpo_noticia."</td>"; 
-                        echo "<td>".$get_categoria_noticia."</td>"; 
-                        //  DELETE AND UPDATE
-                        
+
                         ?>
-                          <td>
+                        <tr>
+                          <td> <?php echo $get_titulo_noticia ?></td>
+                          <td> <?php echo $get_fecha_noticia ?></td>
+                          <td class="d-none d-sm-table-cell"> <?php echo $get_bajada_noticia ?></td>
+                          <td class="d-none d-sm-table-cell" > <?php echo $get_lead_noticia ?></td>
+                          <td class="d-none d-sm-table-cell" > <?php echo $get_cuerpo_noticia ?></td>
+                          <td> <?php echo $get_categoria_noticia ?></td>
+                          <td >
+                            <a style="text-decoration: none;" href='ver_noticia.php?seleccion=<?php echo $id ?>'>
+                              <span class="material-icons text-secondary">
+                                visibility
+                              </span>
+                            </a>
                             <a style="text-decoration: none;" href='editar_noticia.php?seleccion=<?php echo $id ?>'>
                               <span  class="material-icons text-secondary">
                                 edit
@@ -131,11 +135,7 @@
                                 delete
                               </span>
                             </a>
-                            <a style="text-decoration: none;" href='ver_noticia.php?seleccion=<?php echo $id ?>'>
-                              <span class="material-icons text-secondary">
-                                visibility
-                              </span>
-                            </a>
+                            
                           </td>
                         <?php
                         echo "</tr>";              

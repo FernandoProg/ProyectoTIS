@@ -1,9 +1,9 @@
 <?php
     require("crud/conexion.php");
-    $nombre_admin = $_POST["nombre_admin"];
+    $nombre_usuario = $_POST["nombre_usuario"];
     $contrasena = $_POST["contrasena"];
 
-    $sql = "SELECT nombre_admin, contraseña FROM administrador WHERE '$nombre_admin' = nombre_admin AND '$contrasena' = contraseña";
+    $sql = "SELECT nombre_usuario, contraseña FROM usuario WHERE '$nombre_usuario' = nombre_usuario AND '$contrasena' = contraseña";
     $resultado = mysqli_query($conexion, $sql);
     if(mysqli_fetch_assoc($resultado)){
         header("Location: ../proyecto-municipalidad/crud/Administrador");

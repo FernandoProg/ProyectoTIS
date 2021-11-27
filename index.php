@@ -35,8 +35,8 @@
                 <h1 class="text-center text-white">Ingreso - Administrador</h1>
                     <form action="log_in_administrador.php" method="POST">
                         <div class="mb-3">
-                            <label class="form-label fw-bolder text-white">Nombre de administrador:</label>
-                            <input class="form-control" rows="3" maxlength="50" placeholder="Admin" name="nombre_admin">
+                            <label class="form-label fw-bolder text-white">Nombre de usuario:</label>
+                            <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario">
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-bolder text-white">Contraseña de administrador:</label>

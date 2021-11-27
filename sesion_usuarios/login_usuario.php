@@ -22,7 +22,6 @@
       require('..\crud\conexion.php');
       session_start();
          if (isset($_POST['nombreUsuario'])){
-        
         $nombreUsuario = stripslashes($_REQUEST['nombreUsuario']); // removes backslashes
       	$nombreUsuario = mysqli_real_escape_string($conexion,$nombreUsuario); //escapes special characters in a string
         
@@ -30,13 +29,15 @@
       	$contraseñaUsuario = mysqli_real_escape_string($conexion,$contraseñaUsuario);
       	
       //Checking is user existing in the database or not
-        $query = "SELECT nombre_usuario,contraseña FROM `usuario` WHERE nombre_usuario='$nombreUsuario' and contraseña='".md5($contraseñaUsuario)."' ";
+        $query = "SELECT nombre_usuario,contraseña,rol FROM `usuario` WHERE nombre_usuario='$nombreUsuario' and contraseña='".md5($contraseñaUsuario)."' ";
       	$result = mysqli_query($conexion,$query) or die(mysql_error());
       	$rows = mysqli_num_rows($result);
         if($rows==1){
-      		$_SESSION['tipoUsuario'] = "admin";
-      		header("Location: ../crud/Administrador/index.php"); // Redirect user to index.php
+      		$_SESSION['tipoUsuario'] = mysqli_fetch_assoc($result)['rol'];
+            
+      		header("Location: ../index.php"); // Redirect user to index.php
         }else{
+            
       		echo "<div class='form'><h3>Usuario/Contraseña Incorrecto</h3><br/>Haz click aquí para <a href='login_usuario.php'>Logearte</a></div>";
       	}
         }else{

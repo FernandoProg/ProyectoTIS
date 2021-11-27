@@ -47,7 +47,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $consulta ="SELECT * FROM usuario";
+                                $consulta ="SELECT nombre_usuario,contraseña,rol FROM usuario";
                                 $resultado = mysqli_query($conexion, $consulta);
 
                                 while($row = mysqli_fetch_assoc($resultado)){
@@ -59,7 +59,7 @@
                                     echo "<td>".$contrasena."</td>";
                                     echo "<td>".$rol_usuario."</td>";
                                     ?>
-                                    <td><a href='Consultas/delete_administrador.php?seleccionado=<?php echo$nombre_usuario?>'>
+                                    <td><a href='Consultas/delete_administrador.php?seleccionado=<?php echo $nombre_usuario?>'>
                                          <span class="material-icons" style="color: red;">
                                             delete
                                         </span>

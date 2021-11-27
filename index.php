@@ -1,49 +1,126 @@
+<?php require("crud/conexion.php")?>
 <!doctype html>
-<html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
-        crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
-        rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
-         crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet">
-        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
-        <title>Municipalidad</title>
-    </head>
-    <body class="img-fondo">
-        <div class="container bg-black pb-3 mt-5 fondo-redondeado">
-            <div class="row">
-                <div class="row col-lg-8 offset-lg-2 mt-4">
-                    <div class="col-6 text-end">
-                        <img src="crud/img/logo.png" alt="Logo municipalidad">
-                    </div>
-                    <div class="col-6 text-start align-middle">
-                        <span class="d-flex pt-5 text-white fw-bolder">Municipalidad</span>
-                        <span class="d-flex pt-2 text-white fw-bolder">de Chiguayante</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center mt-4">
-                <h1 class="text-center text-white">Ingreso - Administrador</h1>
-                    <form action="log_in_administrador.php" method="POST">
-                        <div class="mb-3">
-                            <label class="form-label fw-bolder text-white">Nombre de administrador:</label>
-                            <input class="form-control" rows="3" maxlength="50" placeholder="Admin" name="nombre_admin">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bolder text-white">Contraseña de administrador:</label>
-                            <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Password" rows="3" name="contrasena">
-                        </div>
-                        <input type="submit" class="btn btn-secondary" value="Ingresar">
-                    </form>
-                </div>
-            </div>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php
+    ?> 
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  </head>
+  <body>
+  <nav class="navbar bg-primary mb-4">
+        <div class="container-fluid">   
+            <a class="navbar-brand" href="index.php">
+                <img src="crud/img/logo.png" style="width: 40%;">
+            </a>
+            <ul class="nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" aria-current="page" href="crud/Evento/index.php">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="crud/Noticia/index.php">Noticias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="crud/Emprendedor/index.php">Emprendedores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="crud/Lugar/index.php">Mapa Comuna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="crud/Opinion/index.php">Opiniones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="crud/Contribucion/index.php">Contribuciones</a>
+                </li>
+            </ul>
+            <ul class="nav justify-content-end">
+            <li class="nav-item">
+                    <a class="nav-link text-white"  href="sesion_usuarios/logout.php">Cerrar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white"  href="../..">Acceso Funcionarios</a>
+                </li>
+            </ul>
         </div>
-    </body>
+    </nav>
+      
+  <div class="row container-fluid">
+      <div class="col-6 ">
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://fundacioncompartir.org/sites/default/files/estos-son-algunos-de-los-edificios-construidos-en-madera.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://fundacioncompartir.org/sites/default/files/estos-son-algunos-de-los-edificios-construidos-en-madera.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://fundacioncompartir.org/sites/default/files/estos-son-algunos-de-los-edificios-construidos-en-madera.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          </div>
+      </div>
+
+  
+     
+
+      <div class="col-6">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <?php 
+        $consulta = "SELECT nombre_evento,descripcion_evento,imagen_evento FROM evento";
+        $data = mysqli_query($conexion,$consulta);
+        while($row=mysqli_fetch_assoc($data)){
+            $nombreEvento = $row['nombre_evento'];
+            $descripcionEvento = $row['descripcion_evento'];
+            $imagenEvento = $row['imagen_evento']; 
+         ?>
+            <div class="col">
+                <div class="card">
+                <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;height:100%;"></td>' ?>
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $nombreEvento; ?></h5>
+                    <p class="card-text"><?php echo $descripcionEvento; ?></p>
+                </div>
+                </div>
+            </div> 
+        <?php } ?>
+      </div>
+    </div>
+  </div>
+  
+  
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
 </html>

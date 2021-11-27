@@ -5,19 +5,19 @@
     $resultado = mysqli_query($conexion, $consulta);
 
     while($row = mysqli_fetch_assoc($resultado)){
-        $get_nombre_admin = $row["nombre_admin"];
+        $get_nombre_usuario = $row["nombre_usuario"];
         $get_titulo_noticia = $row["titulo_noticia"];
         $get_fecha_noticia = $row["fecha_noticia"];
         $get_lead_noticia = $row["lead_noticia"];
         $get_bajada_noticia = $row["bajada_noticia"];
         $get_cuerpo_noticia = $row["cuerpo_noticia"];
         $get_imagen_noticia = $row["imagen_noticia"];
-        $get_categoria_noticia = $row["categoria_noticia"];      
+        $get_categoria_noticia = $row["categoria_noticia"];    
     }
 ?>
 
 <!doctype html>
-  <html lang="en">
+  <html lang="es">
     <head>
       <meta charset="utf-8">
       <?php require("../header.php")?>
@@ -37,10 +37,14 @@
                 <div class="row col-lg-12 pt-3">
                     <span class="fs-5  text-center"><?php echo $get_bajada_noticia ?></span>
                 </div>
+                <!-- Fecha -->
+                <div class="row col-lg-12">
+                    <span class="fs-5  text-left    ">Fecha: <?php echo $get_fecha_noticia ?></span>
+                </div>
                 
                 <div class="row">
                     <!-- IMAGEN -->
-                    <div class="col-lg-3 col-sm-12 justify-content-center"> 
+                    <div class="col-lg-3 col-sm-12  "> 
                         <img class="mt-5" style="width:250px;" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" >
                     </div>
                     <div class="col-lg-9 col-sm-12">
@@ -54,6 +58,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="text-end">
+                    <span> Categoría: <?php echo $get_categoria_noticia ?></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 text-end">
+                        <a href='Consultas/delete_noticia.php?seleccion=<?php echo $id ?>' class="btn btn-danger">Eliminar</a>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <a href="index.php"  class="btn btn-primary" >Volver</a>
+                    </div>
+                </div>
+                
             </div>
         </div>
    

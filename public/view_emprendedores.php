@@ -33,8 +33,8 @@
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col">
-                    <label class="form-label fw-bolder">Filtrar por rubro:</label>
-                    <select class="w-25 form-select" id="rubro" name="rubro_emprendedor">
+                    <label class="form-label fw-bolder d-block">Filtrar por rubro:</label>
+                    <select class="w-25 form-select d-inline" id="rubro" name="rubro_emprendedor">
                         <option hidden selected>Seleccione el Rubro</option>
                         <option value="Alimentos y bebestibles">Alimentos y bebestibles</option>
                         <option value="Ropa">Ropa</option>
@@ -44,7 +44,7 @@
                         <option value="Administración de Viviendas">Administración de Viviendas</option>
                         <option value="Productora de eventos">Productora de eventos</option>
                     </select>
-                    <a id="link" class="btn btn-secondary d-inline" href="#">Filtrar</a>
+                    <a id="link" class="btn  btn-secondary mb-1 d-inline-flex" href="#">Filtrar</a>
             </div>
         </div>
     </div>
@@ -80,8 +80,13 @@
                     <a class="btn btn-secondary w-100" href="view_emprendedores.php?page=<?php echo($_GET["page"]-1)?>">Anterior Página</a>
                 </div>
             <?php
-                    }    
-                }
+                    }
+                }?>
+                <div class="col">
+                    <a href="view_emprendedores.php" class="btn btn-secondary w-100">Volver al incio</a>
+                </div>
+            <?php 
+                
                 $prox =$flag+4;
                 $sqlProx = ($rubro=='')? "SELECT * FROM emprendedor LIMIT $prox ,4": "SELECT * FROM emprendedor WHERE rubro_emprendedor = '$rubro' LIMIT $prox ,4";
                 if(mysqli_num_rows(mysqli_query($conexion,$sqlProx))){
@@ -92,9 +97,6 @@
                     <a class="btn btn-secondary w-100" href="view_emprendedores.php?<?php echo$varGET?>">Siguiente Página</a>
                 </div>
             <?php }?>
-                <div class="col">
-                    <a href="view_emprendedores.php" class="btn btn-secondary w-100">Volver al incio</a>
-                </div>
             </div>
         </div>
     </div>

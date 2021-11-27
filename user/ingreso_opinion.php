@@ -11,7 +11,7 @@
 
 <body>
     <div class="container">
-
+        <?php require("navbar_user.php"); ?>
     </div>
     <div class="container mt-4">
         <form action="Consultas/create_opinion.php" method="POST" enctype="multipart/form-data">

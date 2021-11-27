@@ -1,5 +1,6 @@
 <?php
     require("../conexion.php");
+    include("../../sesion_usuarios/auth.php");
 ?>    
 
 <!doctype html>
@@ -11,7 +12,9 @@
         <title>Administrador</title>
     </head>
     <body>
-        <?php require("../navbar.php")?>
+        <?php 
+            require("../navbar.php");
+        ?>
         <div class="container">
             <div class="row ">
                 <div class="col-lg-12">

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="es">
     <head>
@@ -19,34 +18,33 @@
     </head>
     <body class="img-fondo">
     <?php
-      require('..\crud\conexion.php');
-      session_start();
-         if (isset($_POST['nombreUsuario'])){
-        $nombreUsuario = stripslashes($_REQUEST['nombreUsuario']); // removes backslashes
-      	$nombreUsuario = mysqli_real_escape_string($conexion,$nombreUsuario); //escapes special characters in a string
-        
-      	$contraseñaUsuario = stripslashes($_REQUEST['contraseña']);
-      	$contraseñaUsuario = mysqli_real_escape_string($conexion,$contraseñaUsuario);
-      	
-      //Checking is user existing in the database or not
-        $query = "SELECT nombre_usuario,contraseña,rol FROM `usuario` WHERE nombre_usuario='$nombreUsuario' and contraseña='".md5($contraseñaUsuario)."' ";
-      	$result = mysqli_query($conexion,$query) or die(mysql_error());
-      	$rows = mysqli_num_rows($result);
-        if($rows==1){
-      		$_SESSION['tipoUsuario'] = mysqli_fetch_assoc($result)['rol'];
+        require('crud/conexion.php');
+        session_start();
+        if (isset($_POST['nombre_usuario'])){
+            $nombreUsuario = stripslashes($_REQUEST['nombre_usuario']); // removes backslashes
+            $nombreUsuario = mysqli_real_escape_string($conexion,$nombreUsuario); //escapes special characters in a string
             
-      		header("Location: ../index.php"); // Redirect user to index.php
-        }else{
+            $contraseñaUsuario = stripslashes($_REQUEST['contrasena']);
+            $contraseñaUsuario = mysqli_real_escape_string($conexion,$contraseñaUsuario);
             
-      		echo "<div class='form'><h3>Usuario/Contraseña Incorrecto</h3><br/>Haz click aquí para <a href='login_usuario.php'>Logearte</a></div>";
-      	}
-        }else{
-        }?>
+        //Checking is user existing in the database or not
+            $query = "SELECT nombre_usuario,contraseña,rol FROM `usuario` WHERE nombre_usuario='$nombreUsuario' and contraseña='".md5($contraseñaUsuario)."' ";
+            $result = mysqli_query($conexion,$query) or die(mysql_error());
+            $rows = mysqli_num_rows($result);
+            if($rows==1){
+                $_SESSION['rol'] = mysqli_fetch_assoc($result)['rol']; //cambiar rol !!!!!!Important
+                $_SESSION['nombre_usuario'] = $nombreUsuario;
+                header("Location: index.php"); // Redirect user to index.php
+            }else{
+                echo "<div class='form'><h3>Usuario/Contraseña Incorrecto</h3><br/>Haz click aquí para <a href='login_usuario.php'>Logearte</a></div>";
+            }
+        }
+        ?>
         <div class="container bg-black pb-3 mt-5 fondo-redondeado">
             <div class="row">
                 <div class="row col-lg-8 offset-lg-2 mt-4">
                     <div class="col-6 text-end">
-                        <img src="../crud/img/logo.png" alt="Logo municipalidad">
+                        <img src="crud/img/logo.png" alt="Logo municipalidad">
                     </div>
                     <div class="col-6 text-start align-middle">
                         <span class="d-flex pt-5 text-white fw-bolder">Municipalidad</span>
@@ -60,13 +58,14 @@
                     <form action="" method="POST">
                         <div class="mb-3">
                             <label class="form-label fw-bolder text-white">Nombre de Usuario:</label>
-                            <input class="form-control" rows="3" maxlength="50" placeholder="Admin" name="nombreUsuario">
+                            <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario">
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-bolder text-white">Contraseña :</label>
-                            <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Password" rows="3" name="contraseña">
+                            <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Password" rows="3" name="contrasena">
                         </div>
                         <input type="submit" class="btn btn-secondary" value="Ingresar">
+                        <a href="index.php" class="btn btn-primary">Volver al inicio</a>
                         <p class="text-white mt-3">¿No estás registrado? <a href='registro_usuario.php'>Registrate Aquí</a></p>
                     </form>
                 </div>

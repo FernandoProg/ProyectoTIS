@@ -14,7 +14,7 @@
   </head>
   <body >
     <?php
-      require('../crud/conexion.php');
+      require('crud/conexion.php');
          // If form submitted, insert values into the database.
          if (isset($_REQUEST['nombreUsuario'])){
       	$nombreUsuario = stripslashes($_REQUEST['nombreUsuario']); // removes backslashes
@@ -29,7 +29,7 @@
         if($result){
          ?>
          <div class="alert alert-success container mt-5" role="alert">
-            Te has <strong>registrado correctamente!</strong>. Presiona <a href="login_usuario.php" class="text-green">aquí</a> para inciar sesión.
+            Te has <strong>registrado correctamente!</strong>. Presiona <a href="acceso_usuarios.php" class="text-green">aquí</a> para inciar sesión.
          </div>
 
          <form class="form container mt-5">

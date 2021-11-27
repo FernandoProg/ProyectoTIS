@@ -1,6 +1,6 @@
 <?php
-session_start();
-if(!isset($_SESSION["tipoUsuario"])){
-header("Location: login_usuario.php");
-exit(); }
+    session_start();
+    if(!isset($_SESSION["nombre_usuario"])){
+    header("Location: ../index.php");
+    exit(); }
 ?>

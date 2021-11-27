@@ -23,12 +23,28 @@
             </div>
         </div>
     </div>
+
     <div class="container-fluid mt-4">
         <div class="row">
+            <div class="col">
+                <label class="form-label fw-bolder">Filtrar por rubro:</label>
+                <select class="w-25 form-select" name="rubro_emprendedor">
+                    <option hidden selected>Seleccione el Rubro</option>
+                    <option value="Alimentos y bebestibles">Alimentos y bebestibles</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="Acicalamiento">Acicalamiento</option>
+                    <option value="Entretenimiento">Entretenimiento</option>
+                    <option value="Oficinas">Oficinas</option>
+                    <option value="Administración de Viviendas">Administración de Viviendas</option>
+                    <option value="Productora de eventos">Productora de eventos</option>
+                </select>
+            </div>
+        </div>
+        <div class="row pe-1">
     <?php
         while($row = mysqli_fetch_assoc($data)){
     ?>
-        <div class="col text-center mt-4 mb-4">
+        <div class="col w-25 ms-1 border border-2 rounded text-center mt-4 mb-4">
             <span style="justify-content: center;" class="d-flex fs-5 fw-bolder"><?php echo$row["rubro_emprendedor"] ?></span>
             <img style="height: 300px; width: 300px;" src="data:<?php echo$row["tipo_imagen"]?>;base64,<?php echo base64_encode($row["imagen_emprendedor"])?>">
             <span style="justify-content: center;"  class="d-flex fw-bolder">Nombre: <?php echo$row["nombre_emprendedor"]?></span>
@@ -50,9 +66,10 @@
             <?php }
                 $prox =$flag+4;
                 if(mysqli_num_rows(mysqli_query($conexion,"SELECT * FROM emprendedor LIMIT $prox ,4"))){
+
             ?>
                 <div class="col">
-                        <a class="btn btn-secondary w-100" href="view_emprendedores.php?page=<?php echo$_GET["page"]+1?>">Siguiente Página</a>
+                        <a class="btn btn-secondary w-100" href="view_emprendedores.php?page=<?php echo($flag/4)+1?>">Siguiente Página</a>
                 </div>
             <?php }?>
             </div>

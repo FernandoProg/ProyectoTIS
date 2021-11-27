@@ -132,9 +132,14 @@
                                 edit
                               </span>
                             </a>
-                            <a href='Consultas/delete_noticia.php?seleccion=<?php echo $id ?>'>
+                            <a style="text-decoration: none;" href='Consultas/delete_noticia.php?seleccion=<?php echo $id ?>'>
                               <span class="material-icons" style="color: red;">
                                 delete
+                              </span>
+                            </a>
+                            <a style="text-decoration: none;" href='ver_noticia.php?seleccion=<?php echo $id ?>'>
+                              <span class="material-icons text-secondary">
+                                visibility
                               </span>
                             </a>
                           </td>

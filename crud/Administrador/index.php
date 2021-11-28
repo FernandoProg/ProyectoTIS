@@ -50,7 +50,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $consulta ="SELECT * FROM usuario ORDER BY rol ASC";
+                                $consulta ="SELECT * FROM usuario";
                                 $resultado = mysqli_query($conexion, $consulta);
 
                                 while($row = mysqli_fetch_assoc($resultado)){

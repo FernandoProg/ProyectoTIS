@@ -1,6 +1,6 @@
 <?php require("crud/conexion.php")?>
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <title>Title</title>
     <!-- Required meta tags -->
@@ -10,47 +10,15 @@
     ?> 
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+  
   </head>
   <body>
-  <nav class="navbar bg-primary mb-4">
-        <div class="container-fluid">   
-            <a class="navbar-brand" href="index.php">
-                <img src="crud/img/logo.png" style="width: 40%;">
-            </a>
-            <ul class="nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-white" aria-current="page" href="crud/Evento/index.php">Eventos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="crud/Noticia/index.php">Noticias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="crud/Emprendedor/index.php">Emprendedores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="crud/Lugar/index.php">Mapa Comuna</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="crud/Opinion/index.php">Opiniones</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="crud/Contribucion/index.php">Contribuciones</a>
-                </li>
-            </ul>
-            <ul class="nav justify-content-end">
-            <li class="nav-item">
-                    <a class="nav-link text-white"  href="sesion_usuarios/logout.php">Cerrar Sesión</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white"  href="../..">Acceso Funcionarios</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <?php
+        require_once("navbar_noSession.php");
+    ?>
       
   <div class="row container-fluid">
-      <div class="col-7 ">
+      <div class="col-6 ">
   
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -71,11 +39,11 @@
 
             ?>
           <div class="carousel-inner">
-            <div class="carousel-item active text-center">
-            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:700px; heigth:500px;"></td>' ?>
+            <div class="carousel-item active">
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;max-height:700px;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
-                <span class="fs-5 bg-dark"><?php echo $result['nombre_evento'];?></span> <br>
-                <span class="bg-dark" >Será realizado el día <?php echo $result['fecha_evento'];?> en <?php echo $result2['nombre_lugar'];?></span>
+                <h5 class="bg-dark d-inline-block p-1"><?php echo $result['nombre_evento'];?></h5> <br>
+                <p class="bg-dark d-inline-block p-1">Será realizado el día <?php echo $result['fecha_evento'];?> en <?php echo $result2['nombre_lugar'];?></p>
               </div>
             </div>
 
@@ -93,11 +61,11 @@
               $fechaEvento = $row['fecha_evento'];
             
             ?>
-             <div class="carousel-item text-center">
-            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/style="width:700px; heigth:500px; object-fit:cover;"></td>' ?>
+             <div class="carousel-item ">
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;max-height:700px"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
-                <span class="fs-5 bg-dark" ><?php echo $nombreEvento ?></span> <br>
-                <span class="bg-dark" >Será realizado el día <?php echo $fechaEvento;?> en <?php echo $lugarEvento;?></span>
+                <h5 class="bg-dark d-inline-block p-1"><?php echo $nombreEvento ?></h5> <br>
+                <p class="bg-dark d-inline-block p-1">Será realizado el día <?php echo $fechaEvento;?> en <?php echo $lugarEvento;?></p>
               </div>
             </div>
 
@@ -121,7 +89,7 @@
   
      
 
-      <div class="col-5">
+      <div class="col-6">
         <div class="row row-cols-1 row-cols-md-2 g-4">
         <?php 
         $consulta = "SELECT titulo_noticia,bajada_noticia,imagen_noticia FROM noticia  LIMIT 0,4"; //HACER ORDER BY fecha_noticia ASC/DESC
@@ -144,24 +112,7 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <div class="col-md-6 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-      <span class="">Municipalidad de Chiguayante - Dirección: Orozimbo Barbosa, 104, Chiguayante - Fono: 250 81 00</span>
-    </div>
-
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-    </ul>
-  </footer>
-</div>
-
-  
+          <?php require_once("footer.php"); ?>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

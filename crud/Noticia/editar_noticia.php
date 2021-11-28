@@ -1,6 +1,6 @@
 <?php
     require("../conexion.php");
-    include("../../sesion_usuarios/auth.php");
+    include("../../sesion_usuarios/auth_admin.php");
     $id=$_GET["seleccion"];
     $consulta = "SELECT * FROM noticia WHERE id_noticia = $id";
     $resultado = mysqli_query($conexion, $consulta);

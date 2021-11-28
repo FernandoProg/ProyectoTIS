@@ -6,7 +6,14 @@
         <?php require("../user/head.php")?>
     </head>
     <body>
-        <?php require("navbar_noSession.php"); ?>
+        <?php
+            require("../sesion_usuarios/auth.php");
+            if($_SESSION['nombre_usuario']){
+                require("navbar_user.php");
+            }else{
+                require("navbar_noSession.php");
+            }
+        ?>
         <div class="container">
             <div class="row col-lg-12">
                 <div class="card col-lg-3">

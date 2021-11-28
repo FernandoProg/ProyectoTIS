@@ -13,6 +13,9 @@
             <li class="nav-item">
                 <a class="nav-link text-white" href="public/view_emprendedores.php">Emprendedores</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Mapa comuna</a>
+            </li>
         </ul>
         <ul class="nav justify-content-end">
                 <li class="nav-item">

@@ -34,7 +34,7 @@
             if($rows==1){
                 $_SESSION['rol'] = mysqli_fetch_assoc($result)['rol']; //cambiar rol !!!!!!Important
                 $_SESSION['nombre_usuario'] = $nombreUsuario;
-                header("Location: index.php"); // Redirect user to index.php
+                header("Location: index_usuario.php"); // Redirect user to index.php
             }else{
                 echo "<div class='form'><h3>Usuario/Contraseña Incorrecto</h3><br/>Haz click aquí para <a href='login_usuario.php'>Logearte</a></div>";
             }

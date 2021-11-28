@@ -1,10 +1,6 @@
-<?php
-    include("sesion_usuarios/auth.php");
-?> 
-
 <nav class="navbar bg-primary mb-4">
     <div class="container-fluid">   
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="index_usuario.php">
             <img src="/proyecto-municipalidad/crud/img/logo.png" style="width: 40%;">
         </a>
         <ul class="nav mx-auto">

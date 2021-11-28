@@ -1,6 +1,7 @@
 <?php
-  require("../conexion.php");
-?>
+    require("../conexion.php");
+    include("../../sesion_usuarios/auth.php");
+?>    
 
 <!doctype html>
   <html lang="es">

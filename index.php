@@ -14,12 +14,7 @@
   </head>
   <body>
     <?php
-        session_start();
-        if(!isset($_SESSION["nombre_usuario"])){
-            require_once("navbar_noSession.php");
-        }else{
-            require_once("navbar_user.php");
-        }
+        require_once("navbar_noSession.php");
     ?>
       
   <div class="row container-fluid">

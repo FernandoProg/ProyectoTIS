@@ -40,7 +40,7 @@
             ?>
           <div class="carousel-inner">
             <div class="carousel-item active">
-            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;height:700px;"></td>' ?>
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;max-height:700px;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="bg-dark d-inline-block p-1"><?php echo $result['nombre_evento'];?></h5> <br>
                 <p class="bg-dark d-inline-block p-1">Será realizado el día <?php echo $result['fecha_evento'];?> en <?php echo $result2['nombre_lugar'];?></p>
@@ -62,7 +62,7 @@
             
             ?>
              <div class="carousel-item ">
-            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;height:700px;"></td>' ?>
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;max-height:700px"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="bg-dark d-inline-block p-1"><?php echo $nombreEvento ?></h5> <br>
                 <p class="bg-dark d-inline-block p-1">Será realizado el día <?php echo $fechaEvento;?> en <?php echo $lugarEvento;?></p>
@@ -92,19 +92,19 @@
       <div class="col-6">
         <div class="row row-cols-1 row-cols-md-2 g-4">
         <?php 
-        $consulta = "SELECT nombre_evento,descripcion_evento,imagen_evento FROM evento LIMIT 0,4";
+        $consulta = "SELECT titulo_noticia,bajada_noticia,imagen_noticia FROM noticia  LIMIT 0,4"; //HACER ORDER BY fecha_noticia ASC/DESC
         $data = mysqli_query($conexion,$consulta);
         while($row=mysqli_fetch_assoc($data)){
-            $nombreEvento = $row['nombre_evento'];
-            $descripcionEvento = $row['descripcion_evento'];
-            $imagenEvento = $row['imagen_evento']; 
+            $tituloNoticia = $row['titulo_noticia'];
+            $bajadaNoticia = $row['bajada_noticia'];
+            $imagenNoticia = $row['imagen_noticia']; 
          ?>
             <div class="col">
                 <div class="card">
-                <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;height:100%;"></td>' ?>
+                <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenNoticia).'"/ style="width:100%;height:100%;"></td>' ?>
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $nombreEvento; ?></h5>
-                    <p class="card-text"><?php echo $descripcionEvento; ?></p>
+                    <h5 class="card-title"><?php echo $tituloNoticia; ?></h5>
+                    <p class="card-text"><?php echo $bajadaNoticia; ?></p>
                 </div>
                 </div>
             </div> 

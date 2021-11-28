@@ -1,3 +1,7 @@
+<?php
+    require("../conexion.php");
+    include("../../sesion_usuarios/auth_admin.php");
+?>    
 <!DOCTYPE html>
 <html lang="es">
 
@@ -99,8 +103,8 @@
                         <th>Nombre</th>
                         <th>Dirección</th>
                         <th>Celular</th>
-                        <th>Correo</th>
-                        <th>Rubro</th>
+                        <th class="d-none d-sm-table-cell">Correo</th>
+                        <th class="d-none d-sm-table-cell">Rubro</th>
                         <th>Opciones</th>
                     </tr>
                 </thead>
@@ -111,8 +115,8 @@
                         <th><?php echo$fila["nombre_emprendedor"] ?></th>
                         <th><?php echo$fila["direccion_emprendedor"]?></th>
                         <th><?php echo$fila["celular_emprendedor"]?></th>
-                        <th><?php echo$fila["correo_emprendedor"]?></th>
-                        <th><?php echo$fila["rubro_emprendedor"]?></th>
+                        <th class="d-none d-sm-table-cell"><?php echo$fila["correo_emprendedor"]?></th>
+                        <th class="d-none d-sm-table-cell"><?php echo$fila["rubro_emprendedor"]?></th>
                         <th>
                             <div class="row ms-auto">
                                 <div class="col">

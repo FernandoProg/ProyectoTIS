@@ -5,7 +5,7 @@ session_start();
 if($_SESSION['tipoUsuario'] == "admin"){ ?>
     <nav class="navbar bg-black mb-4">
         <div class="container-fluid">   
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../Administrador">
                 <img src="../img/logo.png" style="width: 40%;">
             </a>
             <ul class="nav mx-auto">
@@ -70,7 +70,7 @@ if($_SESSION['tipoUsuario'] == "admin"){ ?>
                     <a class="nav-link text-white"  href="../../sesion_usuarios/logout.php">Cerrar Sesión</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white"  href="../..">Acceso Funcionarios</a>
+                    <a class="nav-link text-white"  href="../../sesion_usuarios/logout.php">Cerrar Sesión - <?php echo $_SESSION['nombre_usuario']; ?></a>
                 </li>
             </ul>
         </div>

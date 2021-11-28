@@ -1,3 +1,7 @@
+<?php
+    require("../conexion.php");
+    include("../../sesion_usuarios/auth_admin.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,13 +37,11 @@
                     class="form-control" required name="nombreLugar" id="nombreLugar" aria-describedby="helpId" placeholder="Bodega Acuenta" maxlength="50">
                 </div>
                 <div class="mb-3">
-                <label for="latitudLugar" class="form-label fw-bolder">Latitud:</label>
-                <input type="text"
+                <input type="hidden"
                     class="form-control" required name="latitudLugar" id="latitudLugar" aria-describedby="helpId" placeholder="-36.05356" maxlength="9">
                 </div>
                 <div class="mb-3">
-                <label for="longitudLugar" class="form-label fw-bolder">Longitud:</label>
-                <input type="text"
+                <input type="hidden"
                     class="form-control" required name="longitudLugar" id="longitudLugar" aria-describedby="helpId" placeholder="56.52525" maxlength="9">
                 </div>
                 <div id="map" style="height: 380px;"></div>
@@ -57,10 +59,6 @@
                         <option value="Transporte">Transporte</option>
                         <option value="Educación">Educación</option>
                     </select>
-                </div>
-                <div class="mb-3">
-                <label for="nombreAdmin" class="form-label fw-bolder">Nombre administrador:</label>
-                <input type="text" class="form-control" required name="nombreUsuario" id="nombreUsuario" aria-describedby="helpId" placeholder="Juan Perez" maxlength="50">
                 </div>
                 <input name="" id="" class="btn btn-secondary" type="submit" value="Agregar">
                 <!-- <a name="" id="" class="btn btn-primary mx-3" href="?controlador=lugares&accion=inicio" role="button">Volver al inicio</a> -->

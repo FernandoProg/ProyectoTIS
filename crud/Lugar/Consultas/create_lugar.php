@@ -4,10 +4,14 @@
     $nombreLugar = $_POST["nombreLugar"];
     $latitudLugar = $_POST["latitudLugar"];
     $longitudLugar = $_POST["longitudLugar"];
-    $categoriaLugar = $_POST["categoriaLugar"];
-    $nombreUsuario = $_POST["nombreUsuario"];
-
-    $query = "INSERT INTO lugar(nombre_lugar, latitud_lugar, longitud_lugar, categoria_lugar, nombre_admin) VALUES ('$nombreLugar','$latitudLugar','$longitudLugar','$categoriaLugar','$nombreUsuario')";
-    $insert = mysqli_query($conexion,$query);
-    header('location: ../');
+    if(intval($latitudLugar) == 0 && intval($longitudLugar) == 0){
+        echo '<script>alert("No haz seleccionado un lugar");</script>';
+        echo '<script>window.location.href="../index.php"</script>';
+    }else{
+        $categoriaLugar = $_POST["categoriaLugar"];
+        session_start();
+        $query = "INSERT INTO lugar VALUES ('','$nombreLugar','$latitudLugar','$longitudLugar','$categoriaLugar','".$_SESSION['nombre_usuario']."')";
+        $insert = mysqli_query($conexion,$query);
+        header('location: ../');
+    }
 ?>

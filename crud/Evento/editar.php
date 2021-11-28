@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+
+<!DOCTYPE html><?php
+    require("../conexion.php");
+    include("../../sesion_usuarios/auth_admin.php");
+?>  
 <html lang="es">
 <head>
     <meta charset="UTF-8">

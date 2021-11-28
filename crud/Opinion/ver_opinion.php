@@ -1,3 +1,7 @@
+<?php
+    require("../conexion.php");
+    include("../../sesion_usuarios/auth_admin.php");
+?>  
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -53,18 +57,14 @@
             </span>
         </div>
     <div class="fs-2 mt-4 ">
-        <?php
-            if(mysqli_fetch_assoc($data_image)){
-                echo 'Imagenes:';
-            }
-        ?>
+        Imagenes:
     </div>
         <div class="row mb-4">
             <?php
                 while($imagen = mysqli_fetch_assoc($data_image)){
             ?>
                 <div class="col">
-                    <img style="width: 100%;" src="data:<?php echo$imagen["tipo_imagen"]?>;base64,<?php echo base64_encode($imagen["imagen_opiniones"])?>">
+                    <img style="width: 50%;" src="data:<?php echo$imagen["tipo_imagen"]?>;base64,<?php echo base64_encode($imagen["imagen_opiniones"])?>">
                 </div>
             <?php }?>
         </div>

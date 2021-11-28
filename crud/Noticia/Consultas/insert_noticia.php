@@ -14,7 +14,9 @@
     $imagen_noticia = addslashes(file_get_contents($_FILES['insert_imagen_noticia']['tmp_name']));
 
 
-    $sql = "INSERT INTO noticia (nombre_usuario, titulo_noticia, fecha_noticia, bajada_noticia, lead_noticia, cuerpo_noticia, categoria_noticia, imagen_noticia) VALUES ('$nombre_usuario','$titulo_noticia','$fecha_noticia','$bajada_noticia','$lead_noticia','$cuerpo_noticia','$categoria_noticia','$imagen_noticia')";
+    $sql = "INSERT INTO noticia (nombre_usuario, titulo_noticia, fecha_noticia, bajada_noticia, lead_noticia, cuerpo_noticia, categoria_noticia, imagen_noticia) 
+
+    VALUES ('$nombre_usuario','$titulo_noticia','$fecha_noticia','$bajada_noticia','$lead_noticia','$cuerpo_noticia','$categoria_noticia','$imagen_noticia')";
     $result = mysqli_query($conexion, $sql);
 
     header('Location: ../index.php');

@@ -1,3 +1,7 @@
+<?php
+    require("../conexion.php");
+    include("../../sesion_usuarios/auth_admin.php");
+?>    
 <!DOCTYPE html>
 <html lang="es">
 <head>

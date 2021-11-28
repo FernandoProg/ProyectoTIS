@@ -34,7 +34,7 @@
             ?>
           <div class="carousel-inner">
             <div class="carousel-item active">
-            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;height:500px;"></td>' ?>
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;height:700px;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
                 <h5><?php echo $result['nombre_evento'];?></h5>
                 <!-- <p><?php echo $result['descripcion_evento'];?></p> -->
@@ -51,7 +51,7 @@
             
             ?>
              <div class="carousel-item ">
-            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;height:500px;"></td>' ?>
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;height:700px;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
                 <h5><?php echo $nombreEvento ?></h5>
               </div>

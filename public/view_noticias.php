@@ -90,10 +90,19 @@
                                 <div class="mt-4 col-lg-4 col-sm-12">
                                     <div class="card ">
                                         <img class="card-img-top" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" alt="Card image cap" >
-                                        <div class="card-body">
+                                        <div class="card-body ">
                                             <h5 class="card-title"><?php echo $get_titulo_noticia?></h5>
                                             <p class="card-text"><?php echo $get_bajada_noticia?></p>
-                                            <a href="ver_noticia.php?seleccion=<?php echo $id ?>" class="btn btn-primary">Ver más</a>
+                                            
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <a href="ver_noticia.php?seleccion=<?php echo $id ?>" class="btn btn-primary">Ver más</a>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <span> Categoría: <?php echo $get_categoria_noticia ?></span>
+                                                </div>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>

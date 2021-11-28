@@ -22,10 +22,6 @@
                             <input class="form-control" rows="3" maxlength="50" placeholder="Creacion de areas recreativas" name="nombre_contribucion">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label fw-bolder">Correo Usuario:</label>
-                            <input class="form-control" rows="3" maxlength="50" placeholder="example@gmail.com" name="correo_contribucion">
-                        </div>
-                        <div class="mb-3">
                             <label class="form-label fw-bolder">Descripción:</label>
                             <textarea class="form-control" cols="30" rows="4" maxlength="1000" placeholder="Se solicita la posibilidad de mayor cantidad de areas recreativas" name="descripcion_contribucion"></textarea>
                         </div>

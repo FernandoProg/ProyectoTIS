@@ -28,6 +28,10 @@
                             <label class="form-label fw-bolder">Contraseña de administrador:</label>
                             <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Contraseña" rows="3" name="contrasena">
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bolder">Correo del administrador:</label>
+                            <input class="form-control" rows="3" maxlength="50" placeholder="example@gmail.com" name="correo_usuario">
+                        </div>
                         <input type="submit" class="btn btn-secondary" value="Guardar">
                     </form>
                     <hr>
@@ -41,6 +45,7 @@
                             <tr>
                                 <th>Nombre de Usuario</th>
                                 <th>Rol</th>
+                                <th>Correo</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -52,9 +57,11 @@
                                 while($row = mysqli_fetch_assoc($resultado)){
                                     $nombre_usuario = $row["nombre_usuario"];
                                     $rol = $row["rol"];
+                                    $correo_usuario = $row["correo_usuario"];
                                     echo "<tr>";
                                     echo "<td>".$nombre_usuario."</td>";
                                     echo "<td>".$rol."</td>";
+                                    echo "<td>".$correo_usuario."</td>";
                                     ?>
                                     <td><a href='Consultas/delete_administrador.php?seleccionado=<?php echo$nombre_usuario?>'>
                                          <span class="material-icons" style="color: red;">

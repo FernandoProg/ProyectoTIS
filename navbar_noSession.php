@@ -5,7 +5,16 @@
         </a>
         <ul class="nav mx-auto">
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">Noticias</a> <!-- Falta noticias a nivel sin usuario o usuario persona -->
+                <a class="nav-link text-white" href="public/view_noticias.php">Noticias</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Eventos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="public/view_emprendedores.php">Emprendedores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Mapa comuna</a>
             </li>
         </ul>
         <ul class="nav justify-content-end">

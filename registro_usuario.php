@@ -32,7 +32,7 @@
             Te has <strong>registrado correctamente!</strong>. Presiona <a href="acceso_usuarios.php" class="text-green">aquí</a> para inciar sesión.
          </div>
 
-         <form class="form container mt-5">
+         <form class="form container mt-5" action="" method="POST">
           <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Nombre de Usuario</label>
               <input type="text" disabled class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nombreUsuario">
@@ -42,7 +42,7 @@
               <label for="exampleInputPassword1" class="form-label">Contraseña</label>
               <input type="password" disabled class="form-control" id="exampleInputPassword1" name="contraseña">
           </div>
-          <a href="login_usuario.php" class="btn btn-primary">Ir al inicio de sesión</a>
+          <a href="acceso_usuarios.php" class="btn btn-primary">Ir al inicio de sesión</a>
         </form>
          
          <?php
@@ -61,7 +61,7 @@
               <input type="password" required class="form-control" id="exampleInputPassword1" name="contraseña" minlength="6" maxlength="16" placeholder="28dejulio , trececatorce , etc...">
           </div>
           <button type="submit" class="btn btn-primary">Registarme</button>
-          <a href="login_usuario.php" class="btn btn-secondary" >Volver atrás</a>
+          <a href="index.php" class="btn btn-secondary" >Volver atrás</a>
     </form>
     <?php } ?>
   </body>

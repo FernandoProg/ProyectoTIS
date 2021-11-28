@@ -3,11 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <title>Municipalidad</title>
-        <?php require("header.php")?>
+        <?php require("../user/head.php")?>
     </head>
     <body>
+<<<<<<< HEAD
         <?php require("navbar.php")?>
 
+=======
+        <?php
+            require("../sesion_usuarios/auth.php");
+            if($_SESSION['nombre_usuario']){
+                require("navbar_user.php");
+            }else{
+                require("navbar_noSession.php");
+            }
+        ?>
+>>>>>>> Master
         <div class="container">
             <div class="row col-lg-12">
                 <div class="card col-lg-3">

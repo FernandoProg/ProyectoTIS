@@ -73,7 +73,7 @@
         </div>
         <?php
             require("../conexion.php");
-            $consulta = "SELECT * FROM lugar";
+            $consulta = "SELECT * FROM lugar JOIN usuario USING(nombre_usuario)";
             $data = mysqli_query($conexion,$consulta);
         ?>
         <table class="table table-hover table-light table-bordered">
@@ -96,7 +96,7 @@
                     <td><?php echo $row["latitud_lugar"]?></td>
                     <td><?php echo $row["longitud_lugar"]?></td>
                     <td><?php echo $row["categoria_lugar"]?></td>
-                    <td><?php echo $row["nombre_admin"]?></td>
+                    <td><?php echo $row["nombre_usuario"]?></td>
                     <td class="text-center">
                         <!-- <a href="#" class="btn btn-info">Editar</a> -->
                         <a href="Consultas/delete_lugar.php?id=<?php echo $row["id_lugar"];?>" >

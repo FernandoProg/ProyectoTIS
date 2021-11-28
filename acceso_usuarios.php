@@ -33,6 +33,7 @@
             $rows = mysqli_num_rows($result);
             if($rows==1 && mysqli_fetch_assoc($result)['rol'] == "usuario"){
                 $_SESSION['nombre_usuario'] = $nombreUsuario;
+                $_SESSION['rol'] = "usuario";
                 header("Location: index_usuario.php"); // Redirect user to index.php
             }else{
                 ?>

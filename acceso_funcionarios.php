@@ -34,6 +34,7 @@
             $rows = mysqli_num_rows($result);
             if($rows == 1 && mysqli_fetch_assoc($result)['rol'] == "admin"){
                 $_SESSION['nombre_usuario'] = $nombreUsuario;
+                $_SESSION['rol'] = "admin";
                 header("Location: crud/Administrador/index.php"); // Redirect user to index.php
             }else{
                 ?>

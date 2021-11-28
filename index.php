@@ -27,15 +27,9 @@
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <?php 
-              $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar FROM evento  LIMIT 0,1 ";
+              $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar,nombre_lugar FROM evento join lugar using(id_lugar) LIMIT 0,1 ";
               $info = mysqli_query($conexion,$consulta);
               $result=mysqli_fetch_assoc($info);
-              $IDlugar = $result['id_lugar'];
-              
-              $consulta2 = "SELECT nombre_lugar FROM lugar WHERE id_lugar = $IDlugar";
-              $info2 = mysqli_query($conexion,$consulta2);
-              $result2=mysqli_fetch_assoc($info2);
-
 
             ?>
           <div class="carousel-inner">
@@ -43,16 +37,15 @@
             <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;max-height:700px;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="bg-dark d-inline-block p-1"><?php echo $result['nombre_evento'];?></h5> <br>
-                <p class="bg-dark d-inline-block p-1">Será realizado el día <?php echo $result['fecha_evento'];?> en <?php echo $result2['nombre_lugar'];?></p>
+                <p class="bg-dark d-inline-block p-1">Será realizado el día <?php echo $result['fecha_evento'];?> en <?php echo $result['nombre_lugar'];?></p>
               </div>
             </div>
 
             <?php 
-            $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar,nombre_lugar FROM evento join lugar using(id_lugar) ORDER BY fecha_evento ASC LIMIT 0,3";
+            $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar,nombre_lugar FROM evento join lugar using(id_lugar)  LIMIT 0,3";
             $data = mysqli_query($conexion,$consulta);
             $result2=mysqli_fetch_assoc($data);
     
-            
             
             while($row=mysqli_fetch_assoc($data)){
               $nombreEvento = $row['nombre_evento'];

@@ -1,8 +1,9 @@
 <?php 
+if(!isset($_SESSION)){
+    session_start();
+}
 
-session_start();
-
-if($_SESSION['tipoUsuario'] == "admin"){ ?>
+if($_SESSION['rol'] == "admin"){ ?>
     <nav class="navbar bg-black mb-4">
         <div class="container-fluid">   
             <a class="navbar-brand" href="../Administrador">

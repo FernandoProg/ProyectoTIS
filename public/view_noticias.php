@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Municipalidad</title>
-        <?php require("header.php")?>
+        <?php require("../user/head.php")?>
     </head>
     <body>
-
+        <?php require("navbar_noSession.php"); ?>
         <div class="container">
             <div class="row col-lg-12">
                 <div class="card col-lg-3">

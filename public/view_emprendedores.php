@@ -14,6 +14,7 @@
     </script>
     <script src="main.js"></script>
 <body>
+    <?php require("navbar_noSession.php"); ?>
     <?php
         $rubro = isset($_GET["rubro"]) ? $_GET["rubro"]:'';
         $flag = isset($_GET["page"]) ? $_GET["page"]*4 : 0;

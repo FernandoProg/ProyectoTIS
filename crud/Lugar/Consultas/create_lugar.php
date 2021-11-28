@@ -10,7 +10,7 @@
     }else{
         $categoriaLugar = $_POST["categoriaLugar"];
         session_start();
-        $query = "INSERT INTO lugar VALUES ('','$nombreLugar','$latitudLugar','$longitudLugar','$categoriaLugar','".$_SESSION['nombre_usuario']."')";
+        $query = "INSERT INTO lugar VALUES ('','".$_SESSION['nombre_usuario']."','$latitudLugar','$longitudLugar','$categoriaLugar', '$nombreLugar')";
         $insert = mysqli_query($conexion,$query);
         header('location: ../');
     }

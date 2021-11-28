@@ -13,7 +13,7 @@
     <?php require("../navbar.php")?>
     <?php
         require("../conexion.php");
-        $query = "SELECT id_opinion,nombre_opinion,correo_opinion,fecha_opinion FROM opinion ORDER BY fecha_opinion";
+        $query = "SELECT id_opinion,nombre_opinion,correo_usuario,fecha_opinion FROM opinion JOIN usuario USING(nombre_usuario) ORDER BY fecha_opinion";
         $data = mysqli_query($conexion,$query);
     ?>
     <div class="container">
@@ -37,7 +37,7 @@
                 ?>
                     <tr>
                         <th><?php echo$fila["nombre_opinion"]?></th>
-                        <th><?php echo$fila["correo_opinion"]?></th>
+                        <th><?php echo$fila["correo_usuario"]?></th>
                         <th><?php echo$fila["fecha_opinion"]?></th>
                         <th class="ps-3">
                             <a href="ver_opinion.php?id=<?php echo$fila["id_opinion"]?>" style="text-decoration: none;">

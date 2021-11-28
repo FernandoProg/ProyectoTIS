@@ -19,18 +19,18 @@
             ?>
                 <div class="container-fluid my-4 px-4">
                     <div class="row">
-                        <div class="col text-center">
-                            <img style="height: 300px; width: 300px;"class="" src="data:<?php echo$row["tipo_imagen"]?>;base64,<?php echo base64_encode($row["imagen_emprendedor"])?>">
+                        <div class="col-lg-2 col-md-12 mt-4 text-center">
+                            <img style="height: 100%; width: 100%;"class="" src="data:<?php echo$row["tipo_imagen"]?>;base64,<?php echo base64_encode($row["imagen_emprendedor"])?>">
                         </div>
-                        <div class="col">
+                        <div class="col-lg-6 col-md-12 mt-4 text-center ">
                             <span class="text-center mt-4 mb-2 fs-2 fw-bolder">
                                 Información 
                             </span>
-                            <span class="fw-bolder text-justify">
+                            <span style="text-align: justify;" class="d-flex fw-bolder">
                                 <?php echo$row["informacion"]?>
                             </span>
                         </div>
-                        <div class="col card">
+                        <div class="col-lg-4 col-md-12 mt-4 card">
                             <span class="text-center my-4 fs-2 fw-bolder">
                                 Información Emprendedor
                             </span>
@@ -100,13 +100,32 @@
                                     <?php echo$row["rubro_emprendedor"]?>
                                 </span>
                             </div>
+                            <?php
+                                if($row["facebook"]!=null || $row["instagram"]!=null){                              
+                            ?>
+                            <div class="">
+                                <span class="align-middle material-icons">
+                                    group
+                                </span>
+                                <span class="fw-bolder">
+                                    Redes sociales:
+                                </span>
+                                <?php if($row["facebook"]!=null){?>
+                                    <a href="https://www.facebook.com/public/<?php echo$row["facebook"]?>" style="text-decoration: none;" class="ms-4">
+                                        <i style="color: #2851A3;" class="align-middle fs-4 fab fa-facebook-square"></i>
+                                    </a>
+                                <?php }?>
+                                <?php if($row["instagram"]!=null){?>
+                                    <a href="https://www.instagram.com/<?php echo$row["instagram"]?>" class="ms-4" style="text-decoration: none;">
+                                        <i class="align-middle instagram fs-4 fab fa-instagram-square" style="color: #fd5949;"></i>
+                                    </a>
+                                <?php }?>
+                            </div>
+                            <?php }?>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <i style="color: #2851A3;" class="fs-2 fab fa-facebook-square"></i>
-                            <i class="fs-2 fab fa-instagram-square"></i>
-                        </div>
+                    <div class="row mt-4 w-25 mx-auto">
+                        <a href="view_emprendedores.php" class="btn btn-secondary">Volver</a>
                     </div>
                 </div>
             <?php

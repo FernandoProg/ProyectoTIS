@@ -35,18 +35,18 @@
     <div id="map" style="height:700px;"></div>
 
     <?php 
-        $consulta = "SELECT nombre_lugar,latitud_lugar,longitud_lugar,categoria_lugar FROM lugar"; //HACER ORDER BY fecha_noticia ASC/DESC
+        $consulta = "SELECT nombre_lugar,latitud_lugar,longitud_lugar FROM lugar"; //HACER ORDER BY fecha_noticia ASC/DESC
         $data = mysqli_query($conexion,$consulta);
         while($row=mysqli_fetch_assoc($data)){ 
             $nombreLugar = $row['nombre_lugar'];
             $latitudLugar = $row['latitud_lugar'];
             $longitudLugar = $row['longitud_lugar'];
-            $categoriaLugar = $row['categoria_lugar'];
+            // $categoriaLugar = $row['categoria_lugar'];
             
-            echo "<input type=text value=$nombreLugar class='nombreLugar'> ";
-            echo "<input type=text value=$latitudLugar class='latitudLugar'>";
-            echo "<input type=text value=$longitudLugar class='longitudLugar'> ";
-            echo "<input type=text value=$categoriaLugar class='categoriaLugar'> ";
+            echo "<input type=hidden value=$nombreLugar class='nombreLugar'> ";
+            echo "<input type=hidden value=$latitudLugar class='latitudLugar'>";
+            echo "<input type=hidden value=$longitudLugar class='longitudLugar'> ";
+            // echo "<input type=hidden value=$categoriaLugar class='categoriaLugar'> ";
                        
         }
         

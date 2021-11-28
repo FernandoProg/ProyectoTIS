@@ -52,18 +52,19 @@
         </div>
     </div>
     <div class="container-fluid">
-    <div class="row">
+    <div class="row p-1">
         <?php
             while($row = mysqli_fetch_assoc($data)){
         ?>
-                <div class="col text-center mt-4 mb-4">
-                    <span style="justify-content: center;" class="d-flex fs-5 fw-bolder"><?php echo$row["rubro_emprendedor"] ?></span>
-                    <img style="height: 300px; width: 300px;" src="data:<?php echo$row["tipo_imagen"]?>;base64,<?php echo base64_encode($row["imagen_emprendedor"])?>">
-                    <span style="justify-content: center;"  class="d-flex fw-bolder">Nombre: <?php echo$row["nombre_emprendedor"]?></span>
-                    <span style="justify-content: center;"  class="d-flex  fw-bolder">Número: <?php echo$row["celular_emprendedor"]?> </span>
-                    <span style="justify-content: center;" class="d-flex  fw-bolder">Fono: <?php echo$row["telefono_emprendedor"]?> </span>
-                    <span style="justify-content: center;" class="d-flex  fw-bolder">Correo: <?php echo$row["correo_emprendedor"]?> </span>
-                    <span style="justify-content: center;" class="d-flex  fw-bolder">Dirección: <?php echo$row["direccion_emprendedor"]?> </span>
+                <div class="col card text-center mt-4 mb-4 pb-2">
+                    <span style="justify-content: center;" class="mt-2 d-flex fs-5 fw-bolder"><?php echo$row["rubro_emprendedor"] ?></span>
+                    <img style="height: 300px; width: 300px;"class="mt-2 mx-auto" src="data:<?php echo$row["tipo_imagen"]?>;base64,<?php echo base64_encode($row["imagen_emprendedor"])?>">
+                    <span style="justify-content: center;"  class="mt-2 d-flex fw-bolder">Nombre: <?php echo$row["nombre_emprendedor"]?></span>
+                    <span style="justify-content: center;"  class="mt-2 d-flex  fw-bolder">Número: <?php echo$row["celular_emprendedor"]?> </span>
+                    <span style="justify-content: center;" class="mt-2 d-flex  fw-bolder">Fono: <?php echo$row["telefono_emprendedor"]?> </span>
+                    <span style="justify-content: center;" class="mt-2 d-flex  fw-bolder">Correo: <?php echo$row["correo_emprendedor"]?> </span>
+                    <span style="justify-content: center;" class="mt-2 d-flex  fw-bolder">Dirección: <?php echo$row["direccion_emprendedor"]?></span>
+                    <a class="mt-2 btn btn-secondary w-25 mx-auto" href="view_emprendedor.php?id=<?php echo$row["id_emprendedor"]?>">Ver Mas</a>
                 </div>
         <?php }?>
         </div>
@@ -86,7 +87,7 @@
                     }
                 }?>
                 <div class="col">
-                    <a href="view_emprendedores.php" class="btn btn-secondary w-100">Volver al incio</a>
+                    <a href="view_emprendedores.php" class="btn btn-secondary w-100">Volver al inicio</a>
                 </div>
             <?php 
                 

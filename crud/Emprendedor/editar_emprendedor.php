@@ -68,6 +68,27 @@
                     </select>
                 </div>
             </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <label class="form-label fw-bolder">Usuario de Facebook:(opcional)</label>
+                    <input class="form-control" type="text" name="facebook_emprendedor" value="<?php echo$row["facebook"]?>" maxlength="50" required>
+                </div>
+                <div class="col">
+                    <label class="form-label fw-bolder">Usuario de Instagram:(opcional)</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input class="form-control" type="text" name="instagram_emprendedor" value="<?php echo$row["instagram"]?>" maxlength="50" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <label class="form-label fw-bolder" >Información del emprendedor:</label>
+                    <textarea  name="informacion" class="form-control" cols="30" rows="10" required>
+                        <?php echo$row["informacion"]?>
+                    </textarea>
+                </div>
+            </div>
         </div>
         <div class="container">
             <div class="row mt-4">

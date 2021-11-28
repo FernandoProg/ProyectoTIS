@@ -7,3 +7,4 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
 <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>

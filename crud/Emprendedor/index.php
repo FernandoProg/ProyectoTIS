@@ -73,6 +73,25 @@
             </div>
             <div class="row mt-2">
                 <div class="col">
+                    <label class="form-label fw-bolder">Usuario de Facebook:(opcional)</label>
+                    <input class="form-control" type="text" name="facebook_emprendedor" maxlength="50" placeholder="Abarrotes juanito"required>
+                </div>
+                <div class="col">
+                    <label class="form-label fw-bolder">Usuario de Instagram:(opcional)</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input class="form-control" type="text" name="instagram_emprendedor" maxlength="50" placeholder="Abarrotesjuanito"required>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <label class="form-label fw-bolder" >Información del emprendedor:</label>
+                    <textarea placeholder="Aquí describa lo que realiza, precios, horarios, etc." name="informacion" class="form-control" cols="30" rows="10" required></textarea>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
                     <label for="formFile" class="form-label fw-bolder">Seleccione una Imagen Representativa del Emprendedor:</label>
                     <input class="form-control"  accept="image/png, .jpeg, .jpg .svg" type="file" name="imagen_emprendedor" required>
                 </div>

@@ -1,5 +1,5 @@
 <?php
-    require("conexion.php");
+    require("../crud/conexion.php");
     //include("../../sesion_usuarios/auth_admin.php");
     $id=$_GET["seleccion"];
     $consulta = "SELECT * FROM noticia WHERE id_noticia = $id";
@@ -21,12 +21,12 @@
   <html lang="es">
     <head>
       <meta charset="utf-8">
-      <?php require("header.php")?>
+      <?php require("../user/head.php")?>
       <title>Municipalidad</title>
     </head>
 
     <body>   
-        <?php require("navbar.php") ?>  
+        <?php require("navbar_noSession.php");?>  
 
         <div class="container">
             <div class="row col-lg-12">
@@ -65,7 +65,7 @@
 
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <a href="index.php"  class="btn btn-primary" >Volver</a>
+                        <a href="view_noticias.php"  class="btn btn-primary" >Volver</a>
                     </div>
                 </div>
                 

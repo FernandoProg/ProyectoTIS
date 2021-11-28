@@ -1,12 +1,12 @@
 <?php
     require("../../conexion.php");
-
+    session_start();
     $nombre_opinion = $_POST["nombre_opinion"];
     $correo_opinion = $_POST["correo_opinion"];
     $descripcion_opinion = $_POST["descripcion_opinion"];
     $length = count($_FILES["imagenes_opinion"]['name']);
     $fecha = date("Y,m,d");
-    $query= "INSERT INTO opinion VALUES ('','$nombre_opinion','$correo_opinion','$descripcion_opinion','$fecha')";
+    $query= "INSERT INTO opinion VALUES ('','$nombre_opinion','".$_SESSION['nombre_usuario']."','$descripcion_opinion','$fecha')";
     if($length>5){
         echo'<script>
         alert("No se pueden ingresar mas de 5 imagenes");

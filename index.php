@@ -14,7 +14,7 @@
   </head>
   <body>
     <?php
-        require_once("navbar_noSession.php");
+        require_once("navbar_user.php");
     ?>
       
   <div class="row container-fluid">

@@ -38,7 +38,7 @@
                     <table class="w-50">
                         <div class="row">
                             <div class="col-lg-12 text-center fs-2 fw-bolder mt-4 mb-4">
-                                <span>Usuarios</span>
+                                <span>Usuarios Registrados</span>
                             </div>
                         </div>
                         <thead>
@@ -50,7 +50,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $consulta ="SELECT * FROM usuario";
+                                $consulta ="SELECT * FROM usuario ORDER BY rol ASC";
                                 $resultado = mysqli_query($conexion, $consulta);
 
                                 while($row = mysqli_fetch_assoc($resultado)){

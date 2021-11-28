@@ -19,7 +19,9 @@
     <body class="img-fondo">
     <?php
         require('crud/conexion.php');
-        session_start();
+        if(!isset($_SESSION)){
+            session_start();
+        }
         if (isset($_POST['nombre_usuario'])){
             $nombreUsuario = stripslashes($_REQUEST['nombre_usuario']); // removes backslashes
             $nombreUsuario = mysqli_real_escape_string($conexion,$nombreUsuario); //escapes special characters in a string
@@ -34,7 +36,7 @@
             if($rows==1 && mysqli_fetch_assoc($result)['rol'] == "usuario"){
                 $_SESSION['nombre_usuario'] = $nombreUsuario;
                 $_SESSION['rol'] = "usuario";
-                header("Location: index_usuario.php"); // Redirect user to index.php
+                header("Location: index.php"); // Redirect user to index.php
             }else{
                 ?>
                 <div class="container bg-black pb-3 mt-5 fondo-redondeado">

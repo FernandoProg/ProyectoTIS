@@ -13,14 +13,9 @@
     crossorigin="anonymous">
     </script>
     <script src="main.js"></script>
-<body>
+    <body>
     <?php
-        require("../sesion_usuarios/auth.php");
-        if($_SESSION['nombre_usuario']){
-            require("navbar_user.php");
-        }else{
-            require("navbar_noSession.php");
-        }
+        require("navbar_user.php");
     ?>
     <?php
         $rubro = isset($_GET["rubro"]) ? $_GET["rubro"]:'';

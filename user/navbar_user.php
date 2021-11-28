@@ -18,9 +18,6 @@
                 <a class="nav-link text-white" href="ingreso_contribucion.php">Contribuciones</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="ingreso_contribucion.php">Contribuciones</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link text-white" href="#">Eventos</a>
             </li>
             <li class="nav-item">

@@ -13,11 +13,15 @@
     crossorigin="anonymous">
     </script>
     <script src="main.js"></script>
-<body>
+    <body>
     <?php
-        require("../sesion_usuarios/auth.php");
-        if($_SESSION['nombre_usuario']){
-            require("navbar_user.php");
+        session_start();
+        if(isset($_SESSION['nombre_usuario'])){
+            if($_SESSION['rol'] == "usuario"){
+                require("navbar_user.php");
+            }else{
+                header("Location: ../index.php");
+            }
         }else{
             require("navbar_noSession.php");
         }

@@ -22,10 +22,6 @@
         <div class="row">
             <form action="Consultas/insert_evento.php" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label for="nombre del administrador" class="form-label fw-bolder">Nombre Administrador</label>
-                    <input type="text" required class="form-control" name="nombreAdmin" id="nombreAdmin" aria-describedby="helpId" placeholder="Juan Perez" maxlength="50">
-                </div>
-                <div class="mb-3">
                     <label for="id del lugar" class="form-label fw-bolder">Lugar</label>
                     <?php 
                         $lugar = "SELECT nombre_lugar,id_lugar FROM lugar";
@@ -52,7 +48,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="descripcion" required class="form-label fw-bolder">Descripción</label>
-                    <input type="text" class="form-control" name="descripcionEvento" id="descripcionEvento"  placeholder="Este evento incluirá DJ's que vienen desde...el estilo de música será..." maxlength="1200">
+                    <textarea type="text" class="form-control" name="descripcionEvento" id="descripcionEvento"  placeholder="Este evento incluirá DJ's que vienen desde...el estilo de música será..." maxlength="1200"></textarea>
                     </div>
                 <!-- <a href="?controlador=evento&accion=inicio" class="btn btn-primary">Volver al inicio</a> -->
                 <div class="row w-25 mx-auto">
@@ -62,7 +58,7 @@
         </div>
     </div>
     <?php
-        $consulta = "SELECT * FROM evento";
+        $consulta = "SELECT * FROM evento JOIN usuario USING(nombre_usuario)";
         $data = mysqli_query($conexion,$consulta);
     ?>
     <div class="container mt-4">
@@ -89,7 +85,7 @@
                     <?php while($row=mysqli_fetch_assoc($data)) { ?>
                         <tr>
                         <td> <?php echo $row["id_evento"]; ?> </td>
-                        <td> <?php echo $row["nombre_admin"]; ?> </td>
+                        <td> <?php echo $row["nombre_usuario"]; ?> </td>
                         <td> <?php echo $row["id_lugar"]; ?> </td>
                         <td> <?php echo $row["nombre_evento"]; ?> </td>
                         <td> <?php echo $row["fecha_evento"]; ?> </td>

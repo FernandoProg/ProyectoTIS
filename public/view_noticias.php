@@ -32,16 +32,7 @@
     </head>
     <body>
         <?php
-        session_start();
-        if(isset($_SESSION['nombre_usuario'])){
-            if($_SESSION['rol'] == "usuario"){
-                require("navbar_user.php");
-            }else{
-                header("Location: ../index.php");
-            }
-        }else{
-            require("navbar_user.php");
-        }
+        require_once("navbar_user.php");
     ?>
         <div class="container-fluid">
             <div>

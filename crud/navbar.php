@@ -1,7 +1,7 @@
 
     <nav class="navbar bg-black mb-4">
         <div class="container-fluid">   
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../Administrador">
                 <img src="../img/logo.png" style="width: 40%;">
             </a>
             <ul class="nav mx-auto">

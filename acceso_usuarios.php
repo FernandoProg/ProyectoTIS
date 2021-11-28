@@ -31,15 +31,46 @@
             $query = "SELECT nombre_usuario,contraseña,rol FROM `usuario` WHERE nombre_usuario='$nombreUsuario' and contraseña='".md5($contraseñaUsuario)."' ";
             $result = mysqli_query($conexion,$query) or die(mysql_error());
             $rows = mysqli_num_rows($result);
-            if($rows==1){
-                $_SESSION['rol'] = mysqli_fetch_assoc($result)['rol']; //cambiar rol !!!!!!Important
+            if($rows==1 && mysqli_fetch_assoc($result)['rol'] == "usuario"){
                 $_SESSION['nombre_usuario'] = $nombreUsuario;
                 header("Location: index_usuario.php"); // Redirect user to index.php
             }else{
-                echo "<div class='form'><h3>Usuario/Contraseña Incorrecto</h3><br/>Haz click aquí para <a href='login_usuario.php'>Logearte</a></div>";
+                ?>
+                <div class="container bg-black pb-3 mt-5 fondo-redondeado">
+                    <div class="row">
+                        <div class="row col-lg-8 offset-lg-2 mt-4">
+                            <div class="col-6 text-end">
+                                <img src="crud/img/logo.png" alt="Logo municipalidad">
+                            </div>
+                            <div class="col-6 text-start align-middle">
+                                <span class="d-flex pt-5 text-white fw-bolder">Municipalidad</span>
+                                <span class="d-flex pt-2 text-white fw-bolder">de Chiguayante</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2 text-center mt-4">
+                        <h1 class="text-center text-white">Ingreso Usuarios</h1>
+                            <form action="" method="POST">
+                                <div class="mb-3">
+                                    <label class="form-label fw-bolder text-white">Nombre de Usuario:</label>
+                                    <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-bolder text-white">Contraseña :</label>
+                                    <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Password" rows="3" name="contrasena">
+                                </div>
+                                <input type="submit" class="btn btn-secondary" value="Ingresar">
+                                <a href="index.php" class="btn btn-primary">Volver al inicio</a>
+                                <p class="text-white mt-3">¿No estás registrado? <a href='registro_usuario.php'>Registrate Aquí</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <?php echo "<div class='form text-center text-white mt-2'><h3>Usuario/Contraseña Incorrecto</h3></div>";
             }
-        }
-        ?>
+        }else{
+            ?>
         <div class="container bg-black pb-3 mt-5 fondo-redondeado">
             <div class="row">
                 <div class="row col-lg-8 offset-lg-2 mt-4">
@@ -71,5 +102,6 @@
                 </div>
             </div>
         </div>
+        <?php } ?>
     </body>
 </html>

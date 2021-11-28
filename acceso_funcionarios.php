@@ -66,7 +66,7 @@
                         </form>
                     </div>
                 </div>
-                    <?php echo "<div class='form text-center text-white mt-2'><h3>Usuario/Contraseña Incorrecto</h3>Haz click aquí para <a href='acceso_funcionarios.php'>Logearte</a></div>";
+                <?php echo "<div class='form text-center text-white mt-2'><h3>Usuario/Contraseña Incorrecto</h3>Haz click aquí para <a href='acceso_funcionarios.php'>Logearte</a></div>";
             }
         }else{
             ?>

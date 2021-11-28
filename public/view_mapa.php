@@ -20,19 +20,11 @@
   </head>
     <body>
     <?php
-        session_start();
-        if(isset($_SESSION['nombre_usuario'])){
-            if($_SESSION['rol'] == "usuario"){
-                require("navbar_user.php");
-            }else{
-                header("Location: ../index.php");
-            }
-        }else{
-            require("navbar_user.php");
-        }
+        require("navbar_user.php");
+
     ?>
 
-    <div id="map" style="height:700px;"></div>
+    <div id="map" style="height:1000px;"></div>
 
     <?php 
         $consulta = "SELECT nombre_lugar,latitud_lugar,longitud_lugar FROM lugar"; //HACER ORDER BY fecha_noticia ASC/DESC

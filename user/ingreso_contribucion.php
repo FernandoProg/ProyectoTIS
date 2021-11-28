@@ -11,7 +11,7 @@
         <title>Envío Contribución</title>
     </head>
     <body>
-        <?php require("navbar.php")?>
+        <?php require("navbar_user.php")?>
         <div class="container">
             <div class="row mt-5">
                 <div class="col-lg-12">

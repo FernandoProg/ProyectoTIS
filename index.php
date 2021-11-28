@@ -71,8 +71,8 @@
 
             ?>
           <div class="carousel-inner">
-            <div class="carousel-item active">
-            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;height:100%;"></td>' ?>
+            <div class="carousel-item active text-center">
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:700px; heigth:500px;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
                 <span class="fs-5 bg-dark"><?php echo $result['nombre_evento'];?></span> <br>
                 <span class="bg-dark" >Será realizado el día <?php echo $result['fecha_evento'];?> en <?php echo $result2['nombre_lugar'];?></span>
@@ -93,8 +93,8 @@
               $fechaEvento = $row['fecha_evento'];
             
             ?>
-             <div class="carousel-item ">
-            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;height:100%;"></td>' ?>
+             <div class="carousel-item text-center">
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/style="width:700px; heigth:500px; object-fit:cover;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
                 <span class="fs-5 bg-dark" ><?php echo $nombreEvento ?></span> <br>
                 <span class="bg-dark" >Será realizado el día <?php echo $fechaEvento;?> en <?php echo $lugarEvento;?></span>

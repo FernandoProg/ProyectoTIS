@@ -27,33 +27,45 @@
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <?php 
-              $consulta = "SELECT nombre_evento,descripcion_evento,imagen_evento FROM evento  LIMIT 0,1 ";
+              $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar FROM evento  LIMIT 0,1 ";
               $info = mysqli_query($conexion,$consulta);
               $result=mysqli_fetch_assoc($info);
-            
+              $IDlugar = $result['id_lugar'];
+              
+              $consulta2 = "SELECT nombre_lugar FROM lugar WHERE id_lugar = $IDlugar";
+              $info2 = mysqli_query($conexion,$consulta2);
+              $result2=mysqli_fetch_assoc($info2);
+
+
             ?>
           <div class="carousel-inner">
             <div class="carousel-item active">
             <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;height:700px;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
-                <h5><?php echo $result['nombre_evento'];?></h5>
-                <!-- <p><?php echo $result['descripcion_evento'];?></p> -->
+                <h5 class="bg-dark d-inline-block p-1"><?php echo $result['nombre_evento'];?></h5> <br>
+                <p class="bg-dark d-inline-block p-1">Será realizado el día <?php echo $result['fecha_evento'];?> en <?php echo $result2['nombre_lugar'];?></p>
               </div>
             </div>
 
             <?php 
-            $consulta = "SELECT nombre_evento,descripcion_evento,imagen_evento FROM evento ORDER BY fecha_evento ASC LIMIT 1,2";
+            $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar,nombre_lugar FROM evento join lugar using(id_lugar) ORDER BY fecha_evento ASC LIMIT 0,3";
             $data = mysqli_query($conexion,$consulta);
+            $result2=mysqli_fetch_assoc($data);
+    
+            
+            
             while($row=mysqli_fetch_assoc($data)){
               $nombreEvento = $row['nombre_evento'];
-              $descripcionEvento = $row['descripcion_evento'];
               $imagenEvento = $row['imagen_evento']; 
+              $lugarEvento = $row['nombre_lugar'];
+              $fechaEvento = $row['fecha_evento'];
             
             ?>
              <div class="carousel-item ">
             <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;height:700px;"></td>' ?>
               <div class="carousel-caption d-none d-md-block">
-                <h5><?php echo $nombreEvento ?></h5>
+                <h5 class="bg-dark d-inline-block p-1"><?php echo $nombreEvento ?></h5> <br>
+                <p class="bg-dark d-inline-block p-1">Será realizado el día <?php echo $fechaEvento;?> en <?php echo $lugarEvento;?></p>
               </div>
             </div>
 
@@ -100,8 +112,7 @@
       </div>
     </div>
   </div>
-  
-  
+          <?php require_once("footer.php"); ?>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

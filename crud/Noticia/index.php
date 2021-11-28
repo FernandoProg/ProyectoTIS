@@ -26,7 +26,6 @@
               <br>
               <!-- INSERT -->
               <form action="Consultas/insert_noticia.php" enctype="multipart/form-data" method="POST">
-                <input type="hidden" class="form-control" name="insert_nombre_usuario" maxlength="50" value="Admin" placeholder="Juan Perez" required>
                 <div class="mb-3">
                   <label class="form-label fw-bolder">Fecha:</label>
                   <input type="date" class="form-control" name="insert_fecha_noticia" required>

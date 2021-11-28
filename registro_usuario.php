@@ -61,7 +61,7 @@
               <input type="password" required class="form-control" id="exampleInputPassword1" name="contraseña" minlength="6" maxlength="16" placeholder="28dejulio , trececatorce , etc...">
           </div>
           <button type="submit" class="btn btn-primary">Registarme</button>
-          <a href="login_usuario.php" class="btn btn-secondary" >Volver atrás</a>
+          <a href="index.php" class="btn btn-secondary" >Volver atrás</a>
     </form>
     <?php } ?>
   </body>

@@ -4,12 +4,12 @@
 
 <nav class="navbar bg-primary mb-4">
     <div class="container-fluid">   
-        <a class="navbar-brand" href="../index_usuario.php">
-            <img src="/proyecto-municipalidad/crud/img/logo.png" style="width: 40%;">
+        <a class="navbar-brand" href="../index.php">
+            <img src="../crud/img/logo.png" style="width: 40%;">
         </a>
         <ul class="nav mx-auto">
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">Noticias</a> <!-- Falta noticias a nivel sin usuario o usuario persona -->
+                <a class="nav-link text-white" href="../public/view_noticias.php">Noticias</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="ingreso_opinion.php">Opiniones</a>

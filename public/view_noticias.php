@@ -31,7 +31,18 @@
         <script src="main.js"></script>
     </head>
     <body>
-        <?php require("navbar_noSession.php");?> 
+        <?php
+        session_start();
+        if(isset($_SESSION['nombre_usuario'])){
+            if($_SESSION['rol'] == "usuario"){
+                require("navbar_user.php");
+            }else{
+                header("Location: ../index.php");
+            }
+        }else{
+            require("navbar_user.php");
+        }
+    ?>
         <div class="container-fluid">
             <div>
                 <div class="container mt-4">

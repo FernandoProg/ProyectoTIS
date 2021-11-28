@@ -28,12 +28,12 @@
                 </div>
             </div>
             <?php
-                $consulta = "SELECT * FROM contribucion";
+                $consulta = "SELECT * FROM contribucion JOIN usuario USING(nombre_usuario)";
                 $resultado = mysqli_query($conexion, $consulta);
 
                 while($row = mysqli_fetch_assoc($resultado)){
                     $nombre_contribucion = $row["nombre_contribucion"];
-                    $correo_contribucion = $row["correo_contribucion"];
+                    $correo_contribucion = $row["correo_usuario"];
                     $departamento = $row["departamento"];
                     echo "<tr>";
                         echo "<th>".$nombre_contribucion."</th>";

@@ -1,3 +1,7 @@
+<?php
+    require("../conexion.php");
+    include("../../sesion_usuarios/auth_admin.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,6 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require("../header.php")?>
+    <!-- LEAFLET MAP CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <!-- LEAFLET END -->
+
     <title>Municipalidad</title>
 </head>
 <body>
@@ -23,15 +37,14 @@
                     class="form-control" required name="nombreLugar" id="nombreLugar" aria-describedby="helpId" placeholder="Bodega Acuenta" maxlength="50">
                 </div>
                 <div class="mb-3">
-                <label for="latitudLugar" class="form-label fw-bolder">Latitud:</label>
-                <input type="text"
+                <input type="hidden"
                     class="form-control" required name="latitudLugar" id="latitudLugar" aria-describedby="helpId" placeholder="-36.05356" maxlength="9">
                 </div>
                 <div class="mb-3">
-                <label for="longitudLugar" class="form-label fw-bolder">Longitud:</label>
-                <input type="text"
+                <input type="hidden"
                     class="form-control" required name="longitudLugar" id="longitudLugar" aria-describedby="helpId" placeholder="56.52525" maxlength="9">
                 </div>
+                <div id="map" style="height: 380px;"></div>
                 <div class="mb-3">
                     <label for="categoriaLugar" class="form-label fw-bolder">Categoría:</label>
                     <select class="form-select" name="categoriaLugar">
@@ -46,11 +59,6 @@
                         <option value="Transporte">Transporte</option>
                         <option value="Educación">Educación</option>
                     </select>
-                </div>
-                <div class="mb-3">
-                <label for="nombreAdmin" class="form-label fw-bolder">Nombre administrador:</label>
-                <input type="text"
-                    class="form-control" required name="nombreAdmin" id="nombreAdmin" aria-describedby="helpId" placeholder="Juan Perez" maxlength="50">
                 </div>
                 <input name="" id="" class="btn btn-secondary" type="submit" value="Agregar">
                 <!-- <a name="" id="" class="btn btn-primary mx-3" href="?controlador=lugares&accion=inicio" role="button">Volver al inicio</a> -->
@@ -102,5 +110,6 @@
             </tbody>
         </table>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

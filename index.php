@@ -1,51 +1,120 @@
-
-
+<?php require("crud/conexion.php")?>
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
-        crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
-        rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
-         crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet">
-        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
-        <title>Municipalidad</title>
-    </head>
-    <body class="img-fondo">
-        <div class="container bg-black pb-3 mt-5 fondo-redondeado">
-            <div class="row">
-                <div class="row col-lg-8 offset-lg-2 mt-4">
-                    <div class="col-6 text-end">
-                        <img src="crud/img/logo.png" alt="Logo municipalidad">
-                    </div>
-                    <div class="col-6 text-start align-middle">
-                        <span class="d-flex pt-5 text-white fw-bolder">Municipalidad</span>
-                        <span class="d-flex pt-2 text-white fw-bolder">de Chiguayante</span>
-                    </div>
-                </div>
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php
+    ?> 
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+  </head>
+  <body>
+    <?php
+        require_once("navbar_noSession.php");
+    ?>
+      
+  <div class="row container-fluid">
+      <div class="col-6 ">
+  
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center mt-4">
-                <h1 class="text-center text-white">Ingreso - Administrador</h1>
-                    <form action="log_in_administrador.php" method="POST">
-                        <div class="mb-3">
-                            <label class="form-label fw-bolder text-white">Nombre de usuario:</label>
-                            <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bolder text-white">Contraseña de administrador:</label>
-                            <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Password" rows="3" name="contrasena">
-                        </div>
-                        <input type="submit" class="btn btn-secondary" value="Ingresar">
-                    </form>
-                </div>
+            <?php 
+              $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar FROM evento  LIMIT 0,1 ";
+              $info = mysqli_query($conexion,$consulta);
+              $result=mysqli_fetch_assoc($info);
+              $IDlugar = $result['id_lugar'];
+              
+              $consulta2 = "SELECT nombre_lugar FROM lugar WHERE id_lugar = $IDlugar";
+              $info2 = mysqli_query($conexion,$consulta2);
+              $result2=mysqli_fetch_assoc($info2);
+
+
+            ?>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;max-height:700px;"></td>' ?>
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="bg-dark d-inline-block p-1"><?php echo $result['nombre_evento'];?></h5> <br>
+                <p class="bg-dark d-inline-block p-1">Será realizado el día <?php echo $result['fecha_evento'];?> en <?php echo $result2['nombre_lugar'];?></p>
+              </div>
             </div>
-        </div>
-    </body>
+
+            <?php 
+            $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar,nombre_lugar FROM evento join lugar using(id_lugar) ORDER BY fecha_evento ASC LIMIT 0,3";
+            $data = mysqli_query($conexion,$consulta);
+            $result2=mysqli_fetch_assoc($data);
+    
+            
+            
+            while($row=mysqli_fetch_assoc($data)){
+              $nombreEvento = $row['nombre_evento'];
+              $imagenEvento = $row['imagen_evento']; 
+              $lugarEvento = $row['nombre_lugar'];
+              $fechaEvento = $row['fecha_evento'];
+            
+            ?>
+             <div class="carousel-item ">
+            <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenEvento).'"/ style="width:100%;max-height:700px"></td>' ?>
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="bg-dark d-inline-block p-1"><?php echo $nombreEvento ?></h5> <br>
+                <p class="bg-dark d-inline-block p-1">Será realizado el día <?php echo $fechaEvento;?> en <?php echo $lugarEvento;?></p>
+              </div>
+            </div>
+
+
+            <?php } ?>
+
+            
+          </div>
+   
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+      </div>
+
+  
+     
+
+      <div class="col-6">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <?php 
+        $consulta = "SELECT titulo_noticia,bajada_noticia,imagen_noticia FROM noticia  LIMIT 0,4"; //HACER ORDER BY fecha_noticia ASC/DESC
+        $data = mysqli_query($conexion,$consulta);
+        while($row=mysqli_fetch_assoc($data)){
+            $tituloNoticia = $row['titulo_noticia'];
+            $bajadaNoticia = $row['bajada_noticia'];
+            $imagenNoticia = $row['imagen_noticia']; 
+         ?>
+            <div class="col">
+                <div class="card">
+                <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $imagenNoticia).'"/ style="width:100%;height:100%;"></td>' ?>
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $tituloNoticia; ?></h5>
+                    <p class="card-text"><?php echo $bajadaNoticia; ?></p>
+                </div>
+                </div>
+            </div> 
+        <?php } ?>
+      </div>
+    </div>
+  </div>
+          <?php require_once("footer.php"); ?>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
 </html>

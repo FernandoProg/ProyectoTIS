@@ -15,7 +15,7 @@
                 header("Location: ../index.php");
             }
         }else{
-            require("navbar_noSession.php");
+            require("navbar_user.php");
         }
     ?>
         <div class="container">

@@ -15,16 +15,7 @@
     <script src="main.js"></script>
     <body>
     <?php
-        session_start();
-        if(isset($_SESSION['nombre_usuario'])){
-            if($_SESSION['rol'] == "usuario"){
-                require("navbar_user.php");
-            }else{
-                header("Location: ../index.php");
-            }
-        }else{
-            require("navbar_noSession.php");
-        }
+        require("navbar_user.php");
     ?>
     <?php
         $rubro = isset($_GET["rubro"]) ? $_GET["rubro"]:'';

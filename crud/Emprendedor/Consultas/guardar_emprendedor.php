@@ -1,5 +1,6 @@
 <?php
     require("../../conexion.php");
+    session_start();
     $nombre_emprendedor= $_POST["nombre_emprendedor"];
     $direccion_emprendedor = $_POST["direccion_emprendedor"];
     $celular_emprendedor = $_POST["celular_emprendedor"];

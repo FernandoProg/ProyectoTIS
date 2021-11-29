@@ -44,7 +44,7 @@
             <nav class="navbar bg-primary mb-4">
                 <div class="container-fluid">   
                     <a class="navbar-brand" href="index.php">
-                        <img src="/proyecto-municipalidad/crud/img/logo.png" style="width: 40%;">
+                        <img src="crud/img/logo.png" style="width: 40%;">
                     </a>
                     <ul class="nav mx-auto">
                         <li class="nav-item">

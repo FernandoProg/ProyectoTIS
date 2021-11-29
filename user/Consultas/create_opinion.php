@@ -1,5 +1,6 @@
 <?php
     require('conexion.php');
+    session_start();
     $nombre_opinion = $_POST["nombre_opinion"];
     $correo_opinion = $_POST["correo_opinion"];
     $descripcion_opinion = $_POST["descripcion_opinion"];

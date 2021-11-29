@@ -29,6 +29,7 @@
       
           if($result){
             ?>
+            <?php require("navbar_user.php"); ?>
             <div class="container">
               <div class="row">
                 <div class="alert alert-success container mt-5 col-12" role="alert">
@@ -68,6 +69,7 @@
           }
         }else{
       ?>
+        <?php require("navbar_user.php"); ?>
         <div class="container">
           <div class="row">
 

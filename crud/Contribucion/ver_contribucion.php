@@ -26,7 +26,7 @@
         $data_correo = mysqli_query($conexion,$query_correo);
         $row_correo = mysqli_fetch_assoc($data_correo);
        
-
+        $flag = true;
         
     ?>
 
@@ -36,10 +36,10 @@
             <div class="row">
                 <div class="col fs-3">
                     <span class="">
-                        <b>Nombre: </b> <?php echo $row_data["nombre_contribucion"]?>
+                        <b>Nombre: </b> <?php echo $row_data["nombre_contribucion"];?>
                     </span>
                     <span class="d-flex">
-                        <b>Correo: </b> <?php echo $row_correo["correo_usuario"];?>
+                        <b class="me-1">Correo:</b> <?php echo $row_correo["correo_usuario"];?>
                     </span>
                 </div>
                 <div class="col fs-3">
@@ -61,15 +61,18 @@
                     <?php echo$row_data["descripcion_contribucion"]?>
                 </span>
             </div>
-        <div class="fs-2 fw-bolder">
-            Imágenes:
-        </div>
             <div class="row">
                 <?php
                     while($imagen = mysqli_fetch_assoc($data_image)){
                 ?>
+                    <?php if($flag){ ?>
+                        <div class="fs-2 fw-bolder">
+                            <?php $flag = false; ?>
+                            Imágenes:
+                        </div>
+                    <?php } ?>
                     <div class="col">
-                        <img style="width: 100px;" src="data:;base64,<?php echo base64_encode($imagen["imagen_contribuciones"])?>">
+                        <img style="max-width: 400px; max-height:400px;" src="data:;base64,<?php echo base64_encode($imagen["imagen_contribuciones"])?>">
                     </div>
                 <?php }?>
             </div>

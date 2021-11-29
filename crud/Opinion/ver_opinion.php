@@ -39,10 +39,10 @@
         </div>
         <div class="row mt-4">
             <div class="col fs-3">
-                <span>
+                <span class="fw-bolder">
                     Nombre: <?php echo$row_data["nombre_opinion"]?>
                 </span>
-                <span class="d-flex">
+                <span class="d-flex fw-bolder">
                     Correo: <?php echo$row_correo["correo_usuario"]?>
                 </span>
             </div>
@@ -65,19 +65,21 @@
                 <?php echo$row_data["descripcion_opinion"]?>
             </span>
         </div>
-    <div class="fs-2 mt-4 ">
-        Imagenes:
-    </div>
-        <div class="row mb-4">
-            <?php
-                while($imagen = mysqli_fetch_assoc($data_image)){
-            ?>
-                <div class="col">
-                    <img style="width: 50%;" src="data:<?php echo$imagen["tipo_imagen"]?>;base64,<?php echo base64_encode($imagen["imagen_opiniones"])?>">
-                </div>
-            <?php }?>
+    <?php if(mysqli_num_rows($data_image)>0){?>
+        <div class="fs-2 mt-4 ">
+            Imagenes:
         </div>
-    </div>
+            <div class="row mb-4">
+                <?php
+                    while($imagen = mysqli_fetch_assoc($data_image)){
+                ?>
+                    <div class="col-xl col-lg-12 mt-4">
+                        <img style="height: 100%; width: 100%;" src="data:<?php echo$imagen["tipo_imagen"]?>;base64,<?php echo base64_encode($imagen["imagen_opiniones"])?>">
+                    </div>
+                <?php }?>
+            </div>
+        </div>
+    <?php }?>
     <div class="container">
         <div class="row mb-4">
             <a href="../Opinion" class="btn mx-auto btn-primary w-25">Volver atrás</a>

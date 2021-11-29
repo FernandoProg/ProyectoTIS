@@ -16,7 +16,7 @@
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <h1 class="text-center">Ingresar Contribución</h1>
-                    <form action="Consultas/create_contribucion.php" method="POST">
+                    <form action="Consultas/create_contribucion.php" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label class="form-label fw-bolder">Nombre de la contribución:</label>
                             <input class="form-control" rows="3" maxlength="50" placeholder="Creacion de areas recreativas" name="nombre_contribucion">
@@ -46,7 +46,12 @@
                                 <option value="Obras municipales">Jurídico</option>
                             </select>
                         </div>
-                        <input type="submit" class="btn btn-secondary" value="Guardar">
+                        <div class="col">
+                            <label class="form-label fw-bolder">Imagenes:</label>
+                            <input accept="image/png, .jpeg, .jpg, .svg" class="form-control" type="file" multiple name="imagenes_contribucion[]" id="">
+                            <label class="">Se puede ingresar un máximo de 5 imagenes.</label>
+                        </div>
+                        <input type="submit" class="btn mt-3 btn-secondary" value="Guardar">
                     </form>
                 </div>
             </div>

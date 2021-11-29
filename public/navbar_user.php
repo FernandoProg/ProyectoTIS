@@ -21,7 +21,7 @@
                                     <a class="nav-link text-white" href="../user/ingreso_contribucion.php">Contribuciones</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="#">Eventos</a>
+                                    <a class="nav-link text-white" href="view_eventos.php">Eventos</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white" href="view_emprendedores.php">Emprendedores</a>
@@ -51,7 +51,7 @@
                                 <a class="nav-link text-white" href="view_noticias.php">Noticias</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Eventos</a>
+                                <a class="nav-link text-white" href="view_eventos.php">Eventos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="view_emprendedores.php">Emprendedores</a>

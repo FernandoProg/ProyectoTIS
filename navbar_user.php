@@ -21,7 +21,7 @@
                                 <a class="nav-link text-white" href="user/ingreso_contribucion.php">Contribuciones</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Eventos</a>
+                                <a class="nav-link text-white" href="public/view_eventos.php">Eventos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="public/view_emprendedores.php">Emprendedores</a>
@@ -44,14 +44,14 @@
             <nav class="navbar bg-primary mb-4">
                 <div class="container-fluid">   
                     <a class="navbar-brand" href="index.php">
-                        <img src="/proyecto-municipalidad/crud/img/logo.png" style="width: 40%;">
+                        <img src="crud/img/logo.png" style="width: 40%;">
                     </a>
                     <ul class="nav mx-auto">
                         <li class="nav-item">
                             <a class="nav-link text-white" href="public/view_noticias.php">Noticias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Eventos</a>
+                            <a class="nav-link text-white" href="public/view_eventos.php">Eventos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="public/view_emprendedores.php">Emprendedores</a>

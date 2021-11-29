@@ -17,7 +17,6 @@
     $data = mysqli_query($conexion,$query);
     $row_data = mysqli_fetch_assoc($data);
     $user = $row_data["nombre_usuario"];
-    echo $user;
 
     $query_image ="SELECT tipo_imagen,imagen_opiniones FROM imagen_opinion WHERE id_opinion = $id";
     $data_image = mysqli_query($conexion,$query_image); 

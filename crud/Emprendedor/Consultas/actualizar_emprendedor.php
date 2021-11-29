@@ -26,3 +26,5 @@ require("../../conexion.php");
 
     $query = mysqli_query($conexion,$sql);
     header('location: ../index.php');
+ 
+    ?>

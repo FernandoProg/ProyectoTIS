@@ -3,8 +3,10 @@
     session_start();
     $nombre_opinion = $_POST["nombre_opinion"];
     $descripcion_opinion = $_POST["descripcion_opinion"];
-    $length = count($_FILES["imagenes_opinion"]['name']);
     $fecha = date("Y,m,d");
+    
+    $length = count($_FILES["imagenes_opinion"]['name']);
+    
     $query= "INSERT INTO opinion VALUES ('','$nombre_opinion','".$_SESSION['nombre_usuario']."','$descripcion_opinion','$fecha')";
     if($length>5){
         echo'<script>
@@ -19,9 +21,7 @@
             $tipo_imagen = $_FILES["imagenes_opinion"]['type'][$i];
             $query_image = "INSERT INTO imagen_opinion VALUES('','$id','$imagen_opinion','$tipo_imagen')";
             $consulta = mysqli_query($conexion,$query_image);
-        }
-        
-        
+        }        
     }else{
         $ingreso = mysqli_query($conexion,$query) or die(mysqli_error($conexion));
     }

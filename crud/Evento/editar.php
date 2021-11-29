@@ -56,7 +56,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="Descripcion Evento" class="form-label fw-bolder">Descripcion Evento:</label>
-                    <input type="text" required class="form-control" value="<?php echo$row["descripcion_evento"]?>" name="descripcionEvento" id="descripcionEvento" aria-describedby="emailHelpId" maxlength="1200">
+                    <textarea type="text" required class="form-control" rows="10" name="descripcionEvento" id="descripcionEvento" aria-describedby="emailHelpId" maxlength="1200"><?php echo$row["descripcion_evento"]?></textarea>
                 </div>
                 <div class="row">
                     <div class="col-6 text-end">

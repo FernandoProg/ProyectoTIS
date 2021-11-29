@@ -16,7 +16,7 @@
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <h1 class="text-center">Ingresar Contribución</h1>
-                    <form action="Consultas/create_contribucion.php" method="POST">
+                    <form action="Consultas/create_contribucion.php" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label class="form-label fw-bolder">Nombre de la contribución:</label>
                             <input class="form-control" rows="3" maxlength="50" placeholder="Creacion de areas recreativas" name="nombre_contribucion">

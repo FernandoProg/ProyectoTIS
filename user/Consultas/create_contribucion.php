@@ -13,7 +13,7 @@
 
     $length = count($_FILES["imagenes_contribucion"]['name']);
     
-    $query= "INSERT INTO contribucion VALUES VALUES ('', '$nombre_contribucion', '".$_SESSION['nombre_usuario']."', '$descripcion_contribucion', '$departamento', '$fecha')";
+    $query= "INSERT INTO contribucion VALUES ('', '$nombre_contribucion', '".$_SESSION['nombre_usuario']."', '$descripcion_contribucion', '$departamento', '$fecha')";
     if($length>5){
         echo'<script>
         alert("No se pueden ingresar mas de 5 imagenes");

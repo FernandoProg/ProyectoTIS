@@ -1,21 +1,15 @@
 <?php
     if(!$_GET){
-        header('Location:view_noticias.php?pagina=1');
+        header('Location:view_eventos.php?pagina=1');
     }
     require("../crud/conexion.php");
-    $categoria = isset($_GET["categoria"]) ? $_GET["categoria"]:'';
     $consulta =  "SELECT id_evento FROM evento" ;
-    //$consulta = "SELECT * FROM noticia";
     $resultado = mysqli_query($conexion, $consulta);
-
-
-    $cantidad_noticias = mysqli_num_rows($resultado);
-    $noticias_por_pagina= 6;
-    $paginas = ceil($cantidad_noticias/$noticias_por_pagina);
-    $inicio= ($_GET['pagina']-1)*$noticias_por_pagina;
+    $cantidad_eventos = mysqli_num_rows($resultado);
+    $eventos_por_pagina= 6;
+    $paginas = ceil($cantidad_eventos/$eventos_por_pagina);
+    $inicio= ($_GET['pagina']-1)*$eventos_por_pagina;
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -47,9 +41,7 @@
 
 
             <?php
-                $sql_noticias =  "SELECT id_evento,nombre_evento,descripcion_evento,imagen_evento FROM evento LIMIT $inicio,$noticias_por_pagina";
-                //$sql_noticias = 'SELECT * FROM noticia LIMIT '.(int)$inicio.','.(int)($noticias_por_pagina).'';
-                //$sql_noticias = "SELECT * FROM noticia WHERE categoria_noticia = '$categoria' LIMIT $inicio,$noticias_por_pagina";
+                $sql_noticias =  "SELECT id_evento,nombre_evento,descripcion_evento,imagen_evento FROM evento LIMIT $inicio,$eventos_por_pagina";
                 $resultado_noticias = mysqli_query($conexion, $sql_noticias);
 
                 $i = 1;
@@ -105,7 +97,6 @@
                                 Anterior
                             </a>
                     </li>
-
                         <?php for($j=1; $j<=$paginas; $j++): ?>
                         <li class="page-item <?php echo $_GET['pagina']==$j ? 'active' : '' ?>" >
                             <a class="page-link" href="view_eventos.php?pagina=<?php echo $j ?>">
@@ -113,7 +104,6 @@
                             </a>
                         </li>
                         <?php endfor?>
-
                         <li class="page-item">
                             <a class="page-link" 
                             href="view_eventos.php?pagina=<?php if($_GET['pagina']+1>$paginas){ echo $_GET['pagina'] ;}else{ echo $_GET['pagina']+1 ;} ?>">
@@ -123,14 +113,7 @@
                     </ul>
                 </nav>
             </div>
-            
-
-
 
         </div>
-        
-
-
-
     </body>
 </html>

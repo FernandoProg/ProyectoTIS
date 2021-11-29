@@ -107,6 +107,24 @@
                     </td>
                 </tr>
                 <?php } ?>
+
+                <?php 
+        $consulta = "SELECT nombre_lugar,latitud_lugar,longitud_lugar,categoria_lugar FROM lugar"; //HACER ORDER BY fecha_noticia ASC/DESC
+        $data = mysqli_query($conexion,$consulta);
+        while($row=mysqli_fetch_assoc($data)){ 
+            $nombreLugar = $row['nombre_lugar'];
+            $latitudLugar = $row['latitud_lugar'];
+            $longitudLugar = $row['longitud_lugar'];
+            $categoriaLugar = $row['categoria_lugar'];
+            
+            echo "<input type=hidden value='$nombreLugar' class='nombreLugar'> ";
+            echo "<input type=hidden value=$latitudLugar class='latitudLugar'>";
+            echo "<input type=hidden value=$longitudLugar class='longitudLugar'> ";
+            echo "<input type=hidden value='$categoriaLugar' class='categoriaLugar'> ";
+                       
+        }
+        
+        ?>
             </tbody>
         </table>
     </div>

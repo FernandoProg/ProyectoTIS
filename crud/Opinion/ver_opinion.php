@@ -13,11 +13,21 @@
 <?php
     require("../conexion.php");
     $id = $_GET["id"];
-    $query = "SELECT nombre_opinion,correo_opinion,descripcion_opinion,fecha_opinion FROM opinion WHERE id_opinion =$id";
+    $query = "SELECT nombre_opinion, nombre_usuario, descripcion_opinion, fecha_opinion FROM opinion WHERE id_opinion =$id";
     $data = mysqli_query($conexion,$query);
     $row_data = mysqli_fetch_assoc($data);
+    $user = $row_data["nombre_usuario"];
+    echo $user;
+
     $query_image ="SELECT tipo_imagen,imagen_opiniones FROM imagen_opinion WHERE id_opinion = $id";
     $data_image = mysqli_query($conexion,$query_image); 
+
+
+    $query_correo ="SELECT correo_usuario FROM usuario WHERE nombre_usuario = '$user'";
+    $data_correo = mysqli_query($conexion,$query_correo);
+    $row_correo = mysqli_fetch_assoc($data_correo);
+    
+   
 ?>
 
 <body>
@@ -34,7 +44,7 @@
                     Nombre: <?php echo$row_data["nombre_opinion"]?>
                 </span>
                 <span class="d-flex">
-                    Correo: <?php echo$row_data["correo_opinion"]?>
+                    Correo: <?php echo$row_correo["correo_usuario"]?>
                 </span>
             </div>
             <div class="col fs-3 justify-content-end d-flex">

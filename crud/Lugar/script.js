@@ -1,38 +1,57 @@
+let latitud = document.querySelector("#latitudLugar");
+let longitud = document.querySelector("#longitudLugar");
+let map = L.map("map").setView([-26.3441113, -70.615], 15);
 
-    let latitud = document.querySelector("#latitudLugar");
-    let longitud = document.querySelector("#longitudLugar");
+let tiles = L.tileLayer(
+  "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
+  {
+    maxZoom: 18,
+    id: "mapbox/streets-v11",
+    tileSize: 512,
+    zoomOffset: -1,
+  }
+).addTo(map);
 
-	let mymap = L.map('map').setView([51.505, -0.09], 13);
+let popup = L.popup();
 
-	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-		maxZoom: 18,
-		id: 'mapbox/streets-v11',
-		tileSize: 512,
-		zoomOffset: -1
-    }).addTo(mymap);
+function onMapClick(e) {
+  popup.setLatLng(e.latlng).setContent("Haz clickeado aquí ").openOn(map);
+  latitud.value = e.latlng["lat"].toString().slice(0, 8);
+  longitud.value = e.latlng["lng"].toString().slice(0, 8);
+}
 
-	
-	let popup = L.popup();
+map.on("click", onMapClick);
 
-	function onMapClick(e) {
-		popup
-			.setLatLng(e.latlng)
-			.setContent("Haz clickeado aquí")
-			.openOn(mymap);
-            latitud.value = e.latlng['lat'].toString().slice(0,8);
-            longitud.value = e.latlng['lng'].toString().slice(0,8);
-	}
+let nombreLugar = document.getElementsByClassName("nombreLugar");
+let latitudLugar = document.getElementsByClassName("latitudLugar");
+let longitudLugar = document.getElementsByClassName("longitudLugar");
+let categoriaLugar = document.getElementsByClassName("categoriaLugar");
 
-    // var greenIcon = L.icon({
-    //     iconUrl: 'busMarker.png',
-    
-    //     iconSize:     [38, 50], // size of the icon
-    //     // shadowSize:   [50, 64], // size of the shadow
-    //     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    //     shadowAnchor: [4, 62],  // the same for the shadow
-    //     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-    // });
-    // L.marker([51.5, -0.09], {icon: greenIcon}).addTo(mymap);
+// console.log(categoriaLugar[2].value);
+// console.log(parseFloat(latitudLugar[0].value));
+// console.log(parseFloat(longitudLugar[0].value));
+colores = {
+  "Lugar de trámite": "yellow",
+  "Lugar de pago": "orange",
+  "Lugar recreativo": "green",
+  "Lugar de emergencia": "red",
+  "Local comercial": "magenta",
+  Salud: "navy",
+  Correo: "aqua",
+  Transporte: "grey",
+  Educación: "brown",
+};
 
-	mymap.on('click', onMapClick);
+for (let i = 0; i < nombreLugar.length; i++) {
+  var circle = L.circle(
+    [parseFloat(latitudLugar[i].value), parseFloat(longitudLugar[i].value)],
+    {
+      color: colores[categoriaLugar[i].value],
 
+      fillOpacity: 0.5,
+      radius: 25,
+    }
+  ).addTo(map);
+
+  circle.bindPopup(nombreLugar[i].value);
+}

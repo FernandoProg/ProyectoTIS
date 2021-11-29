@@ -33,7 +33,7 @@
                 </div>
                 <!-- Fecha -->
                 <div class="row col-lg-12">
-                    <span class="fs-5  text-left ">Fecha: <?php echo $fechaEvento ?></span>
+                    <span class="fs-5  text-left ">Fecha de realización: <?php echo $fechaEvento ?></span>
                 </div>
                 
                 <div class="row">

@@ -57,7 +57,7 @@
                                 <a class="nav-link text-white" href="view_emprendedores.php">Emprendedores</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="view_emprendedores.php">Mapa comuna</a>
+                                <a class="nav-link text-white" href="view_mapa.php">Mapa comuna</a>
                             </li>
                         </ul>
                         <ul class="nav justify-content-end">

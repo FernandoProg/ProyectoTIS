@@ -1,4 +1,9 @@
+<?php 
+if(!isset($_SESSION)){
+    session_start();
+}
 
+if($_SESSION['rol'] == "admin"){ ?>
     <nav class="navbar bg-black mb-4">
         <div class="container-fluid">   
             <a class="navbar-brand" href="../Administrador">
@@ -31,3 +36,7 @@
             </ul>
         </div>
     </nav>
+<?php } 
+    else{ 
+        header("Location: ../index.php");
+    } ?>

@@ -71,7 +71,7 @@
                 </div>
                 <div class="mb-3">
                   <label class="form-label fw-bolder" >Imagen:</label>
-                  <input type="file" accept="image/png, .jpeg, .jpg .svg" class="form-control" name="insert_imagen_noticia" required>
+                  <input type="file" accept="image/png, .jpeg, .jpg .svg .jpg" class="form-control" name="insert_imagen_noticia" required>
                 </div>
                 <div class="row w-25 mx-auto mt-4">
                   <button class="btn btn-secondary" type="submit">Guardar</button>
@@ -110,7 +110,6 @@
                         $get_cuerpo_noticia = $row["cuerpo_noticia"];
                         $get_categoria_noticia = $row["categoria_noticia"];
                         $id = $row["id_noticia"];
-
                         ?>
                         <tr>
                           <td> <?php echo $get_titulo_noticia ?></td>

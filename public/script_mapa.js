@@ -23,18 +23,29 @@ let latitudLugar = document.getElementsByClassName("latitudLugar");
 let longitudLugar = document.getElementsByClassName("longitudLugar");
 let categoriaLugar = document.getElementsByClassName("categoriaLugar");
 
-console.log(categoriaLugar[0].value);
-console.log(parseFloat(latitudLugar[0].value));
-console.log(parseFloat(longitudLugar[0].value));
+// console.log(categoriaLugar[2].value);
+// console.log(parseFloat(latitudLugar[0].value));
+// console.log(parseFloat(longitudLugar[0].value));
+colores = {
+  "Lugar de trámite": "yellow",
+  "Lugar de pago": "orange",
+  "Lugar recreativo": "green",
+  "Lugar de emergencia": "red",
+  "Local comercial": "magenta",
+  Salud: "navy",
+  Correo: "aqua",
+  Transporte: "grey",
+  Educación: "brown",
+};
 
 for (let i = 0; i < nombreLugar.length; i++) {
   var circle = L.circle(
-    [parseFloat(latitudLugar[0].value), parseFloat(longitudLugar[0].value)],
+    [parseFloat(latitudLugar[i].value), parseFloat(longitudLugar[i].value)],
     {
-      color: "red",
-      fillColor: "#f03",
+      color: colores[categoriaLugar[i].value],
+
       fillOpacity: 0.5,
-      radius: 100,
+      radius: 25,
     }
   ).addTo(map);
 

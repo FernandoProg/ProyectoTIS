@@ -10,6 +10,7 @@
 </head>
 <body>
     <?php
+        require("navbar_user.php");
         if(isset($_GET["id"])){
             $id = $_GET["id"];
             $sql = "SELECT * FROM emprendedor WHERE id_emprendedor = $id";

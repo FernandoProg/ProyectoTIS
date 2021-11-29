@@ -24,27 +24,37 @@
 
     ?>
 
-    <div id="map" style="height:1000px;"></div>
+    <div id="map" style="height:800px;" class="mb-3"></div>
 
     <?php 
-        $consulta = "SELECT nombre_lugar,latitud_lugar,longitud_lugar FROM lugar"; //HACER ORDER BY fecha_noticia ASC/DESC
+        $consulta = "SELECT nombre_lugar,latitud_lugar,longitud_lugar,categoria_lugar FROM lugar"; //HACER ORDER BY fecha_noticia ASC/DESC
         $data = mysqli_query($conexion,$consulta);
         while($row=mysqli_fetch_assoc($data)){ 
             $nombreLugar = $row['nombre_lugar'];
             $latitudLugar = $row['latitud_lugar'];
             $longitudLugar = $row['longitud_lugar'];
-            // $categoriaLugar = $row['categoria_lugar'];
+            $categoriaLugar = $row['categoria_lugar'];
             
-            echo "<input type=hidden value=$nombreLugar class='nombreLugar'> ";
+            echo "<input type=hidden value='$nombreLugar' class='nombreLugar'> ";
             echo "<input type=hidden value=$latitudLugar class='latitudLugar'>";
             echo "<input type=hidden value=$longitudLugar class='longitudLugar'> ";
-            // echo "<input type=hidden value=$categoriaLugar class='categoriaLugar'> ";
+            echo "<input type=hidden value='$categoriaLugar' class='categoriaLugar'> ";
                        
         }
         
         ?>
-
-
+   
+<div class="container text-center" >
+      <p style="background-color:rgb(255,255,0);" class="p-2 m-2 d-xl-inline">Lugar de trámite</p>
+      <p style="background-color:#FFA500;" class="p-2 m-2 d-xl-inline">Lugar de pago</p>
+      <p style="background-color:#008000;"class="text-white p-2 m-2 d-xl-inline" >Lugar recreativo</p>
+      <p style="background-color:#FF0000;" class="text-white p-2 m-2 d-xl-inline">Lugar de emergencia</p>
+      <p style="background-color:#FF00FF;" class="text-white p-2 m-2 d-xl-inline" >Local Comercial</p>
+      <p style="background-color:#000080;" class="text-white p-2 m-2 d-xl-inline" >Salud</p>
+      <p style="background-color:#00FFFF;" class="p-2 m-2 d-xl-inline" >Correo</p>
+      <p style="background-color:#808080" class="text-white p-2 m-2 d-xl-inline" >Transporte</p>
+      <p style="background-color:#800000;" class="text-white p-2 m-2 d-xl-inline" >Educación</p>
+      </div>
     <script src="script_mapa.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

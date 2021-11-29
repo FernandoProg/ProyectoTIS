@@ -102,17 +102,6 @@
                 <textarea type="text" class="form-control" name="descripcion" id=""  placeholder="Mi negocio trata de..." maxlength="1000"></textarea>
                 </div>
             </div>
-            <label class="form-label fw-bolder my-2" style="font-size:35px">Redes Sociales (Opcionales): </label>
-            <div class="row mt-2">
-                <div class="col">
-                    <label class="form-label fw-bolder">Facebook:</label>
-                    <input class="form-control" type="text" name="facebook" maxlength="50" placeholder="https://www.facebook.com/nombre"> 
-                </div>
-                <div class="col">
-                    <label class="form-label fw-bolder">Instagram:</label>
-                    <input class="form-control" type="text" name="instagram" maxlength="50" placeholder="@NombreInstagram">
-                </div>
-            </div>
             <div class="row w-25 mx-auto mt-4">
                 <input class="btn btn-secondary " type="submit" value="Ingresar emprendedor">
             </div>

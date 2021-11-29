@@ -13,7 +13,7 @@
     $facebook = (isset($_POST["facebook_emprendedor"])) ? $_POST["facebook_emprendedor"]: NULL;
     $instagram = (isset($_POST["instagram_emprendedor"])) ? $_POST["instagram_emprendedor"]: NULL;
     $informacion = $_POST["informacion"];
-    $query = "INSERT INTO `emprendedor` VALUES ('','Admin','$nombre_emprendedor','$direccion_emprendedor','$celular_emprendedor','$telefono_emprendedor','$correo_emprendedor','$rubro_emprendedor','$imagen_emprendedor','$tipo_imagen'
+    $query = "INSERT INTO `emprendedor` VALUES ('','".$_SESSION['nombre_usuario']."','$nombre_emprendedor','$direccion_emprendedor','$celular_emprendedor','$telefono_emprendedor','$correo_emprendedor','$rubro_emprendedor','$imagen_emprendedor','$tipo_imagen'
     ,'$facebook','$instagram','$informacion')";
     $resultado = mysqli_query($conexion,$query);
     header('location: ../index.php');

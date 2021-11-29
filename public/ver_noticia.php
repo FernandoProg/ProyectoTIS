@@ -39,26 +39,22 @@
                     <span class="fs-5  text-center"><?php echo $get_bajada_noticia ?></span>
                 </div>
                 <!-- Fecha -->
-                <div class="row col-lg-12">
+                <div class="row col-lg-12 mb-4">
                     <span class="fs-5  text-left    ">Fecha: <?php echo $get_fecha_noticia ?></span>
                 </div>
-                
-                <div class="row">
-                    <!-- IMAGEN -->
-                    <div class="col-lg-5 col-sm-12  "> 
-                        <img class="mt-5" style="width:100%" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" >
-                    </div>
-                    <div class="col-lg-7 col-sm-12">
-                        <!-- Lead -->
-                        <div class="col-lg-12 pt-3" >
-                            <span class="fs-5 text-justify d-flex " style="text-align: justify;"><?php echo $get_lead_noticia ?></span>
-                        </div>
-                        <!-- CUERPO -->
-                        <div class="col-lg-12 pt-3  ">
-                            <span class="fs-5 text-justify d-flex " style="text-align: justify;"class="fs-5 text-justify d-flex " style="text-align: justify;"><?php echo $get_cuerpo_noticia ?></span>
-                        </div>
-                    </div>
+                <!-- IMAGEN -->
+                <div class="col-lg-12 col-sm-12  "> 
+                        <img class="" style="width:100%" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" >
                 </div>
+                <!-- Lead -->
+                <div class="col-lg-12 pt-3 text-center" >
+                    <span class="fs-5 text-justify d-flex " style="text-align: justify;"><?php echo $get_lead_noticia ?></span>
+                </div>
+                <!-- CUERPO -->
+                <div class="col-lg-12 pt-3  ">
+                    <span class="fs-5 text-justify d-flex " style="text-align: justify;"class="fs-5 text-justify d-flex " style="text-align: justify;"><?php echo $get_cuerpo_noticia ?></span>
+                </div>
+        
                 <div class="text-end">
                     <span> Categoría: <?php echo $get_categoria_noticia ?></span>
                 </div>

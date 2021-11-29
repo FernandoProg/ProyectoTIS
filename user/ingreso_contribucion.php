@@ -46,7 +46,12 @@
                                 <option value="Obras municipales">Jurídico</option>
                             </select>
                         </div>
-                        <input type="submit" class="btn btn-secondary" value="Guardar">
+                        <div class="col">
+                            <label class="form-label fw-bolder">Imagenes:</label>
+                            <input accept="image/png, .jpeg, .jpg, .svg" class="form-control" type="file" multiple name="imagenes_contribucion[]" id="">
+                            <label class="">Se puede ingresar un máximo de 5 imagenes.</label>
+                        </div>
+                        <input type="submit" class="btn mt-3 btn-secondary" value="Guardar">
                     </form>
                 </div>
             </div>

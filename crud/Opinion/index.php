@@ -22,7 +22,7 @@
                 OPINION
             </span>
         </div>
-        <div class="row mt-4">
+        <div class="row table-responsive mt-4">
             <table class="w-100 table-hover table-light table table-bordered">   
                 <thead class="table-dark">
                     <tr>

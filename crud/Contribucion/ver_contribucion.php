@@ -16,8 +16,18 @@
         $query = "SELECT * FROM contribucion WHERE id_contribucion =$id";
         $data = mysqli_query($conexion,$query);
         $row_data = mysqli_fetch_assoc($data);
+        $user = $row_data["nombre_usuario"];
+
         $query_image ="SELECT imagen_contribuciones FROM imagen_contribucion WHERE id_contribucion = $id";
         $data_image = mysqli_query($conexion,$query_image); 
+        
+
+        $query_correo ="SELECT correo_usuario FROM usuario WHERE nombre_usuario = '$user'";
+        $data_correo = mysqli_query($conexion,$query_correo);
+        $row_correo = mysqli_fetch_assoc($data_correo);
+       
+
+        
     ?>
 
     <body>
@@ -26,10 +36,10 @@
             <div class="row">
                 <div class="col fs-3">
                     <span class="">
-                        <b>Nombre: </b> <?php echo$row_data["nombre_contribucion"]?>
+                        <b>Nombre: </b> <?php echo $row_data["nombre_contribucion"]?>
                     </span>
                     <span class="d-flex">
-                        <b>Correo: </b> <?php echo$row_data["correo_contribucion"]?>
+                        <b>Correo: </b> <?php echo $row_correo["correo_usuario"];?>
                     </span>
                 </div>
                 <div class="col fs-3">

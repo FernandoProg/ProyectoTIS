@@ -26,7 +26,7 @@
     </head>
 
     <body>   
-        <?php require("navbar_noSession.php");?>  
+        <?php require("navbar_user.php");?>  
 
         <div class="container">
             <div class="row col-lg-12">

@@ -24,7 +24,7 @@
 
     ?>
 
-    <div id="map" style="height:800px;" class="mb-3"></div>
+    <div id="map" style="height:700px;margin-top:-1.5rem;" class="mb-3" ></div>
 
     <?php 
         $consulta = "SELECT nombre_lugar,latitud_lugar,longitud_lugar,categoria_lugar FROM lugar"; //HACER ORDER BY fecha_noticia ASC/DESC

@@ -14,7 +14,7 @@
             $id = $_GET["id"];
             $sql = "SELECT * FROM emprendedor WHERE id_emprendedor = $id";
             $query = mysqli_query($conexion,$sql);  
-            if($query){
+            if(mysqli_num_rows($query)>0){
                 $row = mysqli_fetch_assoc($query);
             ?>
                 <div class="container-fluid my-4 px-4">

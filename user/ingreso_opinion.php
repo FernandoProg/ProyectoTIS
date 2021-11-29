@@ -18,12 +18,8 @@
             </div>
             <div class="row mt-4">
                 <div class="col">
-                    <label class="form-label fw-bolder">Nombre:</label>
+                    <label class="form-label fw-bolder">Título opinión:</label>
                     <input class="form-control" type="correo" name="nombre_opinion" required>
-                </div>
-                <div class="col">
-                    <label class="form-label fw-bolder">Correo:</label>
-                    <input class="form-control" type="text" name="correo_opinion" required>
                 </div>
             </div>
             <div class="row mt-4">

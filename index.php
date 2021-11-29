@@ -75,10 +75,6 @@
             <img src="crud/img/evento_no_disponible.png" class="img-fluid" style="width:100%; height:100%;">
           <?php }?>
       </div>
-
-  
-     
-
       <div class="col-12 col-md-6 mt-4">
         <?php
           $consulta = "SELECT id_noticia,titulo_noticia,bajada_noticia,imagen_noticia FROM noticia  LIMIT 0,4"; //HACER ORDER BY fecha_noticia ASC/DESC

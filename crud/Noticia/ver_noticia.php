@@ -63,15 +63,13 @@
                     <span> Categoría: <?php echo $get_categoria_noticia ?></span>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-6 text-end">
+                <div class="row mb-4 mt-4">
+                    <div class="col-lg-12 text-center ">
                         <a href='Consultas/delete_noticia.php?seleccion=<?php echo $id ?>' class="btn btn-danger">Eliminar</a>
-                    </div>
-                    <div class="col-lg-6 ">
+                        <a href="editar_noticia.php?seleccion=<?php echo $id ?>"  class="btn me-4 ms-4 btn-secondary" >Editar</a>
                         <a href="index.php"  class="btn btn-primary" >Volver</a>
                     </div>
                 </div>
-                
             </div>
         </div>
    

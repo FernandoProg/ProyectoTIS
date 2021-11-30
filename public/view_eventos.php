@@ -60,7 +60,7 @@
                     };
                     ?>
                                 <div class="mt-4 col-lg-4 col-sm-12">
-                                    <div class="card ">
+                                    <div class="card shadow">
                                         <img class="card-img-top" src="data:image/jpeg;base64,<?php echo base64_encode($imagenEvento)?>" alt="Card image cap" >
                                         <div class="card-body ">
                                             <h5 class="card-title"><?php echo $nombreEvento?></h5>

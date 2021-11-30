@@ -20,15 +20,13 @@
       
   <div class="row container-fluid mt-5">
       <div class="col-12 col-md-6 mt-4">
-  
+      <?php 
+        $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar,nombre_lugar FROM evento join lugar using(id_lugar) LIMIT 0,1 ";
+        $info = mysqli_query($conexion,$consulta);
+        if(mysqli_num_rows($info)){
+      ?>
+        <?php $result=mysqli_fetch_assoc($info);?>
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-      
-            <?php 
-              $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar,nombre_lugar FROM evento join lugar using(id_lugar) LIMIT 0,1 ";
-              $info = mysqli_query($conexion,$consulta);
-              $result=mysqli_fetch_assoc($info);
-
-            ?>
           <div class="carousel-inner ">
             <div class="carousel-item active">
             <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;max-height:700px;"></td>' ?>
@@ -39,8 +37,6 @@
               </div>
 
             </div>
-           
-
             <?php 
             $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar,nombre_lugar FROM evento join lugar using(id_lugar)  LIMIT 0,3";
             $data = mysqli_query($conexion,$consulta);
@@ -65,10 +61,7 @@
 
 
             <?php } ?>
-
-            
           </div>
-   
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -78,16 +71,18 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+          <?php }else{?>
+            <img src="crud/img/evento_no_disponible.png" class="img-fluid" style="width:100%; height:100%;">
+          <?php }?>
       </div>
-
-  
-     
-
       <div class="col-12 col-md-6 mt-4">
+        <?php
+          $consulta = "SELECT id_noticia,titulo_noticia,bajada_noticia,imagen_noticia FROM noticia  LIMIT 0,4"; //HACER ORDER BY fecha_noticia ASC/DESC
+          $data = mysqli_query($conexion,$consulta);
+          if(mysqli_num_rows($data)){
+        ?>
         <div class="row row-cols-1 row-cols-md-2 g-4">
         <?php 
-        $consulta = "SELECT id_noticia,titulo_noticia,bajada_noticia,imagen_noticia FROM noticia  LIMIT 0,4"; //HACER ORDER BY fecha_noticia ASC/DESC
-        $data = mysqli_query($conexion,$consulta);
         while($row=mysqli_fetch_assoc($data)){
             $tituloNoticia = $row['titulo_noticia'];
             $bajadaNoticia = $row['bajada_noticia'];
@@ -109,6 +104,9 @@
             </div> 
         <?php } ?>
       </div>
+      <?php }else{?>
+        <img src="crud/img/evento_no_disponible.png" alt="">      
+      <?php }?>
     </div>
   </div>
           <?php require_once("footer.php"); ?>

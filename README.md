@@ -1,8 +1,11 @@
 # Los datos para realizar la conexión con la base de datos son los siguientes:
 
-> <?php
->    $conexion = mysqli_connect("localhost", "root","","proyecto_municipalidad");
-> ?>
+<?php
+    $conexion = mysqli_connect("localhost", "root","","proyecto_municipalidad");
+?>
+<pre><code><?php
+    $conexion = mysqli_connect("localhost", "root","","proyecto_municipalidad");
+?></code></pre>
 
 # Esto significa cada uno de los campos : mysqli_connect("dirección ip", "mi_usuario", "mi_contraseña", "mi_bd")
 #--------------------------------------------------------------------------------------------------------------------#

@@ -134,11 +134,13 @@
                                             <p class="card-text"><?php echo $get_bajada_noticia?></p>
                                             
                                             <div class="row">
-                                                <div class="col-6">
+                                                <div class="mt-2 col-6">
                                                     <a href="ver_noticia.php?seleccion=<?php echo $id ?>" class="btn btn-primary">Ver más</a>
                                                 </div>
                                                 <div class="col-6 text-end">
                                                     <span> Categoría: <?php echo $get_categoria_noticia ?></span>
+                                                    <br>
+                                                    <span>Fecha: <?php echo $get_fecha_noticia?></span>
                                                 </div>
                                             </div>
                                             

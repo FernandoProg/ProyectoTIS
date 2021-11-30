@@ -4,6 +4,7 @@
     }
     require("../crud/conexion.php");
     $categoria = isset($_GET["categoria"]) ? $_GET["categoria"]:'';
+    $fecha = isset($_GET["fecha"]) ? $_GET["fecha"]:'';
     $consulta = ($categoria=='')? "SELECT * FROM noticia" : "SELECT * FROM noticia WHERE categoria_noticia = '$categoria'";
     //$consulta = "SELECT * FROM noticia";
     $resultado = mysqli_query($conexion, $consulta);
@@ -23,12 +24,6 @@
         <meta charset="UTF-8">
         <title>Municipalidad</title>
         <?php require("../user/head.php")?>
-        <script
-        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-        crossorigin="anonymous">
-        </script>
-        <script src="main.js"></script>
     </head>
     <body>
         <?php
@@ -45,27 +40,69 @@
                 </div>
             </div>
             <div class="container-fluid mt-4">
-                <div class="row">
-                    <div class="col">
-                            <label class="form-label fw-bolder d-block">Filtrar por categoría:</label>
-                            <select class="w-25 form-select d-inline" id="categoria" name="categoria_noticia">
-                                <option hidden selected required>Seleccione la categoria</option>
-                                <option value=""></option>
-                                <option value="Política">Política</option>
-                                <option value="Deportiva">Deportiva</option>
-                                <option value="Económica">Económica</option>
-                                <option value="Cultural">Cultural</option>
-                                <option value="Social">Social</option>
-                                <option value="Policial">Policial</option>
-                                <option value="Científica">Científica</option>
-                            </select>
-                            <a id="link_noticia" class="btn  btn-secondary mb-1 d-inline-flex" href="#">Filtrar</a>
-                    </div>
+                <div class="col-12">
+                    
+                        <form action="filtro_noticia.php" method="POST">
+                            <div class="row">
+                                <div class="col-6 text-end">
+                                    <label class="form-label fw-bolder d-block">Filtrar por categoría:</label>
+                                    <select class="w-25 form-select d-inline" name="categoria_noticia">
+                                        <option hidden selected required></option>
+                                        <option value=""></option>
+                                        <option value="Política">Política</option>
+                                        <option value="Deportiva">Deportiva</option>
+                                        <option value="Económica">Económica</option>
+                                        <option value="Cultural">Cultural</option>
+                                        <option value="Social">Social</option>
+                                        <option value="Policial">Policial</option>
+                                        <option value="Científica">Científica</option>
+                                    </select>
+                                </div>
+                                <div class=" col-6">
+                                    <label class="form-label fw-bolder d-block">Filtrar por fecha:</label>
+                                    <select class="w-25 form-select d-inline" name="fecha_noticia">
+                                        <option hidden selected required></option>
+                                        <option value=""></option>
+                                        <option value="masreciente">Menos reciente</option>
+                                        <option value="menosreciente">Más reciente</option>
+                                    </select>
+                                </div>
+                                <div class=" text-center col-12 mt-4">
+                                    <button class="btn btn-secondary" type="submit">Filtrar</button>
+                                </div>
+                            </div> 
+                        </form>
+                   
                 </div>
             </div>
 
             <?php
-                $sql_noticias = ($categoria=='')? "SELECT * FROM noticia LIMIT $inicio,$noticias_por_pagina" : "SELECT * FROM noticia WHERE categoria_noticia = '$categoria' LIMIT $inicio,$noticias_por_pagina";
+                if($categoria=='' && $fecha ==''){
+                    $sql_noticias = "SELECT * FROM noticia LIMIT $inicio,$noticias_por_pagina";
+
+                }elseif($categoria == '' && $fecha != ''){
+                    if($fecha == 'masreciente'){
+                        $sql_noticias = "SELECT * FROM noticia ORDER BY fecha_noticia ASC LIMIT $inicio,$noticias_por_pagina "; 
+
+                    }else{
+                        $sql_noticias = "SELECT * FROM noticia ORDER BY fecha_noticia DESC LIMIT $inicio,$noticias_por_pagina "; 
+
+                    }
+                    
+                }elseif($categoria != '' && $fecha == ''){
+                    $sql_noticias = "SELECT * FROM noticia WHERE categoria_noticia = '$categoria' LIMIT $inicio,$noticias_por_pagina";  
+
+                }elseif($categoria != '' && $fecha != ''){
+
+                    if($fecha == 'masreciente'){
+                        $sql_noticias = "SELECT * FROM noticia WHERE categoria_noticia = '$categoria' ORDER BY fecha_noticia ASC LIMIT $inicio,$noticias_por_pagina ";
+
+                    }else{
+                        $sql_noticias = "SELECT * FROM noticia WHERE categoria_noticia = '$categoria' ORDER BY fecha_noticia DESC LIMIT $inicio,$noticias_por_pagina "; 
+
+                    }
+                }
+                //$sql_noticias = ($categoria=='')? "SELECT * FROM noticia LIMIT $inicio,$noticias_por_pagina" : "SELECT * FROM noticia WHERE categoria_noticia = '$categoria' LIMIT $inicio,$noticias_por_pagina";
                 //$sql_noticias = 'SELECT * FROM noticia LIMIT '.(int)$inicio.','.(int)($noticias_por_pagina).'';
                 //$sql_noticias = "SELECT * FROM noticia WHERE categoria_noticia = '$categoria' LIMIT $inicio,$noticias_por_pagina";
                 $resultado_noticias = mysqli_query($conexion, $sql_noticias);
@@ -93,7 +130,7 @@
                                     <div class="card ">
                                         <img class="card-img-top" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" alt="Card image cap" >
                                         <div class="card-body ">
-                                            <h5 class="card-title"><?php echo $get_titulo_noticia?></h5>
+                                            <h5 class="card-title"><?php echo $get_fecha_noticia?></h5>
                                             <p class="card-text"><?php echo $get_bajada_noticia?></p>
                                             
                                             <div class="row">
@@ -119,14 +156,14 @@
                     <ul class="pagination justify-content-center">
                         <li class="page-item">
                             <a class="page-link" 
-                            href="view_noticias.php?pagina=<?php if($_GET['pagina']-1==0){ echo $_GET['pagina'] ;}else{ echo $_GET['pagina']-1 ;} ?>&categoria=<?php echo $categoria ?>">
+                            href="view_noticias.php?pagina=<?php if($_GET['pagina']-1==0){ echo $_GET['pagina'] ;}else{ echo $_GET['pagina']-1 ;} ?>&categoria=<?php echo $categoria ?>&fecha=<?php echo $fecha ?>">
                                 Anterior
                             </a>
                     </li>
 
                         <?php for($j=1; $j<=$paginas; $j++): ?>
                         <li class="page-item <?php echo $_GET['pagina']==$j ? 'active' : '' ?>" >
-                            <a class="page-link" href="view_noticias.php?pagina=<?php echo $j ?>&categoria=<?php echo $categoria ?>">
+                            <a class="page-link" href="view_noticias.php?pagina=<?php echo $j ?>&categoria=<?php echo $categoria ?>&fecha=<?php echo $fecha ?>">
                                 <?php echo $j ?>
                             </a>
                         </li>
@@ -134,21 +171,13 @@
 
                         <li class="page-item">
                             <a class="page-link" 
-                            href="view_noticias.php?pagina=<?php if($_GET['pagina']+1>$paginas){ echo $_GET['pagina'] ;}else{ echo $_GET['pagina']+1 ;} ?>&categoria=<?php echo $categoria ?>">
+                            href="view_noticias.php?pagina=<?php if($_GET['pagina']+1>$paginas){ echo $_GET['pagina'] ;}else{ echo $_GET['pagina']+1 ;} ?>&categoria=<?php echo $categoria ?>&fecha=<?php echo $fecha ?>">
                                 Siguiente
                             </a>
                         </li>
                     </ul>
                 </nav>
             </div>
-            
-
-
-
         </div>
-        
-
-
-
     </body>
 </html>

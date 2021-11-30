@@ -112,11 +112,11 @@
                         $id = $row["id_noticia"];
                         ?>
                         <tr>
-                          <td> <?php echo $get_titulo_noticia ?></td>
+                          <td> <p style="display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;"><?php echo $get_titulo_noticia ?></p></td>
                           <td> <?php echo $get_fecha_noticia ?></td>
-                          <td class="d-none d-sm-table-cell" > <p style="display: -webkit-box; -webkit-line-clamp: 10; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;"> <?php echo $get_bajada_noticia ?></p></td>
-                          <td class="d-none d-sm-table-cell" > <p style="display: -webkit-box; -webkit-line-clamp: 10; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;"> <?php echo $get_lead_noticia ?></p></td>
-                          <td class="d-none d-sm-table-cell" > <p style="display: -webkit-box; -webkit-line-clamp: 10; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;"> <?php echo $get_cuerpo_noticia ?></p></td>
+                          <td class="d-none d-sm-table-cell" > <p style="display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;"> <?php echo $get_bajada_noticia ?></p></td>
+                          <td class="d-none d-sm-table-cell" > <p style="display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;"> <?php echo $get_lead_noticia ?></p></td>
+                          <td class="d-none d-sm-table-cell" > <p style="display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;"> <?php echo $get_cuerpo_noticia ?></p></td>
                           <td> <?php echo $get_categoria_noticia ?></td>
                           <td >
                             <a style="text-decoration: none;" href='ver_noticia.php?seleccion=<?php echo $id ?>'>

@@ -9,7 +9,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <a class="navbar-brand" href="index.php"><img src="../crud/img/logo.png" style="width: 40%;"></a>
+                <a class="navbar-brand" href="../index.php"><img src="../crud/img/logo.png" style="width: 40%;"></a>
             </ul>
             <ul class="navbar-nav ">
                 <li class="nav-item">

@@ -7,10 +7,15 @@
 ## Esto significa cada uno de los campos : mysqli_connect("dirección ip", "mi_usuario", "mi_contraseña", "mi_bd")
 #--------------------------------------------------------------------------------------------------------------------#
 
-## Los datos del admin para hacer ingreso a la página son : 
+## Los datos del admin para hacer ingreso a "acceso funcionarios" son: 
 
-Nombre de usuario : lsparedes <br>
-Contraseña : lsparedes
+Nombre de administrador : lsparedes <br>
+Contraseña de administrador: lsparedes
+
+## Los datos del usuario para hacer ingreso a "inicio usuarios" son: 
+
+Nombre de usuario : alonso <br>
+Contraseña : alonso
 
 #--------------------------------------------------------------------------------------------------------------------#
 

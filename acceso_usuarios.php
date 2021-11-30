@@ -14,7 +14,7 @@
             rel="stylesheet">
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
         <link rel="stylesheet" href="../style.css">
-        <title>Municipalidad</title>
+        <title>Acceso Usuarios - Municipalidad</title>
     </head>
     <body class="img-fondo">
     <?php
@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-6 text-start align-middle">
                                 <span class="d-flex pt-5 text-white fw-bolder">Municipalidad</span>
-                                <span class="d-flex pt-2 text-white fw-bolder">de Chiguayante</span>
+                                <span class="d-flex pt-2 text-white fw-bolder">de Chañaral</span>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                                 </div>
                                 <input type="submit" class="btn btn-secondary" value="Ingresar">
                                 <a href="index.php" class="btn btn-primary">Volver al inicio</a>
-                                <p class="text-white mt-3">¿No estás registrado? <a href='registro_usuario.php'>Registrate Aquí</a></p>
+                                <p class="text-white mt-3">¿No estás registrado? <a href='registro_usuario.php'>Regístrate Aquí</a></p>
                             </form>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-6 text-start align-middle">
                         <span class="d-flex pt-5 text-white fw-bolder">Municipalidad</span>
-                        <span class="d-flex pt-2 text-white fw-bolder">de Chiguayante</span>
+                        <span class="d-flex pt-2 text-white fw-bolder">de Chañaral</span>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@
                         </div>
                         <input type="submit" class="btn btn-secondary" value="Ingresar">
                         <a href="index.php" class="btn btn-primary">Volver al inicio</a>
-                        <p class="text-white mt-3">¿No estás registrado? <a href='registro_usuario.php'>Registrate Aquí</a></p>
+                        <p class="text-white mt-3">¿No estás registrado? <a href='registro_usuario.php'>Regístrate Aquí</a></p>
                     </form>
                 </div>
             </div>

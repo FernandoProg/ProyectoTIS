@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contribucion</title>
+    <title>Contribuciones - Administrador</title>
     <?php require("../header.php")?>
   </head>
   <body>

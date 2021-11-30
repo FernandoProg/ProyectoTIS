@@ -6,7 +6,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Municipalidad</title>
+    <title>Ver Contribución - Administrador</title>
     <?php require("../header.php")?>
 </head>
 
@@ -55,7 +55,7 @@
             </div>
             <div class="row mt-4 fs-3">
                 <span class="fw-bolder">
-                    Descripcion de la contribucion:
+                    Descripción de la contribución:
                 </span>
                 <span style="text-align: justify;" class="text-justify d-flex text-break ">
                     <?php echo$row_data["descripcion_contribucion"]?>

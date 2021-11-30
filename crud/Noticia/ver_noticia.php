@@ -22,7 +22,7 @@
     <head>
       <meta charset="utf-8">
       <?php require("../header.php")?>
-      <title>Municipalidad</title>
+      <title>Ver noticia - Administrador</title>
     </head>
 
     <body>   

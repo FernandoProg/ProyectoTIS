@@ -3,7 +3,7 @@
       <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
         <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
       </a>
-      <span class="text-white">Municipalidad de Chiguayante - Dirección: Orozimbo Barbosa, 104, Chiguayante - Fono: 250 81 00</span>
+      <span class="text-white">Municipalidad de Chañaral - Dirección: Almirante Latorre Nº700 Chañaral, Atacama - Fono: (52) 254 3307</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

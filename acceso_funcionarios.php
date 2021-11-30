@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet">
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
-    <title>Municipalidad</title>
+    <title>Acceso Funcionarios - Municipalidad</title>
 </head>
 <body class="img-fondo">
     <?php
@@ -46,7 +46,7 @@
                             </div>
                             <div class="col-6 text-start align-middle">
                                 <span class="d-flex pt-5 text-white fw-bolder">Municipalidad</span>
-                                <span class="d-flex pt-2 text-white fw-bolder">de Chiguayante</span>
+                                <span class="d-flex pt-2 text-white fw-bolder">de Chañaral</span>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                     </div>
                     <div class="col-6 text-start align-middle">
                         <span class="d-flex pt-5 text-white fw-bolder">Municipalidad</span>
-                        <span class="d-flex pt-2 text-white fw-bolder">de Chiguayante</span>
+                        <span class="d-flex pt-2 text-white fw-bolder">de Chañaral</span>
                     </div>
                 </div>
             </div>

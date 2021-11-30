@@ -7,7 +7,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Municipalidad</title>
+    <title>Emprendedores - Administrador</title>
     <?php require("../header.php")?>
 </head>
 
@@ -92,7 +92,7 @@
             </div>
             <div class="row mt-2">
                 <div class="col">
-                    <label for="formFile" class="form-label fw-bolder">Seleccione una Imagen Representativa del Emprendedor:</label>
+                    <label for="formFile" class="form-label fw-bolder">Seleccione una Imágen Representativa del Emprendedor:</label>
                     <input class="form-control"  accept="image/png, .jpeg, .jpg .svg" type="file" name="imagen_emprendedor" required>
                 </div>
             </div>

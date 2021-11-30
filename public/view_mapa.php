@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Mapa Comuna - Municipalidad</title>
     <?php require("../user/head.php")?>
     <?php require("../crud/conexion.php")?>
     <!-- Required meta tags -->

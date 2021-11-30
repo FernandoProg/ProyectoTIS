@@ -19,7 +19,7 @@
    crossorigin=""></script>
    <!-- LEAFLET END -->
 
-    <title>Municipalidad</title>
+    <title>Lugares - Administrador</title>
 </head>
 <body>
     <?php require("../navbar.php")?>

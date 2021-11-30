@@ -9,7 +9,7 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <?php require("../header.php")?>
-      <title>Municipalidad</title>
+      <title>Noticias - Administrador</title>
     </head>
 
     <body>
@@ -70,7 +70,7 @@
                   </select>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label fw-bolder" >Imagen:</label>
+                  <label class="form-label fw-bolder" >Imágen:</label>
                   <input type="file" accept="image/png, .jpeg, .jpg .svg .jpg" class="form-control" name="insert_imagen_noticia" required>
                 </div>
                 <div class="row w-25 mx-auto mt-4">

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require('head.php') ?>
-    <title>Municipalidad</title>
+    <title>Ingresar Opinión</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <div class="container mt-4">
         <form action="Consultas/create_opinion.php" method="POST" enctype="multipart/form-data">
             <div class="row fs-2 fw-bolder text-center">
-                <span>INGRESO OPINION</span>
+                <span>INGRESO OPINIÓN</span>
             </div>
             <div class="row mt-4">
                 <div class="col">
@@ -30,7 +30,7 @@
             </div>
             <div class="row mt-4">
                 <div class="col">
-                    <label class="form-label fw-bolder">Imagenes:</label>
+                    <label class="form-label fw-bolder">Imágenes:</label>
                     <input accept="image/png, .jpeg, .jpg, .svg" class="form-control" type="file" multiple name="imagenes_opinion[]" id="">
                     <label class="">Se puede ingresar un máximo de 5 imagenes.</label>
                 </div>

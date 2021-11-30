@@ -21,7 +21,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Municipalidad</title>
+        <title>Noticias - Municipalidad</title>
         <?php require("../user/head.php")?>
         <script
         src="https://code.jquery.com/jquery-3.6.0.slim.min.js"

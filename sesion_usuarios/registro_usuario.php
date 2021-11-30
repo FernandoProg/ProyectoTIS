@@ -63,6 +63,6 @@
           <button type="submit" class="btn btn-primary">Registrarme</button>
           <a href="login_usuario.php" class="btn btn-secondary" >Volver atrás</a>
     </form>
-    <?php } ?>
+    <?php } require("../footer.php"); ?>
   </body>
 </html>

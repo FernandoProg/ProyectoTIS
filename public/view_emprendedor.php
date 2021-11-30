@@ -161,6 +161,6 @@
                 </div>
             </div>
         </div>
-    <?php }?>
+    <?php } require("../footer.php"); ?>
 </body>
 </html>

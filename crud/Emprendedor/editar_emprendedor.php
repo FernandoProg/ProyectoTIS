@@ -111,5 +111,6 @@
             </div>
         </div>
     </form>
+    <?php require("../footer.php") ?>
 </body>
 </html>

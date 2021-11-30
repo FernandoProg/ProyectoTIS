@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet">
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="style.css">
         <title>Acceso Usuarios - Municipalidad</title>
     </head>
     <body class="img-fondo">
@@ -40,7 +40,7 @@
                 header("Location: index.php"); // Redirect user to index.php
             }else{
                 ?>
-                <div class="container bg-black pb-3 mt-5 fondo-redondeado">
+                <div class="container bg-black pb-3 mt-5 fondo-redondeado espacio">
                     <div class="row">
                         <div class="row col-lg-8 offset-lg-2 mt-4">
                             <div class="col-6 text-end">
@@ -75,7 +75,7 @@
             }
         }else{
             ?>
-        <div class="container bg-black pb-3 mt-5 fondo-redondeado">
+        <div class="container bg-black pb-3 mt-5 fondo-redondeado espacio">
             <div class="row">
                 <div class="row col-lg-8 offset-lg-2 mt-4">
                     <div class="col-6 text-end">
@@ -106,6 +106,6 @@
                 </div>
             </div>
         </div>
-        <?php } ?>
+        <?php } require("footer.php");?>
     </body>
 </html>

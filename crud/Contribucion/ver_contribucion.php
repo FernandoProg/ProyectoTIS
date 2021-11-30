@@ -82,5 +82,6 @@
                 <a href="../Contribucion" class="btn btn-primary">Volver al inicio</a>
             </div>
         </div>
+        <?php require("../footer.php") ?>
     </body>
 </html>

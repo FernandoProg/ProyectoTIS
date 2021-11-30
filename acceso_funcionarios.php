@@ -71,7 +71,7 @@
             }
         }else{
             ?>
-            <div class="container bg-black pb-3 mt-5 fondo-redondeado">
+            <div class="container bg-black pb-3 mt-5 fondo-redondeado espacio">
             <div class="row">
                 <div class="row col-lg-8 offset-lg-2 mt-4">
                     <div class="col-6 text-end">
@@ -101,6 +101,6 @@
                 </div>
             </div>
         </div>
-        <?php } ?>
+        <?php } require("footer.php");?>
     </body>
 </html>

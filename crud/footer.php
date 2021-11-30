@@ -1,6 +1,6 @@
-<?php require("user/head.php"); ?>
+<?php require("header.php"); ?>
 <footer class="text-lg-start mt-3">
-    <div class="container-fluid p-4 bg-primary">
+    <div class="container-fluid p-4 bg-black">
         <div class="row">
             <div class="col-md-4 col-lg-4 offset-lg-2 col-md-12 my-3 mb-md-0 text-center">
                 <h5 class="text-uppercase text-white">Nosotros</h5>
@@ -28,17 +28,17 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid pt-4 bg-primary">
+    <div class="container-fluid pt-4 bg-black">
         <section class="text-center">
-            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.facebook.com/munichanaral" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://twitter.com/municipchanaral" role="button" data-mdb-ripple-color="dark" ><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.munichanaral.cl" role="button" data-mdb-ripple-color="dark" ><i class="fab fa-google"></i></a>
-            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/muni_chanaral/?hl=es" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
-            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/FernandoProg/ProyectoTIS" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+            <a class="btn btn-link btn-floating btn-lg text-black m-1" href="https://www.facebook.com/munichanaral" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-link btn-floating btn-lg text-black m-1" href="https://twitter.com/municipchanaral" role="button" data-mdb-ripple-color="dark" ><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-link btn-floating btn-lg text-black m-1" href="https://www.munichanaral.cl" role="button" data-mdb-ripple-color="dark" ><i class="fab fa-google"></i></a>
+            <a class="btn btn-link btn-floating btn-lg text-black m-1" href="https://www.instagram.com/muni_chanaral/?hl=es" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-link btn-floating btn-lg text-black m-1" href="https://github.com/FernandoProg/ProyectoTIS" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
         </section>
     </div>
-    <div class="text-center p-3 bg-primary" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="text-center p-3 bg-black" style="background-color: rgba(0, 0, 0, 0.2);">
         <b>© 2021 Copyright:</b>
-        <a class="text-dark" style="text-decoration:none" href="https://www.munichanaral.cl"> <b>Municipalidad de Chañaral</b> </a>
+        <a class="text-white" style="text-decoration:none" href="https://www.munichanaral.cl"> <b>Municipalidad de Chañaral</b> </a>
     </div>
 </footer>

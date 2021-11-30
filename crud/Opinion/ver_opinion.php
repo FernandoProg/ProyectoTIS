@@ -85,5 +85,6 @@
             <a href="../Opinion" class="btn mx-auto btn-primary w-25">Volver atrás</a>
         </div>
     </div>
+    <?php require("../footer.php") ?>
 </body>
 </html>

@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require("../header.php")?>
-    <title>Municipalidad</title>
+    <title>Eventos - Administrador</title>
 </head>
 <body>
     <?php require("../navbar.php")?>
@@ -43,7 +43,7 @@
                     <input type="date" required class="form-control" name="fechaEvento" id="fechaEvento" aria-describedby="helpId" placeholder="23-11-2021">
                 </div>
                 <div class="mb-3">
-                    <label for="imagen" class="form-label fw-bolder" >Imagen </label>
+                    <label for="imagen" class="form-label fw-bolder" >Imágen </label>
                     <input type="file"  required class="form-control" name="imagenEvento" id="imagenEvento" aria-describedby="helpId" accept="image/png, .jpeg, .jpg .svg">
                 </div>
                 <div class="mb-3">
@@ -76,7 +76,7 @@
                         <th>ID Lugar</th>
                         <th>Nombre Evento</th>
                         <th>Fecha Evento</th>
-                        <th>Imagen</th>
+                        <th>Imágen</th>
                         <th>Descripción</th>
                         <th>Acciones</th>
                     </tr>
@@ -112,5 +112,6 @@
             </table>
         </div>
     </div>
+    <?php require("../footer.php") ?>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Registration</title>
+    <title>Registro Usuarios - Municipalidad</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
     crossorigin="anonymous"></script>
@@ -33,10 +33,10 @@
             <div class="container">
               <div class="row">
                 <div class="alert alert-success container mt-5 col-12" role="alert">
-                    Te has <strong>registrado correctamente!</strong>. Presiona <a href="acceso_usuarios.php" class="text-green">aquí</a> para inciar sesión.
+                    Te has <strong>registrado correctamente!</strong>. Presiona <a href="acceso_usuarios.php" class="text-green">aquí</a> para iniciar sesión.
                 </div>
                 <div class="col-12 text-center mt-5 ">
-                  <span class="fs-1 fw-bolder" >REGISTRATE</span>
+                  <span class="fs-1 fw-bolder" >REGÍSTRATE</span>
                   <br>
                   <span> Es rápido y fácil. </span>
                 </div>
@@ -96,19 +96,12 @@
                       <label for="exampleInputPassword1" class="fw-bolder form-label">Contraseña</label>
                       <input type="password" required class="form-control" id="exampleInputPassword1" name="contraseña" minlength="6" maxlength="16" placeholder="28dejulio , trececatorce , etc..." required>
                   </div>
-                  <button type="submit" class="btn btn-primary">Registarte</button>
+                  <button type="submit" class="btn btn-primary">Registrarte</button>
                   <a href="index.php" class="btn btn-secondary" >Volver atrás</a>
               </form>
             </div>
           </div>
         </div>
-      <?php } 
-    ?>
+      <?php } require("footer.php"); ?>
   </body>
 </html>
-
-
-
-
-
-

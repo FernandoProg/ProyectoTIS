@@ -9,7 +9,7 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <?php require("../header.php")?>
-      <title>Municipalidad</title>
+      <title>Noticias - Administrador</title>
     </head>
 
     <body>
@@ -70,7 +70,7 @@
                   </select>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label fw-bolder" >Imagen:</label>
+                  <label class="form-label fw-bolder" >Imágen:</label>
                   <input type="file" accept="image/png, .jpeg, .jpg .svg .jpg" class="form-control" name="insert_imagen_noticia" required>
                 </div>
                 <div class="row w-25 mx-auto mt-4">
@@ -114,9 +114,9 @@
                         <tr>
                           <td> <?php echo $get_titulo_noticia ?></td>
                           <td> <?php echo $get_fecha_noticia ?></td>
-                          <td class="d-none d-sm-table-cell"> <?php echo $get_bajada_noticia ?></td>
-                          <td class="d-none d-sm-table-cell" > <?php echo $get_lead_noticia ?></td>
-                          <td class="d-none d-sm-table-cell" > <?php echo $get_cuerpo_noticia ?></td>
+                          <td class="d-none d-sm-table-cell" > <p style="display: -webkit-box; -webkit-line-clamp: 10; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;"> <?php echo $get_bajada_noticia ?></p></td>
+                          <td class="d-none d-sm-table-cell" > <p style="display: -webkit-box; -webkit-line-clamp: 10; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;"> <?php echo $get_lead_noticia ?></p></td>
+                          <td class="d-none d-sm-table-cell" > <p style="display: -webkit-box; -webkit-line-clamp: 10; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;"> <?php echo $get_cuerpo_noticia ?></p></td>
                           <td> <?php echo $get_categoria_noticia ?></td>
                           <td >
                             <a style="text-decoration: none;" href='ver_noticia.php?seleccion=<?php echo $id ?>'>
@@ -147,5 +147,6 @@
             </div>
         </div>
       </div> 
+      <?php require("../footer.php") ?>
     </body>
 </html>

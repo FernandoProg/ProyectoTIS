@@ -22,7 +22,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Municipalidad</title>
+        <title>Noticias - Municipalidad</title>
         <?php require("../user/head.php")?>
     </head>
     <body>

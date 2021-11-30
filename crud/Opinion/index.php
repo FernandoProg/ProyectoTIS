@@ -6,7 +6,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Municipalidad</title>
+    <title>Opiniones - Administrador</title>
     <?php require("../header.php")?>
 </head>
 <body>
@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
             <span class="fs-2 fw-bolder text-center">
-                OPINION
+                OPINIONES
             </span>
         </div>
         <div class="row table-responsive mt-4">
@@ -58,5 +58,6 @@
             </table>
         </div>
     </div>
+    <?php require("../footer.php") ?>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Municipalidad</title>
+    <title>Ver Contribución - Administrador</title>
     <?php require("../header.php")?>
 </head>
 
@@ -26,7 +26,7 @@
         $data_correo = mysqli_query($conexion,$query_correo);
         $row_correo = mysqli_fetch_assoc($data_correo);
        
-
+        $flag = true;
         
     ?>
 
@@ -36,10 +36,10 @@
             <div class="row">
                 <div class="col fs-3">
                     <span class="">
-                        <b>Nombre: </b> <?php echo $row_data["nombre_contribucion"]?>
+                        <b>Nombre: </b> <?php echo $row_data["nombre_contribucion"];?>
                     </span>
                     <span class="d-flex">
-                        <b>Correo: </b> <?php echo $row_correo["correo_usuario"];?>
+                        <b class="me-1">Correo:</b> <?php echo $row_correo["correo_usuario"];?>
                     </span>
                 </div>
                 <div class="col fs-3">
@@ -55,21 +55,24 @@
             </div>
             <div class="row mt-4 fs-3">
                 <span class="fw-bolder">
-                    Descripcion de la contribucion:
+                    Descripción de la contribución:
                 </span>
                 <span style="text-align: justify;" class="text-justify d-flex text-break ">
                     <?php echo$row_data["descripcion_contribucion"]?>
                 </span>
             </div>
-        <div class="fs-2 fw-bolder">
-            Imágenes:
-        </div>
             <div class="row">
                 <?php
                     while($imagen = mysqli_fetch_assoc($data_image)){
                 ?>
+                    <?php if($flag){ ?>
+                        <div class="fs-2 fw-bolder">
+                            <?php $flag = false; ?>
+                            Imágenes:
+                        </div>
+                    <?php } ?>
                     <div class="col">
-                        <img style="width: 100px;" src="data:;base64,<?php echo base64_encode($imagen["imagen_contribuciones"])?>">
+                        <img style="max-width: 400px; max-height:400px;" src="data:;base64,<?php echo base64_encode($imagen["imagen_contribuciones"])?>">
                     </div>
                 <?php }?>
             </div>
@@ -79,5 +82,6 @@
                 <a href="../Contribucion" class="btn btn-primary">Volver al inicio</a>
             </div>
         </div>
+        <?php require("../footer.php") ?>
     </body>
 </html>

@@ -28,7 +28,7 @@
         crossorigin="anonymous">
         </script>
         <script src="main_admin.js"></script>
-        <title>Administrador</title>
+        <title>Administradores</title>
     </head>
     <body>
         <?php 
@@ -141,5 +141,6 @@
                 </div>
             </div>
         </div>
+        <?php require("../footer.php") ?>
     </body>
 </html>

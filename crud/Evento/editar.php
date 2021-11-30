@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require("../header.php")?>
-    <title>Municipalidad</title>
+    <title>Editar evento - Administrador</title>
 </head>
 <body>
     <?php require("../navbar.php")?>
@@ -50,13 +50,13 @@
                     <input type="date" required class="form-control" value="<?php echo$row["fecha_evento"] ?>" name="fechaEvento" id="fechaEvento" aria-describedby="emailHelpId" >
                 </div>
                 <div class="mb-3 ">
-                    <label for="Imagen Evento" class="form-label fw-bolder">Imagen Evento:</label>
+                    <label for="Imagen Evento" class="form-label fw-bolder">Imágen Evento:</label>
                     <input type="file" accept="image/png, .jpeg, .jpg .svg" class="form-control w-50 mb-2" value="" name="imagenEvento" id="imagenEvento" aria-describedby="emailHelpId">
                     <img style="width:150px;"src="data:image;base64,<?php echo base64_encode($row["imagen_evento"]); ?> " alt="">
                 </div>
                 <div class="mb-3">
-                    <label for="Descripcion Evento" class="form-label fw-bolder">Descripcion Evento:</label>
-                    <input type="text" required class="form-control" value="<?php echo$row["descripcion_evento"]?>" name="descripcionEvento" id="descripcionEvento" aria-describedby="emailHelpId" maxlength="1200">
+                    <label for="Descripcion Evento" class="form-label fw-bolder">Descripción Evento:</label>
+                    <textarea type="text" required class="form-control" rows="10" name="descripcionEvento" id="descripcionEvento" aria-describedby="emailHelpId" maxlength="1200"><?php echo$row["descripcion_evento"]?></textarea>
                 </div>
                 <div class="row">
                     <div class="col-6 text-end">
@@ -69,5 +69,6 @@
             </form>
         </div>
     </div>
+    <?php require("../footer.php") ?>
 </body>
 </html>

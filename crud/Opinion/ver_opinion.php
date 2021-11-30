@@ -6,7 +6,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Municipalidad</title>
+    <title>Ver opinión - Administrador</title>
     <?php require("../header.php")?>
 </head>
 
@@ -34,7 +34,7 @@
     <div class="container">
         <div class="row">
             <span class="fs-2 fw-bolder text-center">
-                OPINION
+                OPINIÓN
             </span>
         </div>
         <div class="row mt-4">
@@ -59,7 +59,7 @@
         </div>
         <div class="row mt-4 fs-4">
             <span>
-                Descripcion de la opinion:
+                Descripción de la opinión:
             </span>
             <span style="text-align: justify;" class="text-justify d-flex">
                 <?php echo$row_data["descripcion_opinion"]?>
@@ -67,7 +67,7 @@
         </div>
     <?php if(mysqli_num_rows($data_image)>0){?>
         <div class="fs-2 mt-4 ">
-            Imagenes:
+            Imágenes:
         </div>
             <div class="row mb-4">
                 <?php
@@ -85,5 +85,6 @@
             <a href="../Opinion" class="btn mx-auto btn-primary w-25">Volver atrás</a>
         </div>
     </div>
+    <?php require("../footer.php") ?>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Registration</title>
+    <title>Registro Usuario - Municipalidad</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
     crossorigin="anonymous"></script>
@@ -29,7 +29,7 @@
         if($result){
          ?>
          <div class="alert alert-success container mt-5" role="alert">
-            Te has <strong>registrado correctamente!</strong>. Presiona <a href="login_usuario.php" class="text-green">aquí</a> para inciar sesión.
+            Te has <strong>registrado correctamente!</strong>. Presiona <a href="login_usuario.php" class="text-green">aquí</a> para iniciar sesión.
          </div>
 
          <form class="form container mt-5">
@@ -60,15 +60,9 @@
               <label for="exampleInputPassword1" class="form-label">Contraseña</label>
               <input type="password" required class="form-control" id="exampleInputPassword1" name="contraseña" minlength="6" maxlength="16" placeholder="28dejulio , trececatorce , etc...">
           </div>
-          <button type="submit" class="btn btn-primary">Registarme</button>
+          <button type="submit" class="btn btn-primary">Registrarme</button>
           <a href="login_usuario.php" class="btn btn-secondary" >Volver atrás</a>
     </form>
-    <?php } ?>
+    <?php } require("../footer.php"); ?>
   </body>
 </html>
-
-
-
-
-
-

@@ -22,7 +22,7 @@
     <head>
       <meta charset="utf-8">
       <?php require("../header.php")?>
-      <title>Municipalidad</title>
+      <title>Editar noticia - Administrador</title>
     </head>
 
     <body>
@@ -74,7 +74,7 @@
                   </select>
                 </div>
                 <div class="mb-3 row">
-                  <label class="form-label fw-bolder">Imagen:</label>
+                  <label class="form-label fw-bolder">Imágen:</label>
                   <input type="file" class="form-control-file" name="insert_imagen_noticia" >
 
                   <img class="mt-5" style="width:20%;" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" >
@@ -93,6 +93,7 @@
             </div>
         </div>
       </div> 
+      <?php require("../footer.php") ?>
     </body>
 </html>
 

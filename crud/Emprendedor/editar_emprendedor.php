@@ -6,7 +6,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Municipalidad</title>
+    <title>Editar contribuciones - Administrador</title>
     <?php require("../header.php")?>
 </head>
 <?php
@@ -96,7 +96,7 @@
                     <img class="d-block ms-auto img-fluid" style="width:50%;" src="data:<?php echo$row["tipo_imagen"]?>;base64,<?php echo base64_encode($row["imagen_emprendedor"])?>" >
                 </div>
                 <div class="col align-middle">
-                        <label class="form-label fw-bolder">Seleccione la imagen si desea cambiarla</label>
+                        <label class="form-label fw-bolder">Seleccione la imágen si desea cambiarla</label>
                         <input class="form-control w-50" accept="image/png, .jpeg, .jpg" type="file" name="imagen_emprendedor" >
                 </div>
             </div>
@@ -111,5 +111,6 @@
             </div>
         </div>
     </form>
+    <?php require("../footer.php") ?>
 </body>
 </html>

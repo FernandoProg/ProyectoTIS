@@ -1,5 +1,5 @@
 <?php require("header.php"); ?>
-<footer class="text-lg-start mt-3">
+<footer class="text-lg-start mt-3 futer">
     <div class="container-fluid p-4 bg-black">
         <div class="row">
             <div class="col-md-4 col-lg-4 offset-lg-2 col-md-12 my-3 mb-md-0 text-center">
@@ -42,3 +42,4 @@
         <a class="text-white" style="text-decoration:none" href="https://www.munichanaral.cl"> <b>Municipalidad de Chañaral</b> </a>
     </div>
 </footer>
+

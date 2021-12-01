@@ -21,10 +21,7 @@
                         </ul>
                         <ul class="navbar-nav ">
                             <li class="nav-item">
-                                <a class="nav-link text-white  " aria-current="" href="public/view_noticias.php">Noticias</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="user/ingreso_opinion.php">Opiniones</a>
+                                <a class="nav-link text-white" aria-current="" href="public/view_noticias.php">Noticias</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="user/ingreso_contribucion.php">Contribuciones</a>

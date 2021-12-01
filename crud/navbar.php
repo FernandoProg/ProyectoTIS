@@ -23,9 +23,6 @@ if($_SESSION['rol'] == "admin"){ ?>
                     <a class="nav-link text-white" href="../Lugar">Mapa Comuna</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../Opinion">Opiniones</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link text-white" href="../Contribucion">Contribuciones</a>
                 </li>
             </ul>

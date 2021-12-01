@@ -4,7 +4,8 @@
     $id=$_GET["seleccion"];
     $consulta = "SELECT * FROM noticia WHERE id_noticia = $id";
     $resultado = mysqli_query($conexion, $consulta);
-
+    $visita = "UPDATE noticia SET visitas_noticia = visitas_noticia+1 WHERE id_noticia = $id";
+    $sumarVisita = mysqli_query($conexion, $visita);
     while($row = mysqli_fetch_assoc($resultado)){
         $get_nombre_usuario = $row["nombre_usuario"];
         $get_titulo_noticia = $row["titulo_noticia"];

@@ -6,6 +6,8 @@
     $consulta =  "SELECT id_evento FROM evento" ;
     $resultado = mysqli_query($conexion, $consulta);
     $cantidad_eventos = mysqli_num_rows($resultado);
+    $visita = "UPDATE evento SET visitas_evento = visitas_evento + 1 WHERE id_evento = $id";
+    $sumarVisita = mysqli_query($conexion,$visita);
     $eventos_por_pagina= 6;
     $paginas = ceil($cantidad_eventos/$eventos_por_pagina);
     $inicio= ($_GET['pagina']-1)*$eventos_por_pagina;

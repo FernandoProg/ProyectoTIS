@@ -13,6 +13,7 @@
     crossorigin="anonymous">
     </script>
     <script src="main.js"></script>
+    <script src="script.js"></script>
     <body>
     <?php
         require("navbar_user.php");
@@ -65,6 +66,12 @@
                     <span style="justify-content: center;" class="mt-2 d-flex  fw-bolder">Correo: <?php echo$row["correo_emprendedor"]?> </span>
                     <span style="justify-content: center;" class="mt-2 d-flex  fw-bolder">Dirección: <?php echo$row["direccion_emprendedor"]?></span>
                     <a class="mt-2 btn btn-secondary w-25 mx-auto" href="view_emprendedor.php?id=<?php echo$row["id_emprendedor"]?>">Ver Mas</a>
+                    <div class="mt-2 " >
+                        <span class="visitas p-3 d-inline-block">
+                            <span class="material-icons align-bottom">visibility</span>
+                            <span class="fw-bolder"><?php echo$row["visitas_emprendedor"]?></span>
+                        </span>
+                    </div>
                 </div>
         <?php }?>
         </div>

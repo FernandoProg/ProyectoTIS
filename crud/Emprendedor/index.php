@@ -87,19 +87,13 @@
             <div class="row mt-2">
                 <div class="col">
                     <label class="form-label fw-bolder" >Información del emprendedor:</label>
-                    <textarea placeholder="Aquí describa lo que realiza, precios, horarios, etc." name="informacion" class="form-control" cols="30" rows="10" required></textarea>
+                    <textarea placeholder="Aquí describa lo que realiza, precios, horarios, etc." name="informacion" class="form-control" cols="30" rows="10" maxlength="1000" required></textarea>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col">
                     <label for="formFile" class="form-label fw-bolder">Seleccione una Imágen Representativa del Emprendedor:</label>
                     <input class="form-control"  accept="image/png, .jpeg, .jpg .svg" type="file" name="imagen_emprendedor" required>
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col">
-                <label class="form-label fw-bolder">Descripción:</label>
-                <textarea type="text" class="form-control" name="descripcion" id=""  placeholder="Mi negocio trata de..." maxlength="1000"></textarea>
                 </div>
             </div>
             <div class="row w-25 mx-auto mt-4">

@@ -12,7 +12,6 @@
     $paginas = ceil($cantidad_eventos/$eventos_por_pagina);
     $inicio= ($_GET['pagina']-1)*$eventos_por_pagina;
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
     <head>

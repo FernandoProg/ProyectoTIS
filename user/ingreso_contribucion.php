@@ -12,7 +12,7 @@
     </head>
     <body>
         <?php require("navbar_user.php")?>
-        <div class="container">
+        <div class="container mb-5">
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <h1 class="text-center">Ingresar Contribución</h1>

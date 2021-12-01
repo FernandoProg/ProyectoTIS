@@ -17,6 +17,8 @@
             $query = mysqli_query($conexion,$sql);  
             if(mysqli_num_rows($query)>0){
                 $row = mysqli_fetch_assoc($query);
+                $visita = "UPDATE emprendedor SET visitas_emprendedor=visitas_emprendedor+1 WHERE id_emprendedor = $id ";
+                $sumarVisita = mysqli_query($conexion,$visita);
             ?>
                 <div class="container-fluid my-4 px-4">
                     <div class="row">

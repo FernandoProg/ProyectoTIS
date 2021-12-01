@@ -18,7 +18,7 @@
         require_once("navbar_user.php");
     ?>
       
-  <div class="row container-fluid mt-5">
+  <div class="row container-fluid my-5">
       <div class="col-12 col-md-6 mt-4">
       <?php 
         $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,id_lugar,nombre_lugar FROM evento join lugar using(id_lugar) LIMIT 0,1 ";

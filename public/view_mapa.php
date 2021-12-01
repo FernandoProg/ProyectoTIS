@@ -24,7 +24,7 @@
 
     ?>
 
-    <div id="map" style="height:700px;margin-top:-1.5rem;" class="mb-3" ></div>
+    <div id="map" style="height:700px;" class="" ></div>
 
     <?php 
         $consulta = "SELECT nombre_lugar,latitud_lugar,longitud_lugar,categoria_lugar FROM lugar"; //HACER ORDER BY fecha_noticia ASC/DESC
@@ -44,7 +44,7 @@
         
         ?>
    
-<div class="container text-center" >
+<div class="container-fluid text-center bg-secondary p-5" >
       <p style="background-color:rgb(255,255,0);" class="p-2 m-2 d-xl-inline">Lugar de trámite</p>
       <p style="background-color:#FFA500;" class="p-2 m-2 d-xl-inline">Lugar de pago</p>
       <p style="background-color:#008000;"class="text-white p-2 m-2 d-xl-inline" >Lugar recreativo</p>

@@ -25,7 +25,7 @@
     <body>   
         <?php require("navbar_user.php");?>  
 
-        <div class="container">
+        <div class="container mb-5">
             <div class="row col-lg-12">
                 <!-- TITULO -->
                 <div class="row col-lg-12">

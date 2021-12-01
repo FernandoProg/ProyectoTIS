@@ -30,14 +30,20 @@
             $contraseñaUsuario = mysqli_real_escape_string($conexion,$contraseñaUsuario);
             
         //Checking is user existing in the database or not
-            $query = "SELECT nombre_usuario,contraseña,rol FROM `usuario` WHERE nombre_usuario='$nombreUsuario' and contraseña='".md5($contraseñaUsuario)."' ";
+            $query = "SELECT nombre_usuario,contraseña,rol,correo_usuario FROM `usuario` WHERE nombre_usuario='$nombreUsuario' and contraseña='".md5($contraseñaUsuario)."' ";
             $result = mysqli_query($conexion,$query) or die(mysql_error());
             $rows = mysqli_num_rows($result);
-            if($rows==1 && mysqli_fetch_assoc($result)['rol'] == "usuario"){
+            if($rows==1){
                 $_SESSION['nombre_usuario'] = $nombreUsuario;
-                $_SESSION['rol'] = "usuario";
+                $_SESSION['rol'] = mysqli_fetch_assoc($result)['rol'];
                 $_SESSION['correo_usuario'] = mysqli_fetch_assoc($result)['correo_usuario'];
-                header("Location: index.php"); // Redirect user to index.php
+                if($_SESSION['rol'] == 'usuario'){
+                    header("Location: index.php"); // Redirect user to index.php
+                }
+                else{
+                    header("Location: crud/Administrador/index.php"); // Redirect user to index.php
+
+                }
             }else{
                 ?>
                 <div class="container bg-black pb-3 mt-5 fondo-redondeado espacio">
@@ -89,14 +95,13 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center mt-4">
-                <h1 class="text-center text-white">Ingreso Usuarios</h1>
                     <form action="" method="POST">
                         <div class="mb-3">
-                            <label class="form-label fw-bolder text-white">Nombre de Usuario:</label>
+                            <label class="form-label fw-bolder text-white">Nombre de Usuario</label>
                             <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label fw-bolder text-white">Contraseña :</label>
+                            <label class="form-label fw-bolder text-white">Contraseña</label>
                             <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Password" rows="3" name="contrasena">
                         </div>
                         <input type="submit" class="btn btn-secondary" value="Ingresar">

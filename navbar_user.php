@@ -76,11 +76,9 @@
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white " href="acceso_usuarios.php">Inicio Usuarios</a>
+                            <a class="nav-link text-white " href="acceso_usuarios.php">Acceder</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white " href="acceso_funcionarios.php">Acceso Funcionarios</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>

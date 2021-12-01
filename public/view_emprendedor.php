@@ -125,6 +125,28 @@
                             <?php }?>
                         </div>
                     </div>
+                    <div class="row"> <!--imagenes pyme-->
+                        <div class="col-lg-12">
+                        <?php 
+                            $query_image ="SELECT * FROM imagen_producto JOIN emprendedor USING(id_emprendedor)";
+                            $data_image = mysqli_query($conexion,$query_image); 
+                            if(mysqli_num_rows($data_image)>0){?>
+                            <div class="fs-2 mt-4 ms-3">
+                                Productos:
+                            </div>
+                                <div class="row mb-4 text-center">
+                                    <?php
+                                        while($imagen = mysqli_fetch_assoc($data_image)){
+                                    ?>
+                                        <div class="col-xl col-lg-12 mt-4">
+                                            <img style="height: 300px; width: 300px;" src="data:;base64,<?php echo base64_encode($imagen["imagen_emprendedores"])?>">
+                                        </div>
+                                    <?php }?>
+                                </div>
+                            </div>
+                        <?php }?>
+                        </div>
+                    </div>
                     <div class="row mt-4 w-25 mx-auto">
                         <a href="view_emprendedores.php" class="btn btn-secondary">Volver</a>
                     </div>
@@ -147,7 +169,6 @@
             <?php
             }
     ?>
-
     <?php }else{?>
         <div class="container">
             <div class="row">

@@ -12,9 +12,9 @@ $(document).ready(function () {
     const arr = Array.from(varArr)
     arr.map((e)=>{
         $(e).hover(function () {
-                $(e).parent().append($("<span class='fw-bolder'>Visitas </span>"))
+                $(e).append($("<span class='fw-bolder'>Visitas </span>"))
             }, function () {
-                $(e).parent().children().last().remove()
+                $(e).children().last().remove()
             }
         );
     })

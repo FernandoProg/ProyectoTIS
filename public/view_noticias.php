@@ -8,7 +8,7 @@
     $consulta = ($categoria=='')? "SELECT * FROM noticia" : "SELECT * FROM noticia WHERE categoria_noticia = '$categoria'";
     //$consulta = "SELECT * FROM noticia";
     $resultado = mysqli_query($conexion, $consulta);
-
+    
 
     $cantidad_noticias = mysqli_num_rows($resultado);
     $noticias_por_pagina= 6;
@@ -21,9 +21,15 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous">
+        </script>
         <meta charset="UTF-8">
         <title>Noticias - Municipalidad</title>
         <?php require("../user/head.php")?>
+        <script src="script.js"></script>
     </head>
     <body>
         <?php
@@ -143,7 +149,12 @@
                                                     <span>Fecha: <?php echo $get_fecha_noticia?></span>
                                                 </div>
                                             </div>
-                                            
+                                            <div class="row text-end">
+                                                <span class="visitas p-3 d-inline-block">
+                                                    <span class="material-icons align-bottom">visibility</span>
+                                                    <span class="fw-bolder"><?php echo$row["visitas_noticia"]?></span>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

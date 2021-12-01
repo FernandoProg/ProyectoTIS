@@ -6,8 +6,6 @@
     $consulta =  "SELECT id_evento FROM evento" ;
     $resultado = mysqli_query($conexion, $consulta);
     $cantidad_eventos = mysqli_num_rows($resultado);
-    $visita = "UPDATE evento SET visitas_evento = visitas_evento + 1 WHERE id_evento = $id";
-    $sumarVisita = mysqli_query($conexion,$visita);
     $eventos_por_pagina= 6;
     $paginas = ceil($cantidad_eventos/$eventos_por_pagina);
     $inicio= ($_GET['pagina']-1)*$eventos_por_pagina;
@@ -24,6 +22,7 @@
         crossorigin="anonymous">
         </script>
         <script src="main.js"></script>
+        <script src="script.js"></script>
     </head>
     <body>
         <?php
@@ -42,7 +41,7 @@
 
 
             <?php
-                $sql_noticias =  "SELECT id_evento,nombre_evento,descripcion_evento,imagen_evento FROM evento LIMIT $inicio,$eventos_por_pagina";
+                $sql_noticias =  "SELECT id_evento,nombre_evento,descripcion_evento,imagen_evento,visitas_evento FROM evento LIMIT $inicio,$eventos_por_pagina";
                 $resultado_noticias = mysqli_query($conexion, $sql_noticias);
 
                 $i = 1;
@@ -74,12 +73,16 @@
                                             </p>
                                             
                                             <div class="row">
-                                                <div class="col-6">
+                                                <div class="col d-inline">
                                                     <a href="ver_evento.php?seleccion=<?php echo $idEvento ?>" class="btn btn-primary">Ver más</a>
                                                 </div>
-
+                                                <div class="col text-end" >
+                                                    <span class="visitas p-3 d-inline-block">
+                                                        <span class="material-icons align-bottom">visibility</span>
+                                                        <span class="fw-bolder"><?php echo$row["visitas_evento"]?></span>
+                                                    </span>
+                                                </div>
                                             </div>
-                                            
                                         </div>
                                     </div>
                                 </div>

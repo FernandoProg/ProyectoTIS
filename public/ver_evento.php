@@ -4,7 +4,8 @@
     $id=$_GET["seleccion"];
     $consulta = "SELECT nombre_evento,fecha_evento,imagen_evento,descripcion_evento,nombre_lugar FROM evento join lugar using(id_lugar) WHERE id_evento = $id";
     $resultado = mysqli_query($conexion, $consulta);
-
+    $visita = "UPDATE evento SET visitas_evento = visitas_evento +1 WHERE id_evento = $id";
+    $sumarVisita = mysqli_query($conexion, $visita);
     while($row = mysqli_fetch_assoc($resultado)){
         $nombreEvento = $row["nombre_evento"];
         $fechaEvento = $row["fecha_evento"];

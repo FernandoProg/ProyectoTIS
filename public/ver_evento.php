@@ -96,10 +96,12 @@
                 $asiste = "SELECT * FROM asiste WHERE nombre_usuario ='$nombre_usuario' AND id_evento = $id";
                 $flag = mysqli_query($conexion,$asiste);
                 if(mysqli_num_rows($flag)>0){
-            ?>
-                <span id="asist" class="bg-success p-2 align-middle rounded">
-                    Asistencia registrada
-                </span>
+            ?>  <div id="asist" class="d-inline-flex w-auto">
+                  <input type="hidden" id="seleccion" value="<?php echo$id?>">
+                  <span class="bg-success text-white p-2 align-middle rounded">
+                      Asistencia registrada
+                  </span>
+                </div>
                 <?php }else{?>
                   <span class="">
                     <a  class="btn btn-secondary" href="asistencia.php?id=<?php echo$id?>">Marcar Asistencia</a>

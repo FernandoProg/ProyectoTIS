@@ -50,7 +50,7 @@
         }
         }else{
       ?>
-      <form class="form container mt-5">
+      <form class="form container mt-5 mb-5">
           <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Nombre de Usuario</label>
               <input type="text" required class="form-control" id="exampleInputEmail1" placeholder="JuanPerez1 , felipeBurgos14 , JuanFarias , etc..." name="nombreUsuario" maxlength="50">
@@ -62,7 +62,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Registrarme</button>
           <a href="login_usuario.php" class="btn btn-secondary" >Volver atrás</a>
-    </form>
+      </form>
     <?php } require("../footer.php"); ?>
   </body>
 </html>

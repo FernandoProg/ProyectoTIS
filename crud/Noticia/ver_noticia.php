@@ -4,7 +4,6 @@
     $id=$_GET["seleccion"];
     $consulta = "SELECT * FROM noticia WHERE id_noticia = $id";
     $resultado = mysqli_query($conexion, $consulta);
-
     while($row = mysqli_fetch_assoc($resultado)){
         $get_nombre_usuario = $row["nombre_usuario"];
         $get_titulo_noticia = $row["titulo_noticia"];

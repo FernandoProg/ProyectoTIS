@@ -11,7 +11,7 @@
 
 <body>
     <?php require("navbar_user.php"); ?>
-    <div class="container mt-4">
+    <div class="container my-4">
         <form action="Consultas/create_opinion.php" method="POST" enctype="multipart/form-data">
             <div class="row fs-2 fw-bolder text-center">
                 <span>INGRESO OPINIÓN</span>

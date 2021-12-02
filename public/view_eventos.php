@@ -10,7 +10,6 @@
     $paginas = ceil($cantidad_eventos/$eventos_por_pagina);
     $inicio= ($_GET['pagina']-1)*$eventos_por_pagina;
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -23,6 +22,7 @@
         crossorigin="anonymous">
         </script>
         <script src="main.js"></script>
+        <script src="script.js"></script>
     </head>
     <body>
         <?php
@@ -41,7 +41,7 @@
 
 
             <?php
-                $sql_noticias =  "SELECT id_evento,nombre_evento,descripcion_evento,imagen_evento FROM evento LIMIT $inicio,$eventos_por_pagina";
+                $sql_noticias =  "SELECT id_evento,nombre_evento,descripcion_evento,imagen_evento,visitas_evento FROM evento LIMIT $inicio,$eventos_por_pagina";
                 $resultado_noticias = mysqli_query($conexion, $sql_noticias);
 
                 $i = 1;
@@ -60,7 +60,7 @@
                     };
                     ?>
                                 <div class="mt-4 col-lg-4 col-sm-12">
-                                    <div class="card ">
+                                    <div class="card shadow">
                                         <img class="card-img-top" src="data:image/jpeg;base64,<?php echo base64_encode($imagenEvento)?>" alt="Card image cap" >
                                         <div class="card-body ">
                                             <h5 class="card-title"><?php echo $nombreEvento?></h5>
@@ -73,12 +73,16 @@
                                             </p>
                                             
                                             <div class="row">
-                                                <div class="col-6">
+                                                <div class="col d-inline">
                                                     <a href="ver_evento.php?seleccion=<?php echo $idEvento ?>" class="btn btn-primary">Ver más</a>
                                                 </div>
-
+                                                <div class="col text-end" >
+                                                    <span class="visitas p-3 d-inline-block">
+                                                        <span class="material-icons align-bottom">visibility</span>
+                                                        <span class="fw-bolder"><?php echo$row["visitas_evento"]?></span>
+                                                    </span>
+                                                </div>
                                             </div>
-                                            
                                         </div>
                                     </div>
                                 </div>

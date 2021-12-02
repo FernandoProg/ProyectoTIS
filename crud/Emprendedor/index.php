@@ -36,9 +36,6 @@
                 INGRESAR EMPRENDEDOR
             </span>
         </div>
-        <div>
-            <a href="insertar_rubro.php"> Ingresar rubro</a>
-        </div>
     </div>
     <form class="p-2" action="Consultas/guardar_emprendedor.php" method="POST" enctype="multipart/form-data" ">
         <div class="container">
@@ -79,6 +76,7 @@
                             <option value="<?php echo$row["nombre_rubro"]?>"><?php echo$row["nombre_rubro"]?></option>
                         <?php }?>
                     </select>
+                    <span> ¿No encuentras el rubro que buscas? Ingresa uno <a class="" href="insertar_rubro.php">aquí</a>.</span>
                 </div>
             </div>
             <div class="row mt-2">

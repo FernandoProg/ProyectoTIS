@@ -16,7 +16,7 @@
       <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
       <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
       <?php require("../header.php")?>
-      <title>Noticias - Categorias</title>
+      <title>RUBRO - EMPRENDEDOR</title>
     </head>
 
     <body>
@@ -27,15 +27,15 @@
             <div class="col-lg-12"> 
               <div class="mb-3 text-center">
                 <span class="fs-2 fw-bolder">
-                  INGRESAR CATEGORIA NOTICIA
+                  INGRESAR RUBRO EMPRENDEDOR
                 </span>
               </div>
               <br>
               <!-- INSERT -->
-              <form action="Consultas/insert_categoria.php" enctype="multipart/form-data" method="POST">
+              <form action="Consultas/insert_rubro.php" enctype="multipart/form-data" method="POST">
                 <div class="mb-3 col-3">
-                  <label class="form-label fw-bolder" >Nombre_categoria:</label>
-                  <input type="text" class="form-control" name="insert_categoria_noticia" maxlength="100" placeholder="Cultural" required>
+                  <label class="form-label fw-bolder" >Nombre rubro</label>
+                  <input type="text" class="form-control" name="insert_rubro_emprendedor" maxlength="100" placeholder="Ropa" required>
                 </div>
                 <div class="mt-4">
                   <button class="btn btn-secondary" type="submit">Guardar</button>
@@ -44,13 +44,13 @@
 
             <div class="col-lg-12 mt-5">
               <div class="mb-4 text-center">
-                <h5>CATEGORIAS INGRESADAS</h5>
+                <h5>Rubros ingresadas</h5>
               </div>
               <div class="table-responsive ">
                 <table class="table table-hover table-bordered table-light" id="myTable">
                   <thead  class="table-dark">
                     <tr>
-                      <th scope="col">Categoria</th>
+                      <th scope="col">Rubro</th>
                       <th style="width: 100px" scope="col">Usuario </th>
                       <th style="width: 100px;" scope="col" >Opciones</th>
                     </tr>
@@ -58,19 +58,19 @@
                   <tbody>
                     <!-- GET -->
                     <?php
-                      $consulta = "SELECT * FROM categoria_noticia";
+                      $consulta = "SELECT * FROM rubro_emprendedor";
                       $resultado = mysqli_query($conexion, $consulta);
 
                       while($row = mysqli_fetch_assoc($resultado)){
-                        $get_nombre_categoria = $row["nombre_categoria"];
+                        $get_nombre_rubro = $row["nombre_rubro"];
                         $get_nombre_usuario = $row["nombre_usuario"];
                         ?>
                         <tr>
-                          <td> <?php echo $get_nombre_categoria ?></td>
+                          <td> <?php echo $get_nombre_rubro ?></td>
                           <td> <?php echo $get_nombre_usuario ?></td>
                           <td >
                             </a>
-                            <a style="text-decoration: none;" href='Consultas/delete_categoria.php?seleccion=<?php echo $get_nombre_categoria ?>'>
+                            <a style="text-decoration: none;" href='Consultas/delete_rubro.php?seleccion=<?php echo $get_nombre_rubro ?>'>
                               <span class="material-icons" style="color: red;">
                                 delete
                               </span>

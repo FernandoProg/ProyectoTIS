@@ -37,7 +37,7 @@
             </span>
         </div>
     </div>
-    <form class="p-2" action="Consultas/guardar_emprendedor.php" method="POST" enctype="multipart/form-data" ">
+    <form class="p-2" action="Consultas/guardar_emprendedor.php" method="POST" enctype="multipart/form-data">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -65,17 +65,18 @@
                     <input type="email" name="correo_emprendedor" placeholder="Example@gmail.com" maxlength="50" class="form-control" required>
                 </div>
                 <div class="col">
+                    <?php
+                        $sqlrubro = "SELECT nombre_rubro FROM rubro_emprendedor";
+                        $datarubro= mysqli_query($conexion,$sqlrubro);
+                    ?>
                     <label class="form-label fw-bolder">Rubro:</label>
                     <select class="form-select" name="rubro_emprendedor">
                         <option hidden selected>Seleccione el Rubro</option>
-                        <option value="Alimentos y bebestibles">Alimentos y bebestibles</option>
-                        <option value="Ropa">Ropa</option>
-                        <option value="Acicalamiento">Acicalamiento</option>
-                        <option value="Entretenimiento">Entretenimiento</option>
-                        <option value="Oficinas">Oficinas</option>
-                        <option value="Administración de Viviendas">Administración de Viviendas</option>
-                        <option value="Productora de eventos">Productora de eventos</option>
+                        <?php while($row = mysqli_fetch_assoc($datarubro)){?>
+                            <option value="<?php echo$row["nombre_rubro"]?>"><?php echo$row["nombre_rubro"]?></option>
+                        <?php }?>
                     </select>
+                    <span> ¿No encuentras el rubro que buscas? Ingresa uno <a class="" href="insertar_rubro.php">aquí</a>.</span>
                 </div>
             </div>
             <div class="row mt-2">
@@ -98,9 +99,16 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col">
+                <div class="col-6">
                     <label for="formFile" class="form-label fw-bolder">Seleccione una Imágen Representativa del Emprendedor:</label>
                     <input class="form-control"  accept="image/png, .jpeg, .jpg .svg" type="file" name="imagen_emprendedor" required>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-sm-12 col-md-6">
+                    <label  class="form-label fw-bolder">Ingrese imageneres representativas de sus productos:</label>
+                    <input class="form-control"  type="file" multiple name="imagenes_productos[]" id="" required>
+                    <label class="">Se puede ingresar un máximo de 5 imagenes.</label>
                 </div>
             </div>
             <div class="row w-25 mx-auto mt-4">

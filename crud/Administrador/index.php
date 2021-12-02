@@ -2,18 +2,7 @@
 <?php
     require("../conexion.php");
     include("../../sesion_usuarios/auth_admin.php");
-    if(!$_GET){
-        header('Location:index.php?pagina=1');
-    }
-    $rol = isset($_GET["rol"]) ? $_GET["rol"]:'';
-    $consulta = ($rol=='')? "SELECT * FROM usuario" : "SELECT * FROM usuario WHERE rol = '$rol'";
-    $resultado = mysqli_query($conexion, $consulta);
-    $cantidad_user = mysqli_num_rows($resultado);
-    $user_por_pagina= 10;
-    $paginas = ceil($cantidad_user/$user_por_pagina);
-    $inicio= ($_GET['pagina']-1)*$user_por_pagina;
-
-    
+     
 ?>
 
 <!doctype html>
@@ -27,7 +16,7 @@
         integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
         crossorigin="anonymous">
         </script>
-        <script src="main_admin.js"></script>
+
         <title>Administradores</title>
         <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
         <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
@@ -74,8 +63,8 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                        $consulta = ($rol=='')? "SELECT * FROM usuario LIMIT $inicio,$user_por_pagina" : "SELECT * FROM usuario WHERE rol = '$rol' LIMIT $inicio,$user_por_pagina";
-                                        //$consulta ="SELECT * FROM usuario LIMIT $inicio,$user_por_pagina";
+                                        //$consulta = ($rol=='')? "SELECT * FROM usuario LIMIT $inicio,$user_por_pagina" : "SELECT * FROM usuario WHERE rol = '$rol' LIMIT $inicio,$user_por_pagina";
+                                        $consulta ="SELECT * FROM usuario";
                                         $resultado_user = mysqli_query($conexion, $consulta);
                                         while($row = mysqli_fetch_assoc($resultado_user)){
                                             $nombre_usuario = $row["nombre_usuario"];
@@ -99,32 +88,8 @@
                             </table>
                         </div>
                     </div>
-                    <div class="mt-5 col-lg-12" >
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" 
-                                    href="index.php?pagina=<?php if($_GET['pagina']-1==0){ echo $_GET['pagina'] ;}else{ echo $_GET['pagina']-1 ;} ?>&rol=<?php echo $rol ?>">
-                                        Anterior
-                                    </a>
-                                </li>
-                                <?php for($j=1; $j<=$paginas; $j++): ?>
-                                <li class="page-item <?php echo $_GET['pagina']==$j ? 'active' : '' ?>" >
-                                    <a class="page-link" href="index.php?pagina=<?php echo $j ?>&rol=<?php echo $rol ?>">
-                                        <?php echo $j ?>
-                                    </a>
-                                </li>
-                                <?php endfor?>
-                                <li class="page-item">
-                                    <a class="page-link" 
-                                    href="index.php?pagina=<?php if($_GET['pagina']+1>$paginas){ echo $_GET['pagina'] ;}else{ echo $_GET['pagina']+1 ;} ?>&rol=<?php echo $rol ?>">
-                                        Siguiente
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+                        </table>
+                    </div>             
             </div>
         </div>
         <?php require("../footer.php") ?>

@@ -79,7 +79,7 @@
                       </select>
                   </div>
                   <div class="mb-0 col-sm-12 col-md-3">
-                    <a class="btn btn-secondary" href="insertar_categoria.php">Ingresar un categoria</a>
+                    <span> ¿No encuentras la categoría que buscas? Ingresa una <a class="" href="insertar_categoria.php">aquí</a>.</span>
                   </div>
                 </div>
                 

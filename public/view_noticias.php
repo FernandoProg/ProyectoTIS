@@ -141,20 +141,19 @@
                                             <p class="card-text"><?php echo $get_bajada_noticia?></p>
                                             
                                             <div class="row">
-                                                <div class="mt-2 col-6">
+                                                <div class="mt-2 align-self-center col-6">
                                                     <a href="ver_noticia.php?seleccion=<?php echo $id ?>" class="btn btn-primary">Ver más</a>
                                                 </div>
                                                 <div class="col-6 text-end">
                                                     <span> Categoría: <?php echo $get_categoria_noticia ?></span>
                                                     <br>
                                                     <span>Fecha: <?php echo $get_fecha_noticia?></span>
-                                                </div>
-                                            </div>
-                                            <div class="row text-end">
-                                                <span class="visitas p-3 d-inline-block">
-                                                    <span class="material-icons align-bottom">visibility</span>
+                                                    <br>
+                                                    <span class="visitas p-2 d-inline-block">
+                                                        <span class="material-icons align-bottom">visibility</span>
                                                     <span class="fw-bolder"><?php echo$row["visitas_noticia"]?></span>
                                                 </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

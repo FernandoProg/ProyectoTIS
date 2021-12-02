@@ -14,9 +14,12 @@
         integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
         crossorigin="anonymous">
         </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.1/chart.js"></script>
     <title>Eventos - Administrador</title>
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.css"></script>
+    <script src="print.js"></script>
 </head>
 <body>
     <?php require("../navbar.php")?>
@@ -117,6 +120,14 @@
                     <?php } ?>
                 </tbody>
             </table>
+            <div class="chart-container mb-3">
+                <canvas id="graficoEventos" class="mb-3"></canvas>
+                <button type="button" onclick="printJS({ printable: 'graficoEventos', type: 'html', documentTitle: 'Grafico de eventos por mes'})">
+                    <i class="fas fa-file-pdf fa-3x"></i>
+                </button>
+                <span class="h1"> ¡Importante! </span>
+                <span class="h4"> Para tablas muy anchas imprimir en "Apaisado".</span>
+            </div>
         </div>
     </div>
         <script>
@@ -127,9 +138,89 @@
 
 
         });
-        console.log("k pasa");
         } );
         </script>
-    <?php require("../footer.php") ?>
-</body>
+        <?php
+            $query = "SELECT MONTH(fecha_evento) AS fecha_event FROM evento";
+            $query_data = mysqli_query($conexion,$query);
+            $enero = 0; $febrero = 0; $marzo = 0; $abril = 0; $mayo = 0; $junio = 0; $julio = 0; $agosto = 0; $septiembre = 0; $octubre = 0; $noviembre = 0; $diciembre = 0; 
+            while($fechas = mysqli_fetch_assoc($query_data)) 
+                if($fechas["fecha_event"] == 1) $enero++;
+                elseif($fechas["fecha_event"] == 2) $febrero++;
+                elseif($fechas["fecha_event"] == 3) $marzo++;
+                elseif($fechas["fecha_event"] == 4) $abril++;
+                elseif($fechas["fecha_event"] == 5) $mayo++;
+                elseif($fechas["fecha_event"] == 6) $junio++;
+                elseif($fechas["fecha_event"] == 7) $julio++;
+                elseif($fechas["fecha_event"] == 8) $agosto++;
+                elseif($fechas["fecha_event"] == 9) $septiembre++;
+                elseif($fechas["fecha_event"] == 10) $octubre++;
+                elseif($fechas["fecha_event"] == 11) $noviembre++;
+                elseif($fechas["fecha_event"] == 12) $diciembre++;
+        ?>
+        <script>
+            let miGrafico = document.getElementById('graficoEventos').getContext('2d');
+            Chart.defaults.font.size = 18;
+            let EventosPorMes = new Chart(graficoEventos, {
+                type: 'bar',
+                data:{
+                    labels:['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                    datasets:[{
+                        label: 'Cantidad de eventos',
+                        data: [
+                            <?php echo $enero ?>,
+                            <?php echo $febrero ?>,
+                            <?php echo $marzo ?>,
+                            <?php echo $abril ?>,
+                            <?php echo $mayo ?>,
+                            <?php echo $junio ?>,
+                            <?php echo $julio ?>,
+                            <?php echo $agosto ?>,
+                            <?php echo $septiembre ?>,
+                            <?php echo $octubre ?>,
+                            <?php echo $noviembre ?>,
+                            <?php echo $diciembre ?>
+                        ],
+                        backgroundColor:[
+                            'rgba(0, 255, 255, 0.8)',
+                            'rgba(255, 228, 196, 0.8)',
+                            'rgba(165, 42, 42, 0.8)',
+                            'rgba(0, 0, 139, 0.8)',
+                            'rgba(0, 100, 0, 0.8)',
+                            'rgba(148, 0, 211, 0.8)',
+                            'rgba(255, 215, 0, 0.8)',
+                            'rgba(255, 69, 0, 0.8)',
+                            'rgba(107, 142, 35, 0.8)',
+                            'rgba(220, 220, 220, 0.8)',
+                            'rgba(218, 165, 32, 0.8)',
+                            'rgba(0, 255, 0, 0.8)'
+                        ],
+                        borderWidth:1,
+                        borderColor:'#777',
+                        hoverBorderWidth:3,
+                        hoverBorderColor:'#000'
+                    }]
+                },
+                options:{
+                    plugins:{
+                        title:{
+                            display: true,
+                            text: 'Cantidad de eventos por mes',
+                            font:{
+                                size: 30
+                            },
+                            padding:{
+                                bottom: 20,
+                                top: 100
+                            }
+                        },
+                        legend:{
+                            display: false
+                        }
+                    }
+                }
+            });
+        </script>
+        <?php require("../footer.php") ?>
+    </body>
 </html>

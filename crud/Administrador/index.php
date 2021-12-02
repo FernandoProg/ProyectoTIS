@@ -45,7 +45,6 @@
                         <input type="submit" class="btn btn-secondary" value="Guardar">
                     </form>
                     <hr>
-                    
                     <div class="col-lg-6">
                         <div class="row">
                             <div class="col-lg-12 text-center fs-2 fw-bolder ">
@@ -86,21 +85,21 @@
                                         }
                                     ?>
                                 </tbody>
+                            </table>
+                        </div>
                     </div>
                         </table>
                     </div>             
             </div>
         </div>
+        <?php require("../footer.php") ?>
         <script>
         $(document).ready( function () {
         $('#myTable').DataTable({
             "zeroRecords":    "No matching records found",
             "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
-
-
         });
         } );
         </script>
-        <?php require("../footer.php") ?>
     </body>
 </html>

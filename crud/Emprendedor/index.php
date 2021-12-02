@@ -37,7 +37,7 @@
             </span>
         </div>
     </div>
-    <form class="p-2" action="Consultas/guardar_emprendedor.php" method="POST" enctype="multipart/form-data" ">
+    <form class="p-2" action="Consultas/guardar_emprendedor.php" method="POST" enctype="multipart/form-data">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -99,9 +99,16 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col">
+                <div class="col-6">
                     <label for="formFile" class="form-label fw-bolder">Seleccione una Imágen Representativa del Emprendedor:</label>
                     <input class="form-control"  accept="image/png, .jpeg, .jpg .svg" type="file" name="imagen_emprendedor" required>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-sm-12 col-md-6">
+                    <label  class="form-label fw-bolder">Ingrese imageneres representativas de sus productos:</label>
+                    <input class="form-control"  type="file" multiple name="imagenes_productos[]" id="" required>
+                    <label class="">Se puede ingresar un máximo de 5 imagenes.</label>
                 </div>
             </div>
             <div class="row w-25 mx-auto mt-4">

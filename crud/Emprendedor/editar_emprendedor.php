@@ -36,33 +36,33 @@
     <form class="p-2" action="Consultas/actualizar_emprendedor.php" method="POST" enctype="multipart/form-data">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <label class="form-label fw-bolder">Nombre:</label>
                     <input class="form-control w-100" type="text" name="nombre_emprendedor" value="<?php echo$row["nombre_emprendedor"]?>" required>
                 </div>
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                 <label class="form-label fw-bolder">Dirección:</label>
                     <input type="text" name="direccion_emprendedor" class=" form-control w-100" value="<?php echo$row["direccion_emprendedor"]?>" required>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <label class="form-label fw-bolder">Celular:</label>
                    <input class=" form-control w-100" type="text" name="celular_emprendedor" placeholder="Celular" value="<?php echo$row["celular_emprendedor"] ?>" required> 
                 </div>
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <label class="form-label fw-bolder">Teléfono:</label>
                     <input class="form-control w-100" type="text" name="telefono_emprendedor" placeholder="Telefono" value="<?php echo$row["telefono_emprendedor"] ?>" required>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <div class="col">
                         <label class="form-label fw-bolder">Correo:</label>
                         <input type="email" name="correo_emprendedor" placeholder="Correo" class="form-control" value="<?php echo$row["correo_emprendedor"] ?>" required>
                     </div>  
                 </div>
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <?php
                         $sqlrubro = "SELECT nombre_rubro FROM rubro_emprendedor";
                         $datarubro= mysqli_query($conexion,$sqlrubro);
@@ -78,11 +78,11 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <label class="form-label fw-bolder">Usuario de Facebook:(opcional)</label>
                     <input class="form-control" type="text" name="facebook_emprendedor" value="<?php echo $facebook?>" maxlength="50" >
                 </div>
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <label class="form-label fw-bolder">Usuario de Instagram:(opcional)</label>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>

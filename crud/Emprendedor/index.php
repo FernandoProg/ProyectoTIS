@@ -40,31 +40,31 @@
     <form class="p-2" action="Consultas/guardar_emprendedor.php" method="POST" enctype="multipart/form-data">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Nombre:</label>
                     <input class=" form-control" type="text" name="nombre_emprendedor" maxlength="50" placeholder="Juan Perez"  required>
                 </div>
-                <div class="col">
+                <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Dirección:</label>
                     <input class=" form-control" type="text" name="direccion_emprendedor" maxlength="100" placeholder="Calle Siempre viva #742" required>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col">
+                <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Celular:</label>
                     <input class="form-control" type="text" name="celular_emprendedor" maxlength="9" placeholder="912345678"required> 
                 </div>
-                <div class="col">
+                <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Teléfono:</label>
                     <input class="form-control" type="text" name="telefono_emprendedor" maxlength="7" placeholder="2567856"required>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col">
+                <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Correo:</label>
                     <input type="email" name="correo_emprendedor" placeholder="Example@gmail.com" maxlength="50" class="form-control" required>
                 </div>
-                <div class="col">
+                <div class="col-md-6 col-sm-12">
                     <?php
                         $sqlrubro = "SELECT nombre_rubro FROM rubro_emprendedor";
                         $datarubro= mysqli_query($conexion,$sqlrubro);
@@ -80,11 +80,11 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col">
+                <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Usuario de Facebook:(opcional)</label>
                     <input class="form-control" type="text" name="facebook_emprendedor" maxlength="50" placeholder="Abarrotes juanito">
                 </div>
-                <div class="col">
+                <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Usuario de Instagram:(opcional)</label>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-6">
+                <div class="col-md-6 col-sm-12">
                     <label for="formFile" class="form-label fw-bolder">Seleccione una Imágen Representativa del Emprendedor:</label>
                     <input class="form-control"  accept="image/png, .jpeg, .jpg .svg" type="file" name="imagen_emprendedor" required>
                 </div>
@@ -111,7 +111,7 @@
                     <label class="">Se puede ingresar un máximo de 5 imagenes.</label>
                 </div>
             </div>
-            <div class="row w-25 mx-auto mt-4">
+            <div class="row w-25 col-12 d-block mx-auto mt-4">
                 <input class="btn btn-secondary " type="submit" value="Ingresar emprendedor">
             </div>
         </div>

@@ -34,7 +34,7 @@
               <br>
               <!-- INSERT -->
               <form action="Consultas/insert_noticia.php" enctype="multipart/form-data" method="POST">
-                <div class="mb-3">
+                <div class="mb-3 col-sm-13 col-md-4">
                   <label class="form-label fw-bolder">Fecha:</label>
                   <input type="date" class="form-control" name="insert_fecha_noticia" required>
                 </div>

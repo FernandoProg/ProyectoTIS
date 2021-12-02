@@ -17,4 +17,5 @@
     ,'$facebook','$instagram','$informacion')";
     $resultado = mysqli_query($conexion,$query);
     header('location: ../index.php');
+    
 ?>

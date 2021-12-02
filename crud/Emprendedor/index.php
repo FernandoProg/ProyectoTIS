@@ -36,6 +36,9 @@
                 INGRESAR EMPRENDEDOR
             </span>
         </div>
+        <div>
+            <a href="insertar_rubro.php"> Ingresar rubro</a>
+        </div>
     </div>
     <form class="p-2" action="Consultas/guardar_emprendedor.php" method="POST" enctype="multipart/form-data" ">
         <div class="container">
@@ -65,16 +68,16 @@
                     <input type="email" name="correo_emprendedor" placeholder="Example@gmail.com" maxlength="50" class="form-control" required>
                 </div>
                 <div class="col">
+                    <?php
+                        $sqlrubro = "SELECT nombre_rubro FROM rubro_emprendedor";
+                        $datarubro= mysqli_query($conexion,$sqlrubro);
+                    ?>
                     <label class="form-label fw-bolder">Rubro:</label>
                     <select class="form-select" name="rubro_emprendedor">
                         <option hidden selected>Seleccione el Rubro</option>
-                        <option value="Alimentos y bebestibles">Alimentos y bebestibles</option>
-                        <option value="Ropa">Ropa</option>
-                        <option value="Acicalamiento">Acicalamiento</option>
-                        <option value="Entretenimiento">Entretenimiento</option>
-                        <option value="Oficinas">Oficinas</option>
-                        <option value="Administración de Viviendas">Administración de Viviendas</option>
-                        <option value="Productora de eventos">Productora de eventos</option>
+                        <?php while($row = mysqli_fetch_assoc($datarubro)){?>
+                            <option value="<?php echo$row["nombre_rubro"]?>"><?php echo$row["nombre_rubro"]?></option>
+                        <?php }?>
                     </select>
                 </div>
             </div>

@@ -8,6 +8,13 @@
     <head>
       <!-- Required meta tags -->
       <meta charset="utf-8">
+      <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous">
+      </script>
+      <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+      <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
       <?php require("../header.php")?>
       <title>RUBRO - EMPRENDEDOR</title>
     </head>
@@ -40,7 +47,7 @@
                 <h5>Rubros ingresadas</h5>
               </div>
               <div class="table-responsive ">
-                <table class="table table-hover table-bordered table-light">
+                <table class="table table-hover table-bordered table-light" id="myTable">
                   <thead  class="table-dark">
                     <tr>
                       <th scope="col">Rubro</th>
@@ -84,6 +91,17 @@
             </div>
         </div>
       </div> 
+      <script>
+        $(document).ready( function () {
+        $('#myTable').DataTable({
+            "zeroRecords":    "No matching records found",
+            "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
+
+
+        });
+        console.log("k pasa");
+        } );
+        </script>
       <?php require("../footer.php") ?>
     </body>
 </html>

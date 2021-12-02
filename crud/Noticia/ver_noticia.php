@@ -12,7 +12,7 @@
         $get_bajada_noticia = $row["bajada_noticia"];
         $get_cuerpo_noticia = $row["cuerpo_noticia"];
         $get_imagen_noticia = $row["imagen_noticia"];
-        $get_categoria_noticia = $row["categoria_noticia"];    
+        $get_categoria_noticia = $row["nombre_categoria"];    
     }
 ?>
 

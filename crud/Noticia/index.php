@@ -63,21 +63,27 @@
                   placeholder="De acuerdo a los datos entregados por el Servel, el total de votantes habilitados que participó de la instancia fue de 7.115.590, de los cuales hubo 7.027.068 votos emitidos válidamente. De ellos, 1.961.122 se decidió por Kast, mientras que 1.814.809 lo hizo por Boric. Esto representa una participación del 47,34%. Con este resultado, las elecciones presidenciales no logran superar la votación más masiva de los últimos 30 años que fue la del plebiscito por una nueva Constitución, en la que millones de compatriotas decidieron aprobar la escritura de una Carta Magna hecha por una Convención Constitucional." 
                   required></textarea>
                 </div>
-                <div class="mb-3">
+                <div class="row">
+                  <?php
+                        $sqlcategoria = "SELECT nombre_categoria FROM categoria_noticia";
+                        $datacategoria= mysqli_query($conexion,$sqlcategoria);
+                  ?>
                   <label class="form-label fw-bolder" >Categoría:</label>
-                  <!--<input type="text" class="form-control" name="insert_categoria_noticia">-->
-                  <select class="form-select" name="insert_categoria_noticia" >
-                        <option hidden selected required>Seleccione la categoria</option>
-                        <option value="Política">Política</option>
-                        <option value="Deportiva">Deportiva</option>
-                        <option value="Económica">Económica</option>
-                        <option value="Cultural">Cultural</option>
-                        <option value="Social">Social</option>
-                        <option value="Policial">Policial</option>
-                        <option value="Científica">Científica</option>
-                  </select>
+                  <div class="mb-3 col-sm-12 col-md-3">
+                      <!--<input type="text" class="form-control" name="insert_categoria_noticia">-->
+                      <select class="form-select" name="insert_categoria_noticia" >
+                            <option hidden selected required>Seleccione la categoria</option>
+                            <?php while($row = mysqli_fetch_assoc($datacategoria)){?>
+                                <option value="<?php echo$row["nombre_categoria"]?>"><?php echo$row["nombre_categoria"]?></option>
+                            <?php }?>
+                      </select>
+                  </div>
+                  <div class="mb-0 col-sm-12 col-md-3">
+                    <a class="btn btn-secondary" href="insertar_categoria.php">Ingresar un categoria</a>
+                  </div>
                 </div>
-                <div class="mb-3">
+                
+                <div class="mb-3 col-sm-12 col-md-4">
                   <label class="form-label fw-bolder" >Imágen:</label>
                   <input type="file" accept="image/png, .jpeg, .jpg .svg .jpg" class="form-control" name="insert_imagen_noticia" required>
                 </div>
@@ -116,7 +122,7 @@
                         $get_lead_noticia = $row["lead_noticia"];
                         $get_bajada_noticia = $row["bajada_noticia"];
                         $get_cuerpo_noticia = $row["cuerpo_noticia"];
-                        $get_categoria_noticia = $row["categoria_noticia"];
+                        $get_categoria_noticia = $row["nombre_categoria"];
                         $id = $row["id_noticia"];
                         ?>
                         <tr>

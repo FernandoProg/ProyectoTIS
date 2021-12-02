@@ -84,7 +84,7 @@
             <div class="">
               <span class="fs-3 align-bottom material-icons"> people </span>
               <span class="fs-5  fw-bolder">
-                Asistencia:
+                Asistencias:
                 <?php echo$numAsist["asist"]?>
               </span>
             </div>
@@ -96,18 +96,20 @@
                 $asiste = "SELECT * FROM asiste WHERE nombre_usuario ='$nombre_usuario' AND id_evento = $id";
                 $flag = mysqli_query($conexion,$asiste);
                 if(mysqli_num_rows($flag)>0){
-            ?>
-                <span id="asist" class="bg-success p-2 align-middle rounded">
-                    Asistencia registrada
-                </span>
+            ?>  <div id="asist" class="d-inline-flex w-auto">
+                  <input type="hidden" id="seleccion" value="<?php echo$id?>">
+                  <span class="bg-success text-white p-2 align-middle rounded">
+                      Asistencia registrada
+                  </span>
+                </div>
                 <?php }else{?>
                   <span class="">
-                    <a  class="btn btn-secondary" href="asistencia.php?id=<?php echo$id?>">Marcar Asistencia</a>
+                    <a  class="btn btn-secondary" href="./consultas/asistencia.php?id=<?php echo$id?>">Marcar Asistencia</a>
                   </span>
                 <?php }?>
             <?php }else{?>
               <span>
-                <a class="btn btn-danger" href="../acceso_usuarios.php">Iniciar Sesion para registrar asistencia</a>
+                <a class="btn btn-danger" href="../acceso_usuarios.php">Iniciar Sesión para registrar asistencia</a>
               </span>  
             <?php }?>
           </div>

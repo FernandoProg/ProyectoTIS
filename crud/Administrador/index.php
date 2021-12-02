@@ -38,24 +38,24 @@
         ?>
         <div class="container">
             <div class="row ">
-                    <div class="col-lg-6">
-                        <h1 class="text-center mb-5">Ingresar Administrador</h1>
-                        <form action="Consultas/create_administrador.php" method="POST">
-                            <div class="mb-3">
-                                <label class="form-label fw-bolder">Nombre de administrador:</label>
-                                <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label fw-bolder">Contraseña de administrador:</label>
-                                <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Contraseña" rows="3" name="contrasena">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label fw-bolder">Correo del administrador:</label>
-                                <input class="form-control" rows="3" maxlength="50" placeholder="example@gmail.com" name="correo_usuario">
-                            </div>
-                            <input type="submit" class="btn btn-secondary" value="Guardar">
-                        </form>
-                    </div>
+                <div class="col-lg-12">
+                    <h1 class="text-center">Ingresar Administrador</h1>
+                    <form action="Consultas/create_administrador.php" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label fw-bolder">Nombre de administrador:</label>
+                            <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bolder">Contraseña de administrador:</label>
+                            <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Contraseña" rows="3" name="contrasena" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bolder">Correo del administrador:</label>
+                            <input type="email" class="form-control" rows="3" maxlength="50" placeholder="example@gmail.com" name="correo_usuario" required>
+                        </div>
+                        <input type="submit" class="btn btn-secondary" value="Guardar">
+                    </form>
+                    <hr>
                     
                     <div class="col-lg-6">
                         <div class="row">

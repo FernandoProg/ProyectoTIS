@@ -29,6 +29,8 @@
         </script>
         <script src="main_admin.js"></script>
         <title>Administradores</title>
+        <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+        <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     </head>
     <body>
         <?php 
@@ -41,72 +43,61 @@
                     <form action="Consultas/create_administrador.php" method="POST">
                         <div class="mb-3">
                             <label class="form-label fw-bolder">Nombre de administrador:</label>
-                            <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario">
+                            <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-bolder">Contraseña de administrador:</label>
-                            <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Contraseña" rows="3" name="contrasena">
+                            <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Contraseña" rows="3" name="contrasena" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-bolder">Correo del administrador:</label>
-                            <input class="form-control" rows="3" maxlength="50" placeholder="example@gmail.com" name="correo_usuario">
+                            <input type="email" class="form-control" rows="3" maxlength="50" placeholder="example@gmail.com" name="correo_usuario" required>
                         </div>
                         <input type="submit" class="btn btn-secondary" value="Guardar">
                     </form>
                     <hr>
                     
-                    <div class="row">
-                        <div class="col-lg-12 text-center fs-2 fw-bolder mt-4 mb-4">
-                            <span>Usuarios Registrados</span>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-12 text-center fs-2 fw-bolder ">
+                                <p class="mb-5">Usuarios Registrados</p>
+                            </div>
                         </div>
-                        <!-- Filtro -->
-                        <div class="col-lg-12">
-                            <label class="form-label fw-bolder d-block">Filtrar por tipo de usuario:</label>
-                            <select class="w-25 form-select d-inline" id="rol" name="rol_user">
-                                <option hidden selected required>Seleccione el tipo de usuario</option>
-                                <option value=""></option>
-                                <option value="admin">Administrador</option>
-                                <option value="usuario">Usuario</option>
-                            </select>
-                            <a id="link_user" class="btn  btn-secondary mb-1 d-inline-flex" href="#">Filtrar</a>
-                        </div>
+                        <div class="table-responsive">
+                            <table class=" table table-hover table-bordered table-light" id="myTable">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th style="width: 200px;" scope="col">Nombre de Usuario</th>
+                                        <th scope="col">Rol</th>
+                                        <th scope="col">Correo</th>
+                                        <th scope="col">Opciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        $consulta = ($rol=='')? "SELECT * FROM usuario LIMIT $inicio,$user_por_pagina" : "SELECT * FROM usuario WHERE rol = '$rol' LIMIT $inicio,$user_por_pagina";
+                                        //$consulta ="SELECT * FROM usuario LIMIT $inicio,$user_por_pagina";
+                                        $resultado_user = mysqli_query($conexion, $consulta);
+                                        while($row = mysqli_fetch_assoc($resultado_user)){
+                                            $nombre_usuario = $row["nombre_usuario"];
+                                            $rol_user = $row["rol"];
+                                            $correo_usuario = $row["correo_usuario"];
+                                            echo "<tr>";
+                                            echo "<td>".$nombre_usuario."</td>";
+                                            echo "<td>".$rol_user."</td>";
+                                            echo "<td>".$correo_usuario."</td>";
+                                            ?>
+                                            <td><a href='Consultas/delete_administrador.php?seleccionado=<?php echo$nombre_usuario?>'>
+                                                <span class="material-icons" style="color: red;">
+                                                    delete
+                                                </span>
+                                            </a></td>
+                                            <?php
+                                            echo "</tr>";
+                                        }
+                                    ?>
+                                </tbody>
                     </div>
-
-                    <div class="mt-5 table-responsive">
-                        <table class="w-50 table table-hover table-bordered table-light">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th style="width: 200px;" scope="col">Nombre de Usuario</th>
-                                    <th scope="col">Rol</th>
-                                    <th scope="col">Correo</th>
-                                    <th scope="col">Opciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                    $consulta = ($rol=='')? "SELECT * FROM usuario LIMIT $inicio,$user_por_pagina" : "SELECT * FROM usuario WHERE rol = '$rol' LIMIT $inicio,$user_por_pagina";
-                                    //$consulta ="SELECT * FROM usuario LIMIT $inicio,$user_por_pagina";
-                                    $resultado_user = mysqli_query($conexion, $consulta);
-
-                                    while($row = mysqli_fetch_assoc($resultado_user)){
-                                        $nombre_usuario = $row["nombre_usuario"];
-                                        $rol_user = $row["rol"];
-                                        $correo_usuario = $row["correo_usuario"];
-                                        echo "<tr>";
-                                        echo "<td>".$nombre_usuario."</td>";
-                                        echo "<td>".$rol_user."</td>";
-                                        echo "<td>".$correo_usuario."</td>";
-                                        ?>
-                                        <td><a href='Consultas/delete_administrador.php?seleccionado=<?php echo$nombre_usuario?>'>
-                                            <span class="material-icons" style="color: red;">
-                                                delete
-                                            </span>
-                                        </a></td>
-                                        <?php
-                                        echo "</tr>";
-                                    }
-                                ?>
-                            </tbody>
                         </table>
                     </div>
                     
@@ -138,9 +129,19 @@
                         </nav>
                     </div>
 
-                </div>
+               
             </div>
         </div>
+        <script>
+        $(document).ready( function () {
+        $('#myTable').DataTable({
+            "zeroRecords":    "No matching records found",
+            "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
+
+
+        });
+        } );
+        </script>
         <?php require("../footer.php") ?>
     </body>
 </html>

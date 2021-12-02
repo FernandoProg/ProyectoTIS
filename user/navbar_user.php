@@ -16,9 +16,6 @@
                     <a class="nav-link text-white  " aria-current="" href="../public/view_noticias.php">Noticias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="ingreso_opinion.php">Opiniones</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link text-white" href="ingreso_contribucion.php">Contribuciones</a>
                 </li>
                 <li class="nav-item">

@@ -9,7 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require("../header.php")?>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous">
+        </script>
     <title>Eventos - Administrador</title>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
     <?php require("../navbar.php")?>
@@ -67,8 +74,8 @@
                 EVENTOS
             </span>
         </div>
-        <div class="row mt-4">
-            <table class="table table-hover table-light table-bordered">
+        <div class="row mt-4 container">
+            <table class="table table-hover table-light table-bordered" id="myTable">
                 <thead class="table-dark">
                     <tr>
                         <th>ID</th>
@@ -112,6 +119,17 @@
             </table>
         </div>
     </div>
+        <script>
+        $(document).ready( function () {
+        $('#myTable').DataTable({
+            "zeroRecords":    "No matching records found",
+            "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
+
+
+        });
+        console.log("k pasa");
+        } );
+        </script>
     <?php require("../footer.php") ?>
 </body>
 </html>

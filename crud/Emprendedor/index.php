@@ -8,6 +8,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Emprendedores - Administrador</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+    crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <?php require("../header.php")?>
 </head>
 
@@ -30,7 +37,7 @@
             </span>
         </div>
     </div>
-    <form class="p-2" action="Consultas/guardar_emprendedor.php" method="POST" enctype="multipart/form-data">
+    <form class="p-2" action="Consultas/guardar_emprendedor.php" method="POST" enctype="multipart/form-data" ">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -87,19 +94,13 @@
             <div class="row mt-2">
                 <div class="col">
                     <label class="form-label fw-bolder" >Información del emprendedor:</label>
-                    <textarea placeholder="Aquí describa lo que realiza, precios, horarios, etc." name="informacion" class="form-control" cols="30" rows="10" required></textarea>
+                    <textarea placeholder="Aquí describa lo que realiza, precios, horarios, etc." name="informacion" class="form-control" cols="30" rows="10" maxlength="1000" required></textarea>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col">
                     <label for="formFile" class="form-label fw-bolder">Seleccione una Imágen Representativa del Emprendedor:</label>
                     <input class="form-control"  accept="image/png, .jpeg, .jpg .svg" type="file" name="imagen_emprendedor" required>
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col">
-                <label class="form-label fw-bolder">Descripción:</label>
-                <textarea type="text" class="form-control" name="descripcion" id=""  placeholder="Mi negocio trata de..." maxlength="1000"></textarea>
                 </div>
             </div>
             <div class="row w-25 mx-auto mt-4">
@@ -122,7 +123,7 @@
     ?>
     <div class="container">
         <div class="col-12">
-            <table class="w-100 table-light table table-bordered table-hover">
+            <table class="w-100 table-light table table-bordered table-hover" id="myTable">
                 <thead class="table-dark">
                     <tr>
                         <th>Nombre</th>
@@ -165,7 +166,17 @@
             </table>
         </div>
     </div>
+  
     <?php require("../footer.php") ?>
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable({
+                "zeroRecords":    "No matching records found",
+                "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
+
+            });
+        } );
+    </script>
 </body>
 
 </html>

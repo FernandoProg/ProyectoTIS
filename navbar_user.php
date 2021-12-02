@@ -21,10 +21,7 @@
                         </ul>
                         <ul class="navbar-nav ">
                             <li class="nav-item">
-                                <a class="nav-link text-white  " aria-current="" href="public/view_noticias.php">Noticias</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="user/ingreso_opinion.php">Opiniones</a>
+                                <a class="nav-link text-white" aria-current="" href="public/view_noticias.php">Noticias</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="user/ingreso_contribucion.php">Contribuciones</a>
@@ -76,11 +73,9 @@
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white " href="acceso_usuarios.php">Inicio Usuarios</a>
+                            <a class="nav-link text-white " href="acceso_usuarios.php">Acceder</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white " href="acceso_funcionarios.php">Acceso Funcionarios</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>

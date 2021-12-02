@@ -3,8 +3,6 @@
     include("../../sesion_usuarios/auth_admin.php");
     $id=$_GET["seleccion"];
     $consulta = "SELECT * FROM noticia WHERE id_noticia = $id";
-    $visita = "UPDATE noticia WHERE id_noticia = $id";
-    $sumarVisita = mysqli_query($conexion, $visita);
     $resultado = mysqli_query($conexion, $consulta);
     while($row = mysqli_fetch_assoc($resultado)){
         $get_nombre_usuario = $row["nombre_usuario"];

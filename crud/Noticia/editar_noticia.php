@@ -13,7 +13,7 @@
         $get_bajada_noticia = $row["bajada_noticia"];
         $get_cuerpo_noticia = $row["cuerpo_noticia"];
         $get_imagen_noticia = $row["imagen_noticia"];
-        $get_categoria_noticia = $row["categoria_noticia"];      
+        $get_categoria_noticia = $row["nombre_categoria"];      
     }
 ?>
 
@@ -59,24 +59,23 @@
                   <label class="form-label fw-bolder">Cuerpo:</label>
                   <textarea name="insert_cuerpo_noticia" class="form-control" cols="30" rows="10" maxlength="10000" ><?php echo "$get_cuerpo_noticia" ?></textarea>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 col-sm-12 col-md-3">
+                  <?php 
+                      $sqlcategoria = "SELECT nombre_categoria FROM categoria_noticia";
+                      $datacategoria= mysqli_query($conexion,$sqlcategoria);
+                  ?>
                   <label class="form-label fw-bolder" >Categoría:</label>
                   <!--<input type="text" class="form-control" name="insert_categoria_noticia">-->
                   <select class="form-select" name="insert_categoria_noticia" >
                         <option hidden selected value= "<?php echo $get_categoria_noticia ?>"><?php echo $get_categoria_noticia ?></option>
-                        <option value="Política">Política</option>
-                        <option value="Deportiva">Deportiva</option>
-                        <option value="Económica">Económica</option>
-                        <option value="Cultural">Cultural</option>
-                        <option value="Social">Social</option>
-                        <option value="Policial">Policial</option>
-                        <option value="Científica">Científica</option>
+                        <?php while($row = mysqli_fetch_assoc($datacategoria)){?>
+                              <option value="<?php echo$row["nombre_categoria"]?>"><?php echo$row["nombre_categoria"]?></option>
+                        <?php }?>
                   </select>
                 </div>
-                <div class="mb-3 row">
+                <div class="mb-3 col-sm-12 col-md-4">
                   <label class="form-label fw-bolder">Imágen:</label>
-                  <input type="file" class="form-control-file" name="insert_imagen_noticia" >
-
+                  <input type="file" class="form-control" name="insert_imagen_noticia" >
                   <img class="mt-5" style="width:20%;" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" >
                 </div>
                 <input type="hidden" name="insert_id" value="<?php echo "$id" ?>">

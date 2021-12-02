@@ -5,7 +5,7 @@
     require("../crud/conexion.php");
     $categoria = isset($_GET["categoria"]) ? $_GET["categoria"]:'';
     $fecha = isset($_GET["fecha"]) ? $_GET["fecha"]:'';
-    $consulta = ($categoria=='')? "SELECT * FROM noticia" : "SELECT * FROM noticia WHERE categoria_noticia = '$categoria'";
+    $consulta = ($categoria=='')? "SELECT * FROM noticia" : "SELECT * FROM noticia WHERE nombre_categoria = '$categoria'";
     //$consulta = "SELECT * FROM noticia";
     $resultado = mysqli_query($conexion, $consulta);
 
@@ -44,25 +44,26 @@
                     
                         <form action="filtro_noticia.php" method="POST">
                             <div class="row">
+                                
                                 <div class="col-6 text-end">
+                                    <?php
+                                            $sqlcategoria = "SELECT nombre_categoria FROM categoria_noticia";
+                                            $datacategoria= mysqli_query($conexion,$sqlcategoria);
+                                    ?>
                                     <label class="form-label fw-bolder d-block">Filtrar por categoría:</label>
                                     <select class="w-25 form-select d-inline" name="categoria_noticia">
                                         <option hidden selected required></option>
-                                        <option value=""></option>
-                                        <option value="Política">Política</option>
-                                        <option value="Deportiva">Deportiva</option>
-                                        <option value="Económica">Económica</option>
-                                        <option value="Cultural">Cultural</option>
-                                        <option value="Social">Social</option>
-                                        <option value="Policial">Policial</option>
-                                        <option value="Científica">Científica</option>
+                                        <option value="">Todas</option>
+                                        <?php while($row = mysqli_fetch_assoc($datacategoria)){?>
+                                            <option value="<?php echo$row["nombre_categoria"]?>"><?php echo$row["nombre_categoria"]?></option>
+                                        <?php }?>
                                     </select>
                                 </div>
                                 <div class=" col-6">
                                     <label class="form-label fw-bolder d-block">Filtrar por fecha:</label>
                                     <select class="w-25 form-select d-inline" name="fecha_noticia">
                                         <option hidden selected required></option>
-                                        <option value=""></option>
+                                        <option value="">Todas</option>
                                         <option value="masreciente">Menos reciente</option>
                                         <option value="menosreciente">Más reciente</option>
                                     </select>
@@ -90,15 +91,15 @@
                     }
                     
                 }elseif($categoria != '' && $fecha == ''){
-                    $sql_noticias = "SELECT * FROM noticia WHERE categoria_noticia = '$categoria' LIMIT $inicio,$noticias_por_pagina";  
+                    $sql_noticias = "SELECT * FROM noticia WHERE nombre_categoria = '$categoria' LIMIT $inicio,$noticias_por_pagina";  
 
                 }elseif($categoria != '' && $fecha != ''){
 
                     if($fecha == 'masreciente'){
-                        $sql_noticias = "SELECT * FROM noticia WHERE categoria_noticia = '$categoria' ORDER BY fecha_noticia ASC LIMIT $inicio,$noticias_por_pagina ";
+                        $sql_noticias = "SELECT * FROM noticia WHERE nombre_categoria = '$categoria' ORDER BY fecha_noticia ASC LIMIT $inicio,$noticias_por_pagina ";
 
                     }else{
-                        $sql_noticias = "SELECT * FROM noticia WHERE categoria_noticia = '$categoria' ORDER BY fecha_noticia DESC LIMIT $inicio,$noticias_por_pagina "; 
+                        $sql_noticias = "SELECT * FROM noticia WHERE nombre_categoria= '$categoria' ORDER BY fecha_noticia DESC LIMIT $inicio,$noticias_por_pagina "; 
 
                     }
                 }
@@ -114,7 +115,7 @@
                     $get_lead_noticia = $row["lead_noticia"];
                     $get_bajada_noticia = $row["bajada_noticia"];
                     $get_cuerpo_noticia = $row["cuerpo_noticia"];
-                    $get_categoria_noticia = $row["categoria_noticia"];
+                    $get_categoria_noticia = $row["nombre_categoria"];
                     $get_imagen_noticia = $row["imagen_noticia"];
                     $id = $row["id_noticia"];   
                     

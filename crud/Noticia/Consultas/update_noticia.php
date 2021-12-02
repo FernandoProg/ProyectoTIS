@@ -15,12 +15,16 @@
     session_start();
 
     if($imagen){
+        echo " si";
         $imagen_noticia = addslashes(file_get_contents($imagen));
-        $sql = "UPDATE noticia SET nombre_usuario='".$_SESSION['nombre_usuario']."', titulo_noticia='$titulo_noticia', fecha_noticia='$fecha_noticia', bajada_noticia='$bajada_noticia', lead_noticia='$lead_noticia', cuerpo_noticia='$cuerpo_noticia', categoria_noticia='$categoria_noticia', imagen_noticia='$imagen_noticia' WHERE id_noticia =$id";
+        $sql = "UPDATE noticia SET nombre_usuario='".$_SESSION['nombre_usuario']."', titulo_noticia='$titulo_noticia', fecha_noticia='$fecha_noticia', bajada_noticia='$bajada_noticia', lead_noticia='$lead_noticia', cuerpo_noticia='$cuerpo_noticia', nombre_categoria='$categoria_noticia', imagen_noticia='$imagen_noticia' WHERE id_noticia =$id";
         $result = mysqli_query($conexion, $sql);
     }else{
-        $sql = "UPDATE noticia SET nombre_usuario='".$_SESSION['nombre_usuario']."', titulo_noticia='$titulo_noticia', fecha_noticia='$fecha_noticia', bajada_noticia='$bajada_noticia', lead_noticia='$lead_noticia', cuerpo_noticia='$cuerpo_noticia', categoria_noticia='$categoria_noticia' WHERE id_noticia =$id";
+        echo "no ";
+        $sql = "UPDATE noticia SET nombre_usuario='".$_SESSION['nombre_usuario']."', titulo_noticia='$titulo_noticia', fecha_noticia='$fecha_noticia', bajada_noticia='$bajada_noticia', lead_noticia='$lead_noticia', cuerpo_noticia='$cuerpo_noticia', nombre_categoria='$categoria_noticia' WHERE id_noticia =$id";
+        
         $result = mysqli_query($conexion, $sql);
+
     }
 
     header('Location: ../index.php');

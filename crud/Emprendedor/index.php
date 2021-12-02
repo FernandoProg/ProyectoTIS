@@ -82,13 +82,13 @@
             <div class="row mt-2">
                 <div class="col">
                     <label class="form-label fw-bolder">Usuario de Facebook:(opcional)</label>
-                    <input class="form-control" type="text" name="facebook_emprendedor" maxlength="50" placeholder="Abarrotes juanito"required>
+                    <input class="form-control" type="text" name="facebook_emprendedor" maxlength="50" placeholder="Abarrotes juanito">
                 </div>
                 <div class="col">
                     <label class="form-label fw-bolder">Usuario de Instagram:(opcional)</label>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input class="form-control" type="text" name="instagram_emprendedor" maxlength="50" placeholder="Abarrotesjuanito"required>
+                        <input class="form-control" type="text" name="instagram_emprendedor" maxlength="50" placeholder="Abarrotesjuanito">
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
             </div>
             <div class="row mt-2">
                 <div class="col-sm-12 col-md-6">
-                    <label  class="form-label fw-bolder">Ingrese imageneres representativas de sus productos:</label>
+                    <label  class="form-label fw-bolder">Ingrese imágenes representativas de sus productos o empresa:</label>
                     <input class="form-control"  type="file" multiple name="imagenes_productos[]" id="" required>
                     <label class="">Se puede ingresar un máximo de 5 imagenes.</label>
                 </div>

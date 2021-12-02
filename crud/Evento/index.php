@@ -17,7 +17,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.1/chart.js"></script>
     <title>Eventos - Administrador</title>
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.css"></script>
+    <script src="print.js"></script>
 </head>
 <body>
     <?php require("../navbar.php")?>
@@ -118,7 +120,14 @@
                     <?php } ?>
                 </tbody>
             </table>
-            <canvas id="graficoEventos"></canvas>
+            <div class="chart-container mb-3">
+                <canvas id="graficoEventos" class="mb-3"></canvas>
+                <button type="button" onclick="printJS({ printable: 'graficoEventos', type: 'html', documentTitle: 'Grafico de eventos por mes'})">
+                    <i class="fas fa-file-pdf fa-3x"></i>
+                </button>
+                <span class="h1"> ¡Importante! </span>
+                <span class="h4"> Para tablas muy anchas imprimir en "Apaisado".</span>
+            </div>
         </div>
     </div>
         <script>
@@ -192,9 +201,26 @@
                         hoverBorderColor:'#000'
                     }]
                 },
-                option:{}
+                options:{
+                    plugins:{
+                        title:{
+                            display: true,
+                            text: 'Cantidad de eventos por mes',
+                            font:{
+                                size: 30
+                            },
+                            padding:{
+                                bottom: 20,
+                                top: 100
+                            }
+                        },
+                        legend:{
+                            display: false
+                        }
+                    }
+                }
             });
         </script>
-    <?php require("../footer.php") ?>
-</body>
+        <?php require("../footer.php") ?>
+    </body>
 </html>

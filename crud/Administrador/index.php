@@ -56,7 +56,6 @@
                         <input type="submit" class="btn btn-secondary" value="Guardar">
                     </form>
                     <hr>
-                    
                     <div class="col-lg-6">
                         <div class="row">
                             <div class="col-lg-12 text-center fs-2 fw-bolder ">
@@ -97,10 +96,9 @@
                                         }
                                     ?>
                                 </tbody>
+                            </table>
+                        </div>
                     </div>
-                        </table>
-                    </div>
-                    
                     <div class="mt-5 col-lg-12" >
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
@@ -110,7 +108,6 @@
                                         Anterior
                                     </a>
                                 </li>
-
                                 <?php for($j=1; $j<=$paginas; $j++): ?>
                                 <li class="page-item <?php echo $_GET['pagina']==$j ? 'active' : '' ?>" >
                                     <a class="page-link" href="index.php?pagina=<?php echo $j ?>&rol=<?php echo $rol ?>">
@@ -118,7 +115,6 @@
                                     </a>
                                 </li>
                                 <?php endfor?>
-
                                 <li class="page-item">
                                     <a class="page-link" 
                                     href="index.php?pagina=<?php if($_GET['pagina']+1>$paginas){ echo $_GET['pagina'] ;}else{ echo $_GET['pagina']+1 ;} ?>&rol=<?php echo $rol ?>">
@@ -128,20 +124,17 @@
                             </ul>
                         </nav>
                     </div>
-
-               
+                </div>
             </div>
         </div>
+        <?php require("../footer.php") ?>
         <script>
         $(document).ready( function () {
         $('#myTable').DataTable({
             "zeroRecords":    "No matching records found",
             "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
-
-
         });
         } );
         </script>
-        <?php require("../footer.php") ?>
     </body>
 </html>

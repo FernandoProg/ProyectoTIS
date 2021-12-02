@@ -19,6 +19,7 @@
     $instagram = $row["instagram"];
     $info = $row["informacion"];
     $imagen = $row["imagen_emprendedor"];
+    $rubro_emprendedor = $row["rubro_emprendedor"];
 
     $query_image ="SELECT imagen_emprendedores FROM imagen_producto WHERE id_emprendedor = $id";
     $data_image = mysqli_query($conexion,$query_image); 
@@ -68,7 +69,7 @@
                     ?>
                     <label class="form-label fw-bolder">Rubro:</label>
                     <select class="form-select" name="rubro_emprendedor">
-                        <option hidden selected>Seleccione el Rubro</option>
+                        <option hidden value ="<?php echo $rubro_emprendedor?>" selected><?php echo $rubro_emprendedor?></option>
                         <?php while($row = mysqli_fetch_assoc($datarubro)){?>
                             <option value="<?php echo$row["nombre_rubro"]?>"><?php echo $row["nombre_rubro"]?></option>
                         <?php }?>
@@ -92,9 +93,7 @@
             <div class="row mt-2">
                 <div class="col">
                     <label class="form-label fw-bolder" >Información del emprendedor:</label>
-                    <textarea  name="informacion" class="form-control" cols="30" rows="10" required>
-                        <?php echo $info?>
-                    </textarea>
+                    <textarea  name="informacion" class="form-control" cols="30" rows="10" required><?php echo $info?></textarea>
                 </div>
             </div>
         </div>

@@ -41,15 +41,15 @@
                     <form action="Consultas/create_administrador.php" method="POST">
                         <div class="mb-3">
                             <label class="form-label fw-bolder">Nombre de administrador:</label>
-                            <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario">
+                            <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-bolder">Contraseña de administrador:</label>
-                            <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Contraseña" rows="3" name="contrasena">
+                            <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Contraseña" rows="3" name="contrasena" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-bolder">Correo del administrador:</label>
-                            <input class="form-control" rows="3" maxlength="50" placeholder="example@gmail.com" name="correo_usuario">
+                            <input type="email" class="form-control" rows="3" maxlength="50" placeholder="example@gmail.com" name="correo_usuario" required>
                         </div>
                         <input type="submit" class="btn btn-secondary" value="Guardar">
                     </form>

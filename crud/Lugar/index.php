@@ -30,7 +30,7 @@
 </head>
 <body>
     <?php require("../navbar.php")?>
-    <div class="container ">
+    <div class="container page-container">
         <div class="row">
             <span class="text-center fs-2 fw-bolder">
                 INGRESAR LUGAR
@@ -134,25 +134,24 @@
             ?>
                 </tbody>
             </table>
-         <?php require("../footer.php") ?>
-
         </div>
+        
     </div>
     <style>
         .page-container{
             position: relative;
-            min-height: 100vh;
+            min-height: 100%;
         }
         .content-wrap{
             padding-bottom: 2.5rem;;
         }
         .futer {
             position: absolute;
-            bottom: 0;
+            bottom: 10;
             width: 100%;
             height: 2.5rem;            /* Footer height */
         }
-  </style>
+    </style>
     <script src="script.js"></script>
     <script>
         $(document).ready( function () {
@@ -162,8 +161,8 @@
 
 
         });
-        console.log("k pasa");
         } );
         </script>
+        <?php require("../footer.php") ?>
 </body>
 </html>

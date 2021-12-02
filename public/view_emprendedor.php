@@ -130,7 +130,7 @@
                     <div class="row"> <!--imagenes pyme-->
                         <div class="col-lg-12">
                         <?php 
-                            $query_image ="SELECT * FROM imagen_producto JOIN emprendedor USING(id_emprendedor)";
+                            $query_image ="SELECT * FROM imagen_producto JOIN emprendedor USING(id_emprendedor) WHERE id_emprendedor = $id";
                             $data_image = mysqli_query($conexion,$query_image); 
                             if(mysqli_num_rows($data_image)>0){?>
                             <div class="fs-2 mt-4 ms-3">

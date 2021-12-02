@@ -24,6 +24,12 @@
     <meta charset="utf-8" />
     <?php require("../user/head.php")?>
     <title>Ver más - Evento</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+     integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+    crossorigin="anonymous">
+    </script>
+    <script src="asist.js"></script>
   </head>
 
   <body>
@@ -84,9 +90,26 @@
             </div>
           </div>
           <div class="col-lg-6 text-lg-start text-sm-center col-md-12">
-            <span class="">
-              <a class="btn btn-secondary" href=""> Marcar Asistencia</a>
-            </span>
+            <?php
+              if($_SESSION){
+                $nombre_usuario = $_SESSION['nombre_usuario'];
+                $asiste = "SELECT * FROM asiste WHERE nombre_usuario ='$nombre_usuario' AND id_evento = $id";
+                $flag = mysqli_query($conexion,$asiste);
+                if(mysqli_num_rows($flag)>0){
+            ?>
+                <span id="asist" class="bg-success p-2 align-middle rounded">
+                    Asistencia registrada
+                </span>
+                <?php }else{?>
+                  <span class="">
+                    <a  class="btn btn-secondary" href="asistencia.php?id=<?php echo$id?>">Marcar Asistencia</a>
+                  </span>
+                <?php }?>
+            <?php }else{?>
+              <span>
+                <a class="btn btn-danger" href="../acceso_usuarios.php">Iniciar Sesion para registrar asistencia</a>
+              </span>  
+            <?php }?>
           </div>
         </div>
         <div class="row mt-5">

@@ -1,3 +1,4 @@
+console.log("k pasa");
 let latitud = document.querySelector("#latitudLugar");
 let longitud = document.querySelector("#longitudLugar");
 let map = L.map("map").setView([-26.3441113, -70.615], 15);
@@ -18,6 +19,7 @@ function onMapClick(e) {
   popup.setLatLng(e.latlng).setContent("Haz clickeado aquí ").openOn(map);
   latitud.value = e.latlng["lat"].toString().slice(0, 8);
   longitud.value = e.latlng["lng"].toString().slice(0, 8);
+  geocodeReverse(latitud.value, longitud.value);
 }
 
 map.on("click", onMapClick);
@@ -54,4 +56,64 @@ for (let i = 0; i < nombreLugar.length; i++) {
   ).addTo(map);
 
   circle.bindPopup(nombreLugar[i].value);
+}
+
+//LLamando la funcion de geolocalizacion
+let formularioDireccion = document.getElementById("formularioDireccion");
+let btnBuscar = document.getElementById("buscarDireccion");
+
+function geocode(e) {
+  let direccionIngresada = document.getElementById("direccionIngresada");
+  let nombreLugar = document.getElementById("nombreLugar");
+
+  axios
+    .get("https://api.mymappi.com/v2/geocoding/direct", {
+      params: {
+        q: direccionIngresada.value,
+        apikey: "47334f19-6cf9-4386-8fa9-68a69cdaee60",
+      },
+    })
+    .then(function (response) {
+      //direccion formateada
+      console.log(response);
+      if (response.data.data[0].country == "Chile") {
+        var popup = L.popup()
+          .setLatLng([response.data.data[0].lat, response.data.data[0].lon])
+          .setContent(response.data.data[0].normalized_query)
+          .openOn(map);
+        nombreLugar.value = response.data.data[0].display_address;
+        map.setView([response.data.data[0].lat, response.data.data[0].lon], 15);
+        latitud.value = response.data.data[0].lat;
+        longitud.value = response.data.data[0].lon;
+      } else {
+        alert("La dirección ingresada está fuera del país.");
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+function geocodeReverse(latitud, longitud) {
+  let direccionIngresada = document.getElementById("direccionIngresada");
+  let nombreLugar = document.getElementById("nombreLugar");
+  axios
+    .get("https://api.mymappi.com/v2/geocoding/reverse", {
+      params: {
+        apikey: "47334f19-6cf9-4386-8fa9-68a69cdaee60",
+        lat: latitud,
+        lon: longitud,
+      },
+    })
+    .then(function (response) {
+      console.log(response);
+      nombreLugar.value =
+        response.data.data.address.name +
+        ", " +
+        response.data.data.address.suburb +
+        ", " +
+        response.data.data.address.city +
+        ", " +
+        response.data.data.address.country;
+    })
+    .catch(function (error) {});
 }

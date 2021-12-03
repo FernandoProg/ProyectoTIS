@@ -75,7 +75,7 @@
                 </div>
                 <div class="mb-3 col-sm-12 col-md-4">
                   <label class="form-label fw-bolder">Imágen:</label>
-                  <input type="file" class="form-control" name="insert_imagen_noticia" >
+                  <input type="file" accept="image/png, .jpeg, .jpg, .svg" class="form-control" name="insert_imagen_noticia" >
                   <img class="mt-5" style="width:250px;" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" >
                 </div>
                 <input type="hidden" name="insert_id" value="<?php echo "$id" ?>">

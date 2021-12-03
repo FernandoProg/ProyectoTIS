@@ -112,7 +112,7 @@
         <div class="container mt-4">
             <div class="col-sm-12 col-md-6">
                 <label  class="form-label fw-bolder">Ingrese imágenes representativas de sus productos o empresa (Advertencia: Las imágenes anteriores no serán guardadas):</label>
-                <input class="form-control w-75"  type="file" multiple name="imagenes_productos[]" id="" >
+                <input class="form-control w-75"  type="file" accept="image/png, .jpeg, .jpg, .svg" multiple name="imagenes_productos[]" id="" >
                 <label class="">Se puede ingresar un máximo de 5 imagenes.</label>
             </div>
             <div class="row">

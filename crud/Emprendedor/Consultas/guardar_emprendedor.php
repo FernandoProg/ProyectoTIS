@@ -11,7 +11,7 @@
     $imagen_emprendedor = addslashes(file_get_contents($image));
     $tipo_imagen = $_FILES['imagen_emprendedor']['type'];
     $facebook = (isset($_POST["facebook_emprendedor"])) ? $_POST["facebook_emprendedor"]: NULL;
-    $instagram = (isset($_POST["instagram_emprendedor"])) ? $_POST["instagram_emprendedor"]: NULL;
+    $instagram = (isset($_POST["instagram_emprendedor"])) ? $_POST["instagram_emprendedor"] .= '/': NULL;
     $informacion = $_POST["informacion"];
 
     $length = count($_FILES["imagenes_productos"]['name']);

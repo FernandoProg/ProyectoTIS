@@ -79,7 +79,7 @@
               <span> Es rápido y fácil. </span>
             </div>
             <div class="col-12">
-              <form class="form mt-5" >
+              <form class="form mt-5 mb-4" >
                   <div class="mb-3 row">
                       <div class="col-lg-6 col-sm-12 col-md-12">
                         <label for="exampleInputEmail1" class="fw-bolder form-label">Nombre de Usuario</label>

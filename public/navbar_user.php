@@ -32,9 +32,9 @@
                             </li>
                         </ul>
                         <ul class="nav justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link text-white"  href="../sesion_usuarios/logout.php">Cerrar Sesión - <?php echo $_SESSION['nombre_usuario']; ?></a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white"  href="../sesion_usuarios/logout.php">Cerrar Sesión - <?php echo $_SESSION['nombre_usuario']; ?></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -68,10 +68,7 @@
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white " href="../acceso_usuarios.php">Inicio Usuarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white " href="../acceso_funcionarios.php">Acceso Funcionarios</a>
+                            <a class="nav-link text-white " href="../acceso_usuarios.php">Acceder</a>
                         </li>
                     </ul>
                 </div>

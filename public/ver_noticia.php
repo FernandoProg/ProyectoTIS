@@ -14,7 +14,7 @@
         $get_bajada_noticia = $row["bajada_noticia"];
         $get_cuerpo_noticia = $row["cuerpo_noticia"];
         $get_imagen_noticia = $row["imagen_noticia"];
-        $get_categoria_noticia = $row["categoria_noticia"];    
+        $get_categoria_noticia = $row["nombre_categoria"];    
     }
 ?>
 
@@ -83,8 +83,34 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-12 text-center">
+          <div class="col-lg-6 text-end">
             <a href="view_noticias.php" class="btn btn-primary">Volver</a>
+          </div>
+          <div class="col-lg-6">
+            <?php
+              if($_SESSION){
+                $nombre_usuario = $_SESSION['nombre_usuario'];
+                $meGusta = "SELECT * FROM me_gusta  WHERE nombre_usuario='$nombre_usuario' AND id_noticia = $id";
+                $flag = mysqli_query($conexion,$meGusta);
+                if(mysqli_num_rows($flag)>0){
+            ?>
+              <a href="./consultas/remove_like.php?id=<?php echo$id?>">
+                <span class="align-middle fs-2 material-icons">
+                  thumb_up
+                </span>
+              </a>
+              <?php }else{?>
+              <a href="./consultas/me_gusta.php?id=<?php echo$id?>">
+                <span class="material-icons fs-2 align-middle text-secondary">
+                  thumb_up
+                </span>
+              </a>
+              <?php }?>
+            <?php }else{?>
+            <span>
+              <a class="btn btn-danger" href="../acceso_usuarios.php">Inicia Sesión para dejar tu Me gusta </a>
+            </span>
+            <?php }?>  
           </div>
         </div>
       </div>

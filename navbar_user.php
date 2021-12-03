@@ -38,6 +38,9 @@
                         </ul>
                         <ul class="nav justify-content-end">
                             <li class="nav-item">
+                                <i class="fas fa-bell"></i>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-white"  href="sesion_usuarios/logout.php">Cerrar Sesión - <?php echo $_SESSION['nombre_usuario']; ?></a>
                             </li>
                         </ul>
@@ -75,7 +78,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-white " href="acceso_usuarios.php">Acceder</a>
                         </li>
-
                     </ul>
                 </div>
             </div>

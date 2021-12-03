@@ -84,7 +84,7 @@
             <div class="">
               <span class="fs-3 align-bottom material-icons"> people </span>
               <span class="fs-5  fw-bolder">
-                Asistencia:
+                Asistencias:
                 <?php echo$numAsist["asist"]?>
               </span>
             </div>
@@ -104,12 +104,12 @@
                 </div>
                 <?php }else{?>
                   <span class="">
-                    <a  class="btn btn-secondary" href="asistencia.php?id=<?php echo$id?>">Marcar Asistencia</a>
+                    <a  class="btn btn-secondary" href="./consultas/asistencia.php?id=<?php echo$id?>">Marcar Asistencia</a>
                   </span>
                 <?php }?>
             <?php }else{?>
               <span>
-                <a class="btn btn-danger" href="../acceso_usuarios.php">Iniciar Sesion para registrar asistencia</a>
+                <a class="btn btn-danger" href="../acceso_usuarios.php">Iniciar Sesión para registrar asistencia</a>
               </span>  
             <?php }?>
           </div>

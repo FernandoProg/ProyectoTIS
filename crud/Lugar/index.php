@@ -26,11 +26,8 @@ include("../../sesion_usuarios/auth_admin.php");
 </head>
 
 <body>
-    <<<<<<< HEAD <?php require("../navbar.php") ?> <div class="container ">
-        =======
         <?php require("../navbar.php") ?>
         <div class="container page-container">
-            >>>>>>> d2a200d8a75f33171191a5802a552c9e8ce51b24
             <div class="row">
                 <span class="text-center fs-2 fw-bolder">
                     INGRESAR LUGAR

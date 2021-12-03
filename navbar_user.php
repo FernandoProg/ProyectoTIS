@@ -37,9 +37,9 @@
                             </li>
                         </ul>
                         <ul class="nav justify-content-end">
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <i class="fas fa-bell"></i>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <a class="nav-link text-white"  href="sesion_usuarios/logout.php">Cerrar Sesión - <?php echo $_SESSION['nombre_usuario']; ?></a>
                             </li>

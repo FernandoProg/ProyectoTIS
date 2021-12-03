@@ -39,7 +39,7 @@
               <!-- UPDATE -->
               <form action="Consultas/update_noticia.php" enctype="multipart/form-data" method="POST">
                 <input type="hidden" class="form-control" name="insert_nombre_usuario" value="<?php echo "$get_nombre_usuario" ?>">
-                <div class="mb-3"> 
+                <div class="mb-3 col-sm-12 col-md-4"> 
                   <label class="form-label fw-bolder" >Fecha:</label>
                   <input type="date" class="form-control" name="insert_fecha_noticia" value="<?php echo "$get_fecha_noticia" ?>"> 
                 </div>
@@ -59,7 +59,7 @@
                   <label class="form-label fw-bolder">Cuerpo:</label>
                   <textarea name="insert_cuerpo_noticia" class="form-control" cols="30" rows="10" maxlength="10000" ><?php echo "$get_cuerpo_noticia" ?></textarea>
                 </div>
-                <div class="mb-3 col-sm-12 col-md-3">
+                <div class="mb-3 col-sm-12 col-md-4">
                   <?php 
                       $sqlcategoria = "SELECT nombre_categoria FROM categoria_noticia";
                       $datacategoria= mysqli_query($conexion,$sqlcategoria);
@@ -76,7 +76,7 @@
                 <div class="mb-3 col-sm-12 col-md-4">
                   <label class="form-label fw-bolder">Imágen:</label>
                   <input type="file" class="form-control" name="insert_imagen_noticia" >
-                  <img class="mt-5" style="width:20%;" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" >
+                  <img class="mt-5" style="width:250px;" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" >
                 </div>
                 <input type="hidden" name="insert_id" value="<?php echo "$id" ?>">
                 <div class="row ">

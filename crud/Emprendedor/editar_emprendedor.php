@@ -36,33 +36,33 @@
     <form class="p-2" action="Consultas/actualizar_emprendedor.php" method="POST" enctype="multipart/form-data">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <label class="form-label fw-bolder">Nombre:</label>
                     <input class="form-control w-100" type="text" name="nombre_emprendedor" value="<?php echo$row["nombre_emprendedor"]?>" required>
                 </div>
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                 <label class="form-label fw-bolder">Dirección:</label>
                     <input type="text" name="direccion_emprendedor" class=" form-control w-100" value="<?php echo$row["direccion_emprendedor"]?>" required>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <label class="form-label fw-bolder">Celular:</label>
                    <input class=" form-control w-100" type="text" name="celular_emprendedor" placeholder="Celular" value="<?php echo$row["celular_emprendedor"] ?>" required> 
                 </div>
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <label class="form-label fw-bolder">Teléfono:</label>
                     <input class="form-control w-100" type="text" name="telefono_emprendedor" placeholder="Telefono" value="<?php echo$row["telefono_emprendedor"] ?>" required>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <div class="col">
                         <label class="form-label fw-bolder">Correo:</label>
                         <input type="email" name="correo_emprendedor" placeholder="Correo" class="form-control" value="<?php echo$row["correo_emprendedor"] ?>" required>
                     </div>  
                 </div>
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <?php
                         $sqlrubro = "SELECT nombre_rubro FROM rubro_emprendedor";
                         $datarubro= mysqli_query($conexion,$sqlrubro);
@@ -78,15 +78,15 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <label class="form-label fw-bolder">Usuario de Facebook:(opcional)</label>
-                    <input class="form-control" type="text" name="facebook_emprendedor" value="<?php echo $facebook?>" maxlength="50" required>
+                    <input class="form-control" type="text" name="facebook_emprendedor" value="<?php echo $facebook?>" maxlength="50" >
                 </div>
-                <div class="col">
+                <div class="col-sm-12 col-md-6">
                     <label class="form-label fw-bolder">Usuario de Instagram:(opcional)</label>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input class="form-control" type="text" name="instagram_emprendedor" value="<?php echo $instagram?>" maxlength="50" required>
+                        <input class="form-control" type="text" name="instagram_emprendedor" value="<?php echo $instagram?>" maxlength="50" >
                     </div>
                 </div>
             </div>
@@ -104,15 +104,15 @@
                         <input class="form-control w-75" accept="image/png, .jpeg, .jpg" type="file" name="imagen_emprendedor" >
                 </div>
                 <div class="col text-center">
-                    <img class=" ms-auto img-fluid" style="width:250px;" src="data:image/jpeg;base64,<?php echo base64_encode($imagen)?>" >
+                    <img class=" ms-auto img-fluid mt-1" style="width:250px;" src="data:image/jpeg;base64,<?php echo base64_encode($imagen)?>" >
                 </div>
                 
             </div>  
         </div>
         <div class="container mt-4">
             <div class="col-sm-12 col-md-6">
-                <label  class="form-label fw-bolder">Ingrese imageneres representativas de sus productos:</label>
-                <input class="form-control w-75"  type="file" multiple name="imagenes_productos[]" id="" >
+                <label  class="form-label fw-bolder">Ingrese imágenes representativas de sus productos o empresa (Advertencia: Las imágenes anteriores no serán guardadas):</label>
+                <input class="form-control w-75"  type="file" accept="image/png, .jpeg, .jpg, .svg" multiple name="imagenes_productos[]" id="" >
                 <label class="">Se puede ingresar un máximo de 5 imagenes.</label>
             </div>
             <div class="row">

@@ -78,7 +78,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-white " href="acceso_usuarios.php">Acceder</a>
                         </li>
-
                     </ul>
                 </div>
             </div>

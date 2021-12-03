@@ -149,14 +149,14 @@
                         <?php }?>
                         </div>
                     </div>
-                    <div class="row mt-4 w-25 mx-auto">
+                    <div class="row mt-4 w-25 mx-auto mb-2">
                         <a href="view_emprendedores.php" class="btn btn-secondary">Volver</a>
                     </div>
                 </div>
             <?php
             }else{
             ?>
-                <div class="container">
+                <div class="container mb-2">
                     <div class="row">
                         <div class="col text-center my-5">
                             <span class="fw-bolder fs-2">El emprendedor no existe</span>
@@ -172,7 +172,7 @@
             }
     ?>
     <?php }else{?>
-        <div class="container">
+        <div class="container mb-2">
             <div class="row">
                 <div class="col text-center my-5">
                     <span class="fw-bolder fs-2">Seleccione un emprendedor</span>

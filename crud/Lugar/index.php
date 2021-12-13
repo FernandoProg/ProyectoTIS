@@ -20,7 +20,7 @@ include("../../sesion_usuarios/auth_admin.php");
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+    <script src="../main.js"></script>
 
     <title>Lugares - Administrador</title>
 </head>
@@ -155,19 +155,6 @@ include("../../sesion_usuarios/auth_admin.php");
             }
         </style>
         <script src="script.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('#myTable').DataTable({
-                    "zeroRecords": "No matching records found",
-                    "lengthMenu": [
-                        [5, 10, 15, -1],
-                        [5, 10, 15, "All"]
-                    ],
-
-
-                });
-            });
-        </script>
         <?php require("../footer.php") ?>
 </body>
 

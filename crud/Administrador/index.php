@@ -20,6 +20,7 @@
         <title>Administradores</title>
         <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
         <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script src="../main.js"></script>
     </head>
     <body>
         <?php 
@@ -93,13 +94,5 @@
             </div>
         </div>
         <?php require("../footer.php") ?>
-        <script>
-        $(document).ready( function () {
-        $('#myTable').DataTable({
-            "zeroRecords":    "No matching records found",
-            "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
-        });
-        } );
-        </script>
     </body>
 </html>

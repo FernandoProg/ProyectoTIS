@@ -6,6 +6,11 @@ include("../../sesion_usuarios/auth_admin.php");
 <html lang="es">
 
 <head>
+    <!-- navbar -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- /navbar -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,55 +88,55 @@ include("../../sesion_usuarios/auth_admin.php");
                 $consulta = "SELECT * FROM lugar JOIN usuario USING(nombre_usuario)";
                 $data = mysqli_query($conexion, $consulta);
                 ?>
-                <table class="table table-hover table-light table-bordered" id="myTable">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre lugar</th>
-                            <th>Latitud</th>
-                            <th>Longitud</th>
-                            <th>Categoría</th>
-                            <th>Nombre Admin</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php while ($row = mysqli_fetch_assoc($data)) { ?>
+                <div class="table-responsive ">
+                    <table class="table table-hover table-light table-bordered" id="myTable">
+                        <thead class="table-dark">
                             <tr>
-                                <td><?php echo $row["id_lugar"] ?></td>
-                                <td><?php echo $row["nombre_lugar"] ?></td>
-                                <td><?php echo $row["latitud_lugar"] ?></td>
-                                <td><?php echo $row["longitud_lugar"] ?></td>
-                                <td><?php echo $row["categoria_lugar"] ?></td>
-                                <td><?php echo $row["nombre_usuario"] ?></td>
-                                <td class="text-center">
-                                    <!-- <a href="#" class="btn btn-info">Editar</a> -->
-                                    <a href="Consultas/delete_lugar.php?id=<?php echo $row["id_lugar"]; ?>">
-                                        <span class=" material-icons" style="color: red;">
-                                            delete
-                                        </span>
-                                    </a>
-                                </td>
+                                <th>ID</th>
+                                <th>Nombre lugar</th>
+                                <th>Latitud</th>
+                                <th>Longitud</th>
+                                <th>Categoría</th>
+                                <th>Nombre Admin</th>
+                                <th>Acciones</th>
                             </tr>
-                        <?php } ?>
-                        <?php
-                        $consulta = "SELECT nombre_lugar,latitud_lugar,longitud_lugar,categoria_lugar FROM lugar"; //HACER ORDER BY fecha_noticia ASC/DESC
-                        $data = mysqli_query($conexion, $consulta);
-                        while ($row = mysqli_fetch_assoc($data)) {
-                            $nombreLugar = $row['nombre_lugar'];
-                            $latitudLugar = $row['latitud_lugar'];
-                            $longitudLugar = $row['longitud_lugar'];
-                            $categoriaLugar = $row['categoria_lugar'];
-
-                            echo "<input type=hidden value='$nombreLugar' class='nombreLugar'> ";
-                            echo "<input type=hidden value=$latitudLugar class='latitudLugar'>";
-                            echo "<input type=hidden value=$longitudLugar class='longitudLugar'> ";
-                            echo "<input type=hidden value='$categoriaLugar' class='categoriaLugar'> ";
-                        }
-
-                        ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php while ($row = mysqli_fetch_assoc($data)) { ?>
+                                <tr>
+                                    <td><?php echo $row["id_lugar"] ?></td>
+                                    <td><?php echo $row["nombre_lugar"] ?></td>
+                                    <td><?php echo $row["latitud_lugar"] ?></td>
+                                    <td><?php echo $row["longitud_lugar"] ?></td>
+                                    <td><?php echo $row["categoria_lugar"] ?></td>
+                                    <td><?php echo $row["nombre_usuario"] ?></td>
+                                    <td class="text-center">
+                                        <!-- <a href="#" class="btn btn-info">Editar</a> -->
+                                        <a href="Consultas/delete_lugar.php?id=<?php echo $row["id_lugar"]; ?>">
+                                            <span class=" material-icons" style="color: red;">
+                                                delete
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            <?php
+                            $consulta = "SELECT nombre_lugar,latitud_lugar,longitud_lugar,categoria_lugar FROM lugar"; //HACER ORDER BY fecha_noticia ASC/DESC
+                            $data = mysqli_query($conexion, $consulta);
+                            while ($row = mysqli_fetch_assoc($data)) {
+                                $nombreLugar = $row['nombre_lugar'];
+                                $latitudLugar = $row['latitud_lugar'];
+                                $longitudLugar = $row['longitud_lugar'];
+                                $categoriaLugar = $row['categoria_lugar'];
+                                echo "<input type=hidden value='$nombreLugar' class='nombreLugar'> ";
+                                echo "<input type=hidden value=$latitudLugar class='latitudLugar'>";
+                                echo "<input type=hidden value=$longitudLugar class='longitudLugar'> ";
+                                echo "<input type=hidden value='$categoriaLugar' class='categoriaLugar'> ";
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         </div>

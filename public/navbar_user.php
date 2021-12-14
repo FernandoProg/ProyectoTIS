@@ -1,18 +1,27 @@
+<style>
+    a:hover {
+    color:rgb(194, 190, 190) !important;
+}
+</style>
 <?php
     if(!isset($_SESSION)){
         session_start();
-    }
+
+    }   
     if(isset($_SESSION['nombre_usuario'])){
         if($_SESSION['rol'] == "usuario"){ // Navbar para usuarios logeados
             ?>
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="container-fluid  ">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <a class="navbar-brand" href="../index.php"><img src="../crud/img/logo.png" style="width: 40%;"></a>
+
+                    <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+
+                    <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
                         <ul class="navbar-nav">
-                            <a class="navbar-brand" href="../index.php"><img src="../crud/img/logo.png" style="width: 40%;"></a>
+                            
                         </ul>
                         <ul class="navbar-nav ">
                             <li class="nav-item">
@@ -45,12 +54,15 @@
         ?>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid  ">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <a class="navbar-brand" href="../index.php"><img src="../crud/img/logo.png" style="width: 40%;"></a>
+
+                <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+
+                <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
                     <ul class="navbar-nav">
-                        <a class="navbar-brand" href="../index.php"><img src="../crud/img/logo.png" style="width: 40%;"></a>
+                        
                     </ul>
                     <ul class="navbar-nav ">
                         <li class="nav-item">

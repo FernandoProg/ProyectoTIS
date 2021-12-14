@@ -1,15 +1,23 @@
 <?php
     include("../sesion_usuarios/auth.php");
 ?> 
+<style>
+    a:hover {
+    color:rgb(194, 190, 190) !important;
+}
+</style>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid  ">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand" href="../index.php"><img src="../crud/img/logo.png" style="width: 40%;"></a>
+
+        <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+
+        <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
             <ul class="navbar-nav">
-                <a class="navbar-brand" href="../index.php"><img src="../crud/img/logo.png" style="width: 40%;"></a>
+                
             </ul>
             <ul class="navbar-nav ">
                 <li class="nav-item">

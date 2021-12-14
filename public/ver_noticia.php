@@ -34,7 +34,7 @@
   <body>
     <?php require("navbar_user.php");?>
 
-    <div class="container mb-5">
+    <div class="container mb-5 mt-4">
       <div class="row col-lg-12">
         <!-- TITULO -->
         <div class="row col-lg-12">
@@ -58,7 +58,7 @@
         <!-- IMAGEN -->
         <div class="col-lg-12 col-sm-12">
           <img
-            class=""
+            class="shadow"
             style="width: 100%"
             src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>"
           />

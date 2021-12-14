@@ -46,23 +46,23 @@
                 <input type="hidden" class="form-control" name="insert_nombre_usuario" value="<?php echo "$get_nombre_usuario" ?>">
                 <div class="mb-3 col-sm-12 col-md-4"> 
                   <label class="form-label fw-bolder" >Fecha:</label>
-                  <input type="date" class="form-control" name="insert_fecha_noticia" value="<?php echo "$get_fecha_noticia" ?>"> 
+                  <input type="date" class="form-control shadow-sm" name="insert_fecha_noticia" value="<?php echo "$get_fecha_noticia" ?>"> 
                 </div>
                 <div class="mb-3">
                   <label class="form-label fw-bolder">Título:</label>
-                  <input type="text" class="form-control" name="insert_titulo_noticia" value="<?php echo "$get_titulo_noticia" ?>">
+                  <input type="text" class="form-control shadow-sm" name="insert_titulo_noticia" value="<?php echo "$get_titulo_noticia" ?>">
                 </div>
                 <div class="mb-3">
                   <label class="form-label fw-bolder">Bajada:</label>
-                  <textarea name="insert_bajada_noticia" class="form-control" cols="30" rows="2" maxlength="200" ><?php echo "$get_bajada_noticia" ?></textarea>
+                  <textarea name="insert_bajada_noticia" class="form-control shadow-sm" cols="30" rows="2" maxlength="200" ><?php echo "$get_bajada_noticia" ?></textarea>
                 </div>
                 <div class="mb-3">
                   <label class="form-label fw-bolder">Lead:</label>
-                  <textarea name="insert_lead_noticia" class="form-control" cols="30" rows="5" maxlength="400" ><?php echo "$get_lead_noticia" ?></textarea>
+                  <textarea name="insert_lead_noticia" class="form-control shadow-sm" cols="30" rows="5" maxlength="400" ><?php echo "$get_lead_noticia" ?></textarea>
                 </div>
                 <div class="mb-3">
                   <label class="form-label fw-bolder">Cuerpo:</label>
-                  <textarea name="insert_cuerpo_noticia" class="form-control" cols="30" rows="10" maxlength="10000" ><?php echo "$get_cuerpo_noticia" ?></textarea>
+                  <textarea name="insert_cuerpo_noticia" class="form-control shadow-sm" cols="30" rows="10" maxlength="10000" ><?php echo "$get_cuerpo_noticia" ?></textarea>
                 </div>
                 <div class="mb-3 col-sm-12 col-md-4">
                   <?php 
@@ -71,7 +71,7 @@
                   ?>
                   <label class="form-label fw-bolder" >Categoría:</label>
                   <!--<input type="text" class="form-control" name="insert_categoria_noticia">-->
-                  <select class="form-select" name="insert_categoria_noticia" >
+                  <select class="form-select shadow-sm" name="insert_categoria_noticia" >
                         <option hidden selected value= "<?php echo $get_categoria_noticia ?>"><?php echo $get_categoria_noticia ?></option>
                         <?php while($row = mysqli_fetch_assoc($datacategoria)){?>
                               <option value="<?php echo$row["nombre_categoria"]?>"><?php echo$row["nombre_categoria"]?></option>
@@ -80,16 +80,16 @@
                 </div>
                 <div class="mb-3 col-sm-12 col-md-4">
                   <label class="form-label fw-bolder">Imágen:</label>
-                  <input type="file" accept="image/png, .jpeg, .jpg, .svg" class="form-control" name="insert_imagen_noticia" >
-                  <img class="mt-5" style="width:250px;" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" >
+                  <input type="file" accept="image/png, .jpeg, .jpg, .svg" class="form-control shadow-sm" name="insert_imagen_noticia" >
+                  <img class="mt-5 shadow" style="width:250px;" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" >
                 </div>
                 <input type="hidden" name="insert_id" value="<?php echo "$id" ?>">
                 <div class="row ">
                   <div class="col-lg-6 text-end">
-                    <button class="btn btn-secondary" type="submit">Editar</button>
+                    <button class="btn btn-secondary shadow-sm" type="submit">Editar</button>
                   </div>
                   <div class="col-lg-6 " >
-                    <a href="index.php"  class="btn btn-primary" >Volver</a>
+                    <a href="index.php"  class="btn btn-primary shadow-sm" >Volver</a>
                   </div>
                 </div>
               </form>

@@ -42,7 +42,7 @@ include("../../sesion_usuarios/auth_admin.php");
                 <form action="Consultas/create_lugar.php" method="POST">
                     <div class="mb-3">
                         <label for="nombreLugar" class="form-label fw-bolder">Nombre lugar:</label>
-                        <input type="text" readonly class="form-control" required name="nombreLugar" id="nombreLugar" aria-describedby="helpId" placeholder="Bodega Acuenta" maxlength="50">
+                        <input type="text" readonly class="form-control shadow-sm" required name="nombreLugar" id="nombreLugar" aria-describedby="helpId" placeholder="Bodega Acuenta" maxlength="50">
                     </div>
                     <div class="mb-3">
                         <input type="hidden" class="form-control" name="latitudLugar" id="latitudLugar" aria-describedby="helpId" placeholder="-36.05356" maxlength="9">
@@ -51,14 +51,14 @@ include("../../sesion_usuarios/auth_admin.php");
                         <input type="hidden" class="form-control" name="longitudLugar" id="longitudLugar" aria-describedby="helpId" placeholder="56.52525" maxlength="9">
                     </div>
                     <h5>Buscar ubicación : </h5>
-                    <input type="text" id="direccionIngresada" class="form-control form-control-lg">
+                    <input type="text" id="direccionIngresada" class="form-control shadow-sm form-control-lg">
                     <div class="d-grid my-4 ">
                         <button class="btn btn-primary"  style="width: 100px;" type="button" onclick="geocode()">Buscar</button>
                     </div>
-                    <div class="mb-2" id="map" style="height: 380px;"></div>
+                    <div class="mb-2 shadow" id="map" style="height: 380px;"></div>
                     <div class="mb-3 col-sm-12 col-lg-4">
                         <label for="categoriaLugar" class="form-label fw-bolder">Categoría:</label>
-                        <select class="form-select" name="categoriaLugar" required>
+                        <select class="form-select shadow-sm" name="categoriaLugar" required>
                             <option value="">Seleccione la categoría</option>
                             <option value="Lugar de trámite">Lugar de trámite</option>
                             <option value="Lugar de pago">Lugar de pago</option>
@@ -89,7 +89,7 @@ include("../../sesion_usuarios/auth_admin.php");
                 $data = mysqli_query($conexion, $consulta);
                 ?>
                 <div class="table-responsive ">
-                    <table class="table table-striped table-hover table-light table-bordered" id="myTable">
+                    <table class="table shadow-sm table-striped table-hover table-light table-bordered" id="myTable">
                         <thead class="table-dark">
                             <tr>
                                 <th>ID</th>

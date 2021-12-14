@@ -77,7 +77,7 @@
                         </div>
                     <?php } ?>
                     <div class="col">
-                        <img style="max-width: 400px; max-height:400px;" src="data:;base64,<?php echo base64_encode($imagen["imagen_contribuciones"])?>">
+                        <img style="max-width: 400px; max-height:400px;" class="shadow" src="data:;base64,<?php echo base64_encode($imagen["imagen_contribuciones"])?>">
                     </div>
                 <?php }?>
             </div>

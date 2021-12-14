@@ -28,7 +28,7 @@
                 <div class="container-fluid my-4 px-4">
                     <div class="row">
                         <div class="col-lg-2 col-md-12 mt-4 text-center">
-                            <img style="height: 100%; width: 100%;"class="" src="data:<?php echo$row["tipo_imagen"]?>;base64,<?php echo base64_encode($row["imagen_emprendedor"])?>">
+                            <img class="shadow" style="height: 100%; width: 100%;"class="" src="data:<?php echo$row["tipo_imagen"]?>;base64,<?php echo base64_encode($row["imagen_emprendedor"])?>">
                         </div>
                         <div class="col-lg-6 col-md-12 mt-4 text-center ">
                             <span class="text-center mt-4 mb-2 fs-2 fw-bolder">
@@ -38,7 +38,7 @@
                                 <?php echo$row["informacion"]?>
                             </span>
                         </div>
-                        <div class="col-lg-4 col-md-12 mt-4 card">
+                        <div class="col-lg-4 col-md-12 mt-4 card shadow">
                             <span class="text-center my-4 fs-2 fw-bolder">
                                 Información Emprendedor
                             </span>
@@ -146,7 +146,7 @@
                                         while($imagen = mysqli_fetch_assoc($data_image)){
                                     ?>
                                         <div class="col-xl col-lg-12 mt-4">
-                                            <img style="height: 300px; width: 300px;" src="data:;base64,<?php echo base64_encode($imagen["imagen_emprendedores"])?>">
+                                            <img class="shadow" style="height: 300px; width: 300px;" src="data:;base64,<?php echo base64_encode($imagen["imagen_emprendedores"])?>">
                                         </div>
                                     <?php }?>
                                 </div>

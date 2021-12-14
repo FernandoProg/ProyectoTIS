@@ -37,17 +37,17 @@
                     <form action="Consultas/create_administrador.php" method="POST">
                         <div class="mb-3 col-lg-6 col-sm-12">
                             <label class="form-label fw-bolder">Nombre de administrador:</label>
-                            <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario" required>
+                            <input class="form-control shadow-sm" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario" required>
                         </div>
                         <div class="mb-3 col-lg-6 col-sm-12">
                             <label class="form-label fw-bolder">Contraseña de administrador:</label>
-                            <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Contraseña" rows="3" name="contrasena" required>
+                            <input class="form-control shadow-sm" type="password" minlength="6" maxlength="16" placeholder="Contraseña" rows="3" name="contrasena" required>
                         </div>
                         <div class="mb-3 col-lg-6 col-sm-12">
                             <label class="form-label fw-bolder">Correo del administrador:</label>
-                            <input type="email" class="form-control" rows="3" maxlength="50" placeholder="example@gmail.com" name="correo_usuario" required>
+                            <input type="email" class="form-control shadow-sm" rows="3" maxlength="50" placeholder="example@gmail.com" name="correo_usuario" required>
                         </div>
-                        <input type="submit" class="btn btn-secondary" value="Guardar">
+                        <input type="submit" class="btn btn-secondary shadow-sm" value="Guardar">
                     </form>
                     <hr>
                     <div class="col-lg-12">
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table class=" table table-striped table-hover table-bordered table-light" id="myTable">
+                            <table class=" table table-striped shadow-sm table-hover table-bordered table-light" id="myTable">
                                 <thead class="table-dark">
                                     <tr>
                                         <th style="width: 200px;" scope="col">Nombre de Usuario</th>

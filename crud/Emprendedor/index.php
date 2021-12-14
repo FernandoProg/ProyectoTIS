@@ -49,27 +49,27 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Nombre:</label>
-                    <input class=" form-control" type="text" name="nombre_emprendedor" maxlength="50" placeholder="Juan Perez"  required>
+                    <input class=" form-control shadow-sm" type="text" name="nombre_emprendedor" maxlength="50" placeholder="Juan Perez"  required>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Dirección:</label>
-                    <input class=" form-control" type="text" name="direccion_emprendedor" maxlength="100" placeholder="Calle Siempre viva #742" required>
+                    <input class=" form-control shadow-sm" type="text" name="direccion_emprendedor" maxlength="100" placeholder="Calle Siempre viva #742" required>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Celular:</label>
-                    <input class="form-control" type="text" name="celular_emprendedor" maxlength="9" placeholder="912345678"required> 
+                    <input class="form-control shadow-sm" type="text" name="celular_emprendedor" maxlength="9" placeholder="912345678"required> 
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Teléfono:</label>
-                    <input class="form-control" type="text" name="telefono_emprendedor" maxlength="7" placeholder="2567856"required>
+                    <input class="form-control shadow-sm" type="text" name="telefono_emprendedor" maxlength="7" placeholder="2567856"required>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Correo:</label>
-                    <input type="email" name="correo_emprendedor" placeholder="Example@gmail.com" maxlength="50" class="form-control" required>
+                    <input type="email" name="correo_emprendedor" placeholder="Example@gmail.com" maxlength="50" class="form-control shadow-sm" required>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <?php
@@ -77,7 +77,7 @@
                         $datarubro= mysqli_query($conexion,$sqlrubro);
                     ?>
                     <label class="form-label fw-bolder">Rubro:</label>
-                    <select class="form-select" name="rubro_emprendedor">
+                    <select class="form-select shadow-sm" name="rubro_emprendedor">
                         <option hidden selected>Seleccione el Rubro</option>
                         <?php while($row = mysqli_fetch_assoc($datarubro)){?>
                             <option value="<?php echo$row["nombre_rubro"]?>"><?php echo$row["nombre_rubro"]?></option>
@@ -89,37 +89,37 @@
             <div class="row mt-2">
                 <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Usuario de Facebook:(opcional)</label>
-                    <input class="form-control" type="text" name="facebook_emprendedor" maxlength="50" placeholder="Abarrotes juanito">
+                    <input class="form-control shadow-sm" type="text" name="facebook_emprendedor" maxlength="50" placeholder="Abarrotes juanito">
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <label class="form-label fw-bolder">Usuario de Instagram:(opcional)</label>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input class="form-control" type="text" name="instagram_emprendedor" maxlength="50" placeholder="Abarrotesjuanito">
+                        <input class="form-control shadow-sm" type="text" name="instagram_emprendedor" maxlength="50" placeholder="Abarrotesjuanito">
                     </div>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col">
                     <label class="form-label fw-bolder" >Información del emprendedor:</label>
-                    <textarea placeholder="Aquí describa lo que realiza, precios, horarios, etc." name="informacion" class="form-control" cols="30" rows="10" maxlength="1000" required></textarea>
+                    <textarea placeholder="Aquí describa lo que realiza, precios, horarios, etc." name="informacion" class="form-control shadow-sm" cols="30" rows="10" maxlength="1000" required></textarea>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col-md-6 col-sm-12">
                     <label for="formFile" class="form-label fw-bolder">Seleccione una Imágen Representativa del Emprendedor:</label>
-                    <input class="form-control"  accept="image/png, .jpeg, .jpg .svg" type="file" name="imagen_emprendedor" required>
+                    <input class="form-control shadow-sm"  accept="image/png, .jpeg, .jpg .svg" type="file" name="imagen_emprendedor" required>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col-sm-12 col-md-6">
                     <label  class="form-label fw-bolder">Ingrese imágenes representativas de sus productos o empresa:</label>
-                    <input class="form-control"  accept="image/png, .jpeg, .jpg, .svg" type="file" multiple name="imagenes_productos[]" id="" required>
+                    <input class="form-control shadow-sm"  accept="image/png, .jpeg, .jpg, .svg" type="file" multiple name="imagenes_productos[]" id="" required>
                     <label class="">Se puede ingresar un máximo de 5 imagenes.</label>
                 </div>
             </div>
             <div class="row w-25 col-12 d-block mx-auto mt-4">
-                <input class="btn btn-secondary " type="submit" value="Ingresar emprendedor">
+                <input class="btn btn-secondary shadow-sm" type="submit" value="Ingresar emprendedor">
             </div>
         </div>
     </form>
@@ -138,7 +138,7 @@
     ?>
     <div class="container">
         <div class="col-12">
-            <table class="w-100 table-light table-striped table table-bordered table-hover" id="myTable">
+            <table class="w-100 table-light shadow-sm table-striped table table-bordered table-hover" id="myTable">
                 <thead class="table-dark">
                     <tr>
                         <th>Nombre</th>

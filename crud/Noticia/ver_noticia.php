@@ -48,7 +48,7 @@
                 </div>
                 <!-- IMAGEN -->
                 <div class="col-lg-12 ol-sm-12  "> 
-                    <img class="mt-5" style="width:100%" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" >
+                    <img class="mt-5 shadow" style="width:100%" src="data:image/jpeg;base64,<?php echo base64_encode($get_imagen_noticia)?>" >
                 </div>
                 <!-- Lead -->
                 <div class="col-lg-12 pt-3" >

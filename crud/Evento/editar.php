@@ -33,35 +33,41 @@
             ?>
             <form action="Consultas/update_evento.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo$row["id_evento"]?>">
-                <div class="mb-3">
-                    <label for="ID Lugar" class="form-label fw-bolder">Lugar:</label>
-                    <?php 
-                        $lugar = "SELECT nombre_lugar,id_lugar FROM lugar";
-                        $datalugar = mysqli_query($conexion,$lugar);
-                    ?>
-                    <select class="form-select" name="idLugar">
-                        <option value="<?php echo$row["id_lugar"]?>" hidden selected><?php echo$row["nombre_lugar"]?></option>
-                        <?php while($rowlugar = mysqli_fetch_assoc($datalugar)){?>
-                            <option value="<?php echo$rowlugar["id_lugar"]?>"><?php echo$rowlugar["nombre_lugar"]?></option>
-                        <?php }?>
-                    </select>
+
+                <div class="row">
+                    <div class="mb-3 col-lg-6 col-sm-12">
+                        <label for="ID Lugar" class="form-label fw-bolder">Lugar:</label>
+                        <?php
+                            $lugar = "SELECT nombre_lugar,id_lugar FROM lugar";
+                            $datalugar = mysqli_query($conexion,$lugar);
+                        ?>
+                        <select class="form-select shadow-sm" name="idLugar">
+                            <option value="<?php echo$row["id_lugar"]?>" hidden selected><?php echo$row["nombre_lugar"]?></option>
+                            <?php while($rowlugar = mysqli_fetch_assoc($datalugar)){?>
+                                <option value="<?php echo$rowlugar["id_lugar"]?>"><?php echo$rowlugar["nombre_lugar"]?></option>
+                            <?php }?>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-lg-6 col-sm-12">
+                        <label for="Nombre Evento" class="form-label fw-bolder">Nombre Evento:</label>
+                        <input type="text" required class="form-control shadow-sm" value="<?php echo$row["nombre_evento"]?>" name="nombreEvento" id="nombreEvento" aria-describedby="emailHelpId" maxlength="50">
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="Nombre Evento" class="form-label fw-bolder">Nombre Evento:</label>
-                    <input type="text" required class="form-control" value="<?php echo$row["nombre_evento"]?>" name="nombreEvento" id="nombreEvento" aria-describedby="emailHelpId" maxlength="50">
-                </div>
-                <div class="mb-3">
-                    <label for="Fecha Evento" class="form-label fw-bolder">Fecha Evento:</label>
-                    <input type="date" required class="form-control" value="<?php echo$row["fecha_evento"] ?>" name="fechaEvento" id="fechaEvento" aria-describedby="emailHelpId" >
-                </div>
-                <div class="mb-3 ">
-                    <label for="Imagen Evento" class="form-label fw-bolder">Imágen Evento:</label>
-                    <input type="file" accept="image/png, .jpeg, .jpg .svg" class="form-control w-50 mb-2" value="" name="imagenEvento" id="imagenEvento" aria-describedby="emailHelpId">
-                    <img style="width:150px;"src="data:image;base64,<?php echo base64_encode($row["imagen_evento"]); ?> " alt="">
+                <div class="row">
+                    <div class="mb-3 col-lg-6 col-sm-12">
+                        <label for="Imagen Evento" class="form-label fw-bolder">Imágen Evento:</label>
+                        <input type="file" accept="image/png, .jpeg, .jpg .svg" class="form-control  mb-2 shadow-sm" value="" name="imagenEvento" id="imagenEvento" aria-describedby="emailHelpId">
+                        <img class="shadow" style="width:150px;"src="data:image;base64,<?php echo base64_encode($row["imagen_evento"]); ?> " alt="">
+                    </div>
+                    <div class="mb-3 col-lg-6 col-sm-12">
+                        <label for="Fecha Evento" class="form-label fw-bolder">Fecha Evento:</label>
+                        <input type="date" required class="form-control shadow-sm" value="<?php echo$row["fecha_evento"] ?>" name="fechaEvento" id="fechaEvento" aria-describedby="emailHelpId" >
+                    </div>
+                    
                 </div>
                 <div class="mb-3">
                     <label for="Descripcion Evento" class="form-label fw-bolder">Descripción Evento:</label>
-                    <textarea type="text" required class="form-control" rows="10" name="descripcionEvento" id="descripcionEvento" aria-describedby="emailHelpId" maxlength="1200"><?php echo$row["descripcion_evento"]?></textarea>
+                    <textarea type="text" required class="form-control shadow-sm" rows="10" name="descripcionEvento" id="descripcionEvento" aria-describedby="emailHelpId" maxlength="1200"><?php echo$row["descripcion_evento"]?></textarea>
                 </div>
                 <div class="row">
                     <div class="col-6 text-end">

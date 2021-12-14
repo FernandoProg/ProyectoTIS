@@ -62,7 +62,7 @@
                                             $datacategoria= mysqli_query($conexion,$sqlcategoria);
                                     ?>
                                     <label class="form-label fw-bolder d-block">Filtrar por categoría:</label>
-                                    <select class="w-25 form-select d-inline" name="categoria_noticia">
+                                    <select class="w-25 form-select d-inline shadow-sm" name="categoria_noticia">
                                         <option hidden selected required></option>
                                         <option value="">Todas</option>
                                         <?php while($row = mysqli_fetch_assoc($datacategoria)){?>
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class=" col-6">
                                     <label class="form-label fw-bolder d-block">Filtrar por fecha:</label>
-                                    <select class="w-25 form-select d-inline" name="fecha_noticia">
+                                    <select class="w-25 form-select d-inline shadow-sm" name="fecha_noticia">
                                         <option hidden selected required></option>
                                         <option value="">Todas</option>
                                         <option value="masreciente">Menos reciente</option>

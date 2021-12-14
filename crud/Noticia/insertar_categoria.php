@@ -39,11 +39,11 @@
               <!-- INSERT -->
               <form action="Consultas/insert_categoria.php" enctype="multipart/form-data" method="POST">
                 <div class="mb-3 col-3">
-                  <label class="form-label fw-bolder" >Nombre_categoria:</label>
-                  <input type="text" class="form-control" name="insert_categoria_noticia" maxlength="100" placeholder="Cultural" required>
+                  <label class="form-label fw-bolder" >Nombre categoria:</label>
+                  <input type="text" class="form-control shadow-sm" name="insert_categoria_noticia" maxlength="100" placeholder="Cultural" required>
                 </div>
                 <div class="mt-4">
-                  <button class="btn btn-secondary" type="submit">Guardar</button>
+                  <button class="btn btn-secondary shadow-sm" type="submit">Guardar</button>
                 </div>
             </div>
 
@@ -52,7 +52,7 @@
                 <h5>CATEGORIAS INGRESADAS</h5>
               </div>
               <div class="table-responsive ">
-                <table class="table table-hover table-bordered table-light" id="myTable">
+                <table class="table table-hover shadow-sm table-striped table-bordered table-light" id="myTable">
                   <thead  class="table-dark">
                     <tr>
                       <th scope="col">Categoria</th>
@@ -90,7 +90,7 @@
                 </table>
               </div>
               <div class="col-lg-12 " >
-                    <a href="index.php"  class="btn btn-primary" >Volver</a>
+                    <a href="index.php"  class="btn btn-primary shadow-sm" >Volver</a>
                 </div>
               
             </div>

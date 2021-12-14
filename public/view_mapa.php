@@ -32,7 +32,7 @@
       <div class="col-12">
         <h3>Buscar ubicación : </h3>
         <form action="" id="formularioDireccion">
-          <input type="text" id="direccionIngresada" class="form-control form-control-lg">
+          <input type="text" id="direccionIngresada" class="form-control shadow-sm form-control-lg">
           <div class="d-grid my-2">
             <button class="btn btn-primary" style="width: 100px;" type="submit">Buscar</button>
           </div>

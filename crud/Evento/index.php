@@ -44,7 +44,7 @@
                             $lugar = "SELECT nombre_lugar,id_lugar FROM lugar";
                             $datalugar = mysqli_query($conexion,$lugar);
                         ?>
-                        <select class="form-select" name="idLugar">
+                        <select class="form-select shadow-sm" name="idLugar">
                             <option hidden selected>Seleccione el lugar</option>
                             <?php while($row = mysqli_fetch_assoc($datalugar)){?>
                                 <option value="<?php echo$row["id_lugar"]?>"><?php echo$row["nombre_lugar"]?></option>
@@ -53,22 +53,22 @@
                     </div>
                     <div class="mb-3 col-lg-6 col-sm-12">
                         <label for="nombre del evento" class="form-label fw-bolder">Nombre </label>
-                        <input type="text" required class="form-control" name="nombreEvento" id="nombreEvento" aria-describedby="helpId" placeholder="Fiesta Bresh" maxlength="50">
+                        <input type="text" required class="form-control shadow-sm" name="nombreEvento" id="nombreEvento" aria-describedby="helpId" placeholder="Fiesta Bresh" maxlength="50">
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3 col-lg-6 col-sm-12">
                         <label for="fecha" class="form-label fw-bolder">Fecha </label>
-                        <input type="date" required class="form-control" name="fechaEvento" id="fechaEvento" aria-describedby="helpId" placeholder="23-11-2021">
+                        <input type="date" required class="form-control shadow-sm" name="fechaEvento" id="fechaEvento" aria-describedby="helpId" placeholder="23-11-2021">
                     </div>
                     <div class="mb-3 col-lg-6 col-sm-12">
                         <label for="imagen" class="form-label fw-bolder" >Imágen </label>
-                        <input type="file"  required class="form-control" name="imagenEvento" id="imagenEvento" aria-describedby="helpId" accept="image/png, .jpeg, .jpg .svg">
+                        <input type="file"  required class="form-control shadow-sm" name="imagenEvento" id="imagenEvento" aria-describedby="helpId" accept="image/png, .jpeg, .jpg .svg">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="descripcion" required class="form-label fw-bolder">Descripción</label>
-                    <textarea type="text" class="form-control" name="descripcionEvento" id="descripcionEvento"  placeholder="Este evento incluirá DJ's que vienen desde...el estilo de música será..." maxlength="1200"></textarea>
+                    <textarea type="text" class="form-control shadow-sm" name="descripcionEvento" id="descripcionEvento"  placeholder="Este evento incluirá DJ's que vienen desde...el estilo de música será..." maxlength="1200"></textarea>
                     </div>
                 <!-- <a href="?controlador=evento&accion=inicio" class="btn btn-primary">Volver al inicio</a> -->
                 <div class="row w-25 mx-auto">
@@ -89,7 +89,7 @@
         </div>
         <div class=" mt-4 container">
             <div class=" table-responsive">
-                <table class="table table-striped table-hover table-light table-bordered" id="myTable">
+                <table class="table shadow-sm table-striped table-hover table-light table-bordered" id="myTable">
                     <thead class="table-dark">
                         <tr>
                             <th>ID</th>
@@ -111,7 +111,7 @@
                             <td> <?php echo $row["nombre_evento"]; ?> </td>
                             <td> <?php echo $row["fecha_evento"]; ?> </td>
                             <td>
-                                <img style="width:150px;"src="data:image;base64,<?php echo base64_encode($row["imagen_evento"]); ?> " alt="">
+                                <img class="shadow" style="width:150px;"src="data:image;base64,<?php echo base64_encode($row["imagen_evento"]); ?> " alt="">
                 
                             </td>
                             <td> <?php echo $row["descripcion_evento"]; ?> </td>

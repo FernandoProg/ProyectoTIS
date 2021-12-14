@@ -40,7 +40,7 @@
   <body>
     <?php require("navbar_user.php");?>
 
-    <div class="container mb-5">
+    <div class="container mb-5 mt-4">
       <div class="row col-lg-12">
         <!-- TITULO -->
         <div class="row col-lg-12">
@@ -49,7 +49,7 @@
           >
         </div>
         <!-- Fecha -->
-        <div class="row col-lg-12">
+        <div class="row col-lg-12 mt-2">
           <span class="fs-5 text-left"
             >Fecha de realización:
             <?php echo $fechaEvento ?></span
@@ -60,7 +60,7 @@
           <!-- IMAGEN -->
           <div class="col-lg-5 col-sm-12">
             <img
-              class="mt-5"
+              class="mt-5 shadow"
               style="width: 100%"
               src="data:image/jpeg;base64,<?php echo base64_encode($imagenEvento)?>"
             />

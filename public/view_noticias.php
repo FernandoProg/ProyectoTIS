@@ -55,14 +55,17 @@
                     
                         <form action="filtro_noticia.php" method="POST">
                             <div class="row">
+                                <div class="col-sm-12 col-md-3 col-lg-3 ">
+
+                                </div>
                                 
-                                <div class="col-6 text-end">
+                                <div class="col-sm-6 col-md-3 col-lg-3  ">
                                     <?php
                                             $sqlcategoria = "SELECT nombre_categoria FROM categoria_noticia";
                                             $datacategoria= mysqli_query($conexion,$sqlcategoria);
                                     ?>
                                     <label class="form-label fw-bolder d-block">Filtrar por categoría:</label>
-                                    <select class="w-25 form-select d-inline shadow-sm" name="categoria_noticia">
+                                    <select class=" form-select d-inline shadow-sm"  name="categoria_noticia">
                                         <option hidden selected required></option>
                                         <option value="">Todas</option>
                                         <?php while($row = mysqli_fetch_assoc($datacategoria)){?>
@@ -70,16 +73,16 @@
                                         <?php }?>
                                     </select>
                                 </div>
-                                <div class=" col-6">
+                                <div class=" col-sm-6 col-md-3 col-lg-3 ">
                                     <label class="form-label fw-bolder d-block">Filtrar por fecha:</label>
-                                    <select class="w-25 form-select d-inline shadow-sm" name="fecha_noticia">
+                                    <select class=" form-select d-inline shadow-sm"   name="fecha_noticia">
                                         <option hidden selected required></option>
                                         <option value="">Todas</option>
                                         <option value="masreciente">Menos reciente</option>
                                         <option value="menosreciente">Más reciente</option>
                                     </select>
                                 </div>
-                                <div class=" text-center col-12 mt-4">
+                                <div class=" text-center col-sm-12 mt-4">
                                     <button class="btn btn-secondary" type="submit">Filtrar</button>
                                 </div>
                             </div> 

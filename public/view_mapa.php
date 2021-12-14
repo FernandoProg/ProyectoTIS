@@ -50,7 +50,7 @@
   ?>
   <div class="container-fluid text-center p-5">
     <h2>¿Qué significa circulo de color en el mapa?</h2>
-    <div>
+    <div class="mt-4">
       <p style="background-color:rgb(255,255,0);" class="p-2 m-2 d-xl-inline">Lugar de trámite</p>
       <p style="background-color:#FFA500;" class="p-2 m-2 d-xl-inline">Lugar de pago</p>
       <p style="background-color:#008000;" class="text-white p-2 m-2 d-xl-inline">Lugar recreativo</p>

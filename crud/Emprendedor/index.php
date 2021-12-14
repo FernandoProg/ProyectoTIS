@@ -138,7 +138,7 @@
     ?>
     <div class="container">
         <div class="col-12">
-            <table class="w-100 table-light table table-bordered table-hover" id="myTable">
+            <table class="w-100 table-light table-striped table table-bordered table-hover" id="myTable">
                 <thead class="table-dark">
                     <tr>
                         <th>Nombre</th>

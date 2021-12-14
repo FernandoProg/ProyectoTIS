@@ -12,9 +12,9 @@ if(!isset($_SESSION)){
 
 if($_SESSION['rol'] == "admin"){ ?>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-black mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-black mb-4 shadow">
 
-        <div class="container-fluid">   
+        <div class="container-fluid ms-3 pb-2">   
             <a class="navbar-brand" href="../Administrador"> <img src="../img/logo.png" style="width: 40%;"> </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -47,7 +47,7 @@ if($_SESSION['rol'] == "admin"){ ?>
 
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link text-white"  href="../../sesion_usuarios/logout.php">Cerrar Sesión - <?php echo $_SESSION['nombre_usuario']; ?></a>
+                        <a class="nav-link text-dark btn btn-warning mt-2 " style="width: 230px;" href="../../sesion_usuarios/logout.php">Cerrar Sesión - <?php echo $_SESSION['nombre_usuario']; ?></a>
                     </li>
                 </ul>
 

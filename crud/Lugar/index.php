@@ -52,11 +52,11 @@ include("../../sesion_usuarios/auth_admin.php");
                     </div>
                     <h5>Buscar ubicación : </h5>
                     <input type="text" id="direccionIngresada" class="form-control form-control-lg">
-                    <div class="d-grid my-2">
-                        <button class="btn btn-primary" type="button" onclick="geocode()">Buscar</button>
+                    <div class="d-grid my-4 ">
+                        <button class="btn btn-primary"  style="width: 100px;" type="button" onclick="geocode()">Buscar</button>
                     </div>
-                    <div id="map" style="height: 380px;"></div>
-                    <div class="mb-3">
+                    <div class="mb-2" id="map" style="height: 380px;"></div>
+                    <div class="mb-3 col-sm-12 col-lg-4">
                         <label for="categoriaLugar" class="form-label fw-bolder">Categoría:</label>
                         <select class="form-select" name="categoriaLugar" required>
                             <option value="">Seleccione la categoría</option>
@@ -89,7 +89,7 @@ include("../../sesion_usuarios/auth_admin.php");
                 $data = mysqli_query($conexion, $consulta);
                 ?>
                 <div class="table-responsive ">
-                    <table class="table table-hover table-light table-bordered" id="myTable">
+                    <table class="table table-striped table-hover table-light table-bordered" id="myTable">
                         <thead class="table-dark">
                             <tr>
                                 <th>ID</th>

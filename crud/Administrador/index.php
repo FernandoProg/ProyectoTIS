@@ -20,10 +20,11 @@
         <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
         <title>Administradores</title>
+
         <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
         <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
         <script src="../main.js"></script>
-        
     </head>
     <body>
         <?php 
@@ -34,29 +35,29 @@
                 <div class="col-lg-12">
                     <h1 class="text-center">Ingresar Administrador</h1>
                     <form action="Consultas/create_administrador.php" method="POST">
-                        <div class="mb-3">
+                        <div class="mb-3 col-lg-6 col-sm-12">
                             <label class="form-label fw-bolder">Nombre de administrador:</label>
                             <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-lg-6 col-sm-12">
                             <label class="form-label fw-bolder">Contraseña de administrador:</label>
                             <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Contraseña" rows="3" name="contrasena" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-lg-6 col-sm-12">
                             <label class="form-label fw-bolder">Correo del administrador:</label>
                             <input type="email" class="form-control" rows="3" maxlength="50" placeholder="example@gmail.com" name="correo_usuario" required>
                         </div>
                         <input type="submit" class="btn btn-secondary" value="Guardar">
                     </form>
                     <hr>
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="row">
                             <div class="col-lg-12 text-center fs-2 fw-bolder ">
                                 <p class="mb-5">Usuarios Registrados</p>
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table class=" table table-hover table-bordered table-light" id="myTable">
+                            <table class=" table table-striped table-hover table-bordered table-light" id="myTable">
                                 <thead class="table-dark">
                                     <tr>
                                         <th style="width: 200px;" scope="col">Nombre de Usuario</th>

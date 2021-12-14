@@ -31,7 +31,7 @@
       ?>
         <?php $result=mysqli_fetch_assoc($info);?>
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner ">
+          <div class="carousel-inner shadow  ">
             <div class="carousel-item active">
             <?php echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen_evento']).'"/ style="width:100%;max-height:700px;"></td>' ?>
       
@@ -94,7 +94,7 @@
             $idNoticia = $row['id_noticia'];
          ?>
             <div class="col">
-                <div class="card">
+                <div class="card shadow">
                 <td><a href="public/ver_noticia.php?seleccion=<?php echo $idNoticia ?>"><img src="data:image/jpeg;base64,<?php echo base64_encode($imagenNoticia)?>"/ style="width:100%;height:100%; "></a></td>
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $tituloNoticia; ?></h5>

@@ -104,7 +104,7 @@
                 <h5>Noticias ingresadas</h5>
               </div>
               <div class="table-responsive ">
-                <table class="table table-hover table-bordered table-light" id="myTable">
+                <table class="table table-striped table-hover table-bordered table-light" id="myTable">
                   <thead  class="table-dark">
                     <tr>
                       <th scope="col">Título noticia</th>

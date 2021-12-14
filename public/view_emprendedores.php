@@ -62,7 +62,7 @@
         <?php
             while($row = mysqli_fetch_assoc($data)){
         ?>
-                <div class="col-xl-3 col-md-12 card text-center mt-4 mb-4 pb-2">
+                <div class="col-xl-3 col-md-12 shadow card text-center mt-4 mb-4 pb-2">
                     <span style="justify-content: center;" class="mt-2 d-flex fs-5 fw-bolder"><?php echo$row["rubro_emprendedor"] ?></span>
                     <img style="height: 90%; width: 50%;"class="img-fluid mt-2 mx-auto" src="data:<?php echo$row["tipo_imagen"]?>;base64,<?php echo base64_encode($row["imagen_emprendedor"])?>">
                     <span style="justify-content: center;"  class="mt-2 d-flex fw-bolder">Nombre: <?php echo$row["nombre_emprendedor"]?></span>

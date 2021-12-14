@@ -11,8 +11,8 @@
     if(isset($_SESSION['nombre_usuario'])){
         if($_SESSION['rol'] == "usuario"){ // Navbar para usuarios logeados
             ?>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <div class="container-fluid  ">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+                <div class="container-fluid ms-3 pb-2 ">
                     <a class="navbar-brand" href="../index.php"><img src="../crud/img/logo.png" style="width: 40%;"></a>
 
                     <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -40,9 +40,9 @@
                                 <a class="nav-link text-white " href="view_mapa.php">Mapa Comuna</a>
                             </li>
                         </ul>
-                        <ul class="nav justify-content-end">
+                        <ul class="nav ">
                             <li class="nav-item">
-                                <a class="nav-link text-white"  href="../sesion_usuarios/logout.php">Cerrar Sesión - <?php echo $_SESSION['nombre_usuario']; ?></a>
+                                <a class="nav-link text-dark btn btn-warning mt-2 shadow"  href="../sesion_usuarios/logout.php">Cerrar Sesión - <?php echo $_SESSION['nombre_usuario']; ?></a>
                             </li>
                         </ul>
                     </div>
@@ -52,8 +52,8 @@
         }
     }else{ // Navbar para usuarios no logeados
         ?>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="container-fluid  ">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+            <div class="container-fluid ms-3 pb-2">
                 <a class="navbar-brand" href="../index.php"><img src="../crud/img/logo.png" style="width: 40%;"></a>
 
                 <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -80,7 +80,7 @@
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white " href="../acceso_usuarios.php">Acceder</a>
+                            <a class="nav-link text-dark btn btn-warning mt-2 shadow" style="width: 100px;" href="../acceso_usuarios.php">Acceder</a>
                         </li>
                     </ul>
                 </div>

@@ -1,6 +1,6 @@
 <?php require("user/head.php"); ?>
-<footer class="text-lg-start">
-    <div class="container-fluid p-4 bg-primary">
+<footer class="text-lg-start shadow-lg">
+    <div class="container-fluid p-4 bg-primary ">
         <div class="row">
             <div class="col-md-4 col-lg-4 offset-lg-2 col-md-12 my-3 mb-md-0 text-center">
                 <h5 class="text-uppercase text-white">Nosotros</h5>

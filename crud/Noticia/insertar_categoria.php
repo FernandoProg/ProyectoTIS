@@ -34,7 +34,7 @@
               <!-- INSERT -->
               <form action="Consultas/insert_categoria.php" enctype="multipart/form-data" method="POST">
                 <div class="mb-3 col-3">
-                  <label class="form-label fw-bolder" >Nombre_categoria:</label>
+                  <label class="form-label fw-bolder" >Nombre categoria:</label>
                   <input type="text" class="form-control" name="insert_categoria_noticia" maxlength="100" placeholder="Cultural" required>
                 </div>
                 <div class="mt-4">

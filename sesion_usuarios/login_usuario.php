@@ -16,7 +16,9 @@
 <body class="img-fondo">
     <?php
     require('..\crud\conexion.php');
-    session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
     if (isset($_POST['nombreUsuario'])) {
         $nombreUsuario = stripslashes($_REQUEST['nombreUsuario']); // removes backslashes
         $nombreUsuario = mysqli_real_escape_string($conexion, $nombreUsuario); //escapes special characters in a string
@@ -29,9 +31,15 @@
         $result = mysqli_query($conexion, $query) or die(mysql_error());
         $rows = mysqli_num_rows($result);
         if ($rows == 1) {
-            $_SESSION['tipoUsuario'] = mysqli_fetch_assoc($result)['rol'];
+            $_SESSION['nombre_usuario'] = $nombreUsuario;
+            $_SESSION['rol'] = mysqli_fetch_assoc($result)['rol'];
+            $_SESSION['correo_usuario'] = mysqli_fetch_assoc($result)['correo_usuario'];
+            if ($_SESSION['rol'] == 'usuario') {
+                header("Location: ../index.php"); // Redirect user to index.php
+            } else {
+                header("Location: ../crud/Administrador/index.php"); // Redirect user to index.php
 
-            header("Location: ../index.php"); // Redirect user to index.php
+            }
         } else {
 
             echo "<div class='form'><h3>Usuario/Contraseña Incorrecto</h3><br/>Haz click aquí para <a href='login_usuario.php'>Logearte</a></div>";
@@ -63,7 +71,9 @@
                         <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Password" rows="3" name="contraseña">
                     </div>
                     <input type="submit" class="btn btn-secondary" value="Ingresar">
-                    <p class="text-white mt-3">¿No estás registrado? <a href='registro_usuario.php'>Regístrate Aquí</a></p>
+                    <p class="text-white mt-3">¿No estás registrado? <a href='../registro_usuario.php'>Regístrate Aquí</a></p>
+                    <p class="text-white mt-3">¿Olvidaste tu contraseña? <a href='recuperar_password.php'>Recuperala aquí</a></p>
+                    <p class="text-white mt-3">¿Deseas cambiar tu contraseña? <a href='cambiar_password.php'>Cambiala aquí</a></p>
                 </form>
             </div>
         </div>

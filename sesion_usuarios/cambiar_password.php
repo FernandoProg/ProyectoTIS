@@ -85,6 +85,7 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center mt-4">
                     <form action="" method="POST">
+                        <h2>Inicia sesión para cambiar tu contraseña</h2>
                         <div class="mb-3">
                             <label class="form-label fw-bolder text-white">Nombre de Usuario</label>
                             <input class="form-control" rows="3" maxlength="50" placeholder="Usuario" name="nombre_usuario">
@@ -94,7 +95,7 @@
                             <input class="form-control" type="password" minlength="6" maxlength="16" placeholder="Password" rows="3" name="contrasena">
                         </div>
                         <input type="submit" class="btn btn-secondary" value="Ingresar">
-                        <a href="../index.php" class="btn btn-primary">Volver al inicio</a>
+                        <a href="login_usuario.php" class="btn btn-primary">Volver atrás</a>
 
                     </form>
                 </div>

@@ -64,7 +64,7 @@
             $objetoMail->From = 'munichanaral@municipio.cl'; //Remitente
             $objetoMail->addAddress(mysqli_fetch_assoc($result)['correo_usuario']); //Destinatario
             $objetoMail->Subject = "Recuperar contraseña"; //Asunto
-            $objetoMail->Body = "Esta es tu nueva contraseña : " . $randstring . " para cambiarla ingrese al sitio web , presione acceder  y luego cambiar contraseña."; //Destinatario
+            $objetoMail->Body = "Esta es tu nueva contraseña : " . $randstring . " para cambiarla ingrese al sitio web , presione acceder  y luego cambiar contraseña. <a href='http://www.google.com'>Entrar</a>"; //Destinatario
 
             if ($objetoMail->send() == false) {
                 echo "No se pudo enviar el email...";
@@ -72,6 +72,9 @@
             } else {
                 echo '<div class="alert alert-success container mt-5" role="alert">';
                 echo 'Te hemos enviado un correo para recuperar tu contraseña.';
+                echo '</div>';
+                echo '<div class="container p-0 my-4">';
+                echo '<a name="" id="" class="btn btn-primary " href="login_usuario.php" role="button">Volver al login</a>';
                 echo '</div>';
             }
     ?>
@@ -90,7 +93,7 @@
                 <input type="text" required class="form-control" id="exampleInputEmail1" placeholder="JuanPerez1 , felipeBurgos14 , JuanFarias , etc..." name="nombreUsuario" maxlength="50">
                 <div id="UsernameHelp" class="form-text">Recuerda que no podrás cambiar tu nombre usuario posteriormente.</div>
             </div>
-            <button type="submit" class="btn btn-primary">Registrarme</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
             <a href="login_usuario.php" class="btn btn-secondary">Volver atrás</a>
         </form>
     <?php }

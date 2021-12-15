@@ -60,7 +60,6 @@
 
   ?>
   <div class="container-fluid text-center p-5">
-<<<<<<< HEAD
     <div class="row">
       <div class="col-12 mb-4">
         <h2>¿Qué significa circulo de color en el mapa?</h2>
@@ -76,19 +75,6 @@
         <p style="background-color:#808080" class="text-white p-2 m-2 d-xl-inline">Transporte</p>
         <p style="background-color:#800000;" class="text-white p-2 m-2 d-xl-inline">Educación</p>
       </div>
-=======
-    <h2>¿Qué significa circulo de color en el mapa?</h2>
-    <div class="mt-4">
-      <p style="background-color:rgb(255,255,0);" class="p-2 m-2 d-xl-inline">Lugar de trámite</p>
-      <p style="background-color:#FFA500;" class="p-2 m-2 d-xl-inline">Lugar de pago</p>
-      <p style="background-color:#008000;" class="text-white p-2 m-2 d-xl-inline">Lugar recreativo</p>
-      <p style="background-color:#FF0000;" class="text-white p-2 m-2 d-xl-inline">Lugar de emergencia</p>
-      <p style="background-color:#FF00FF;" class="text-white p-2 m-2 d-xl-inline">Local Comercial</p>
-      <p style="background-color:#000080;" class="text-white p-2 m-2 d-xl-inline">Salud</p>
-      <p style="background-color:#00FFFF;" class="p-2 m-2 d-xl-inline">Correo</p>
-      <p style="background-color:#808080" class="text-white p-2 m-2 d-xl-inline">Transporte</p>
-      <p style="background-color:#800000;" class="text-white p-2 m-2 d-xl-inline">Educación</p>
->>>>>>> Master
     </div>
   </div>
   <script src="script_mapa.js"></script>

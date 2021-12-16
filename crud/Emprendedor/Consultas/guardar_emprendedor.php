@@ -18,7 +18,7 @@
     echo $length;
 
     $query = "INSERT INTO `emprendedor` VALUES ('','".$_SESSION['nombre_usuario']."','$nombre_emprendedor','$direccion_emprendedor','$celular_emprendedor','$telefono_emprendedor','$correo_emprendedor','$rubro_emprendedor','$imagen_emprendedor','$tipo_imagen'
-    ,'$facebook','$instagram','$informacion',0)";
+    ,'$facebook','$instagram','$informacion','')";
 
     if($length>5){
         echo'<script>

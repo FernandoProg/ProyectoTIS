@@ -30,11 +30,11 @@
     </div>
     <div class="container-fluid pt-4 bg-black">
         <section class="text-center">
-            <a class="btn btn-link btn-floating btn-lg text-black m-1" href="https://www.facebook.com/munichanaral" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-link btn-floating btn-lg text-black m-1" href="https://twitter.com/municipchanaral" role="button" data-mdb-ripple-color="dark" ><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-link btn-floating btn-lg text-black m-1" href="https://www.munichanaral.cl" role="button" data-mdb-ripple-color="dark" ><i class="fab fa-google"></i></a>
-            <a class="btn btn-link btn-floating btn-lg text-black m-1" href="https://www.instagram.com/muni_chanaral/?hl=es" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
-            <a class="btn btn-link btn-floating btn-lg text-black m-1" href="https://github.com/FernandoProg/ProyectoTIS" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+            <a class="btn btn-link btn-floating btn-lg text-white m-1" href="https://www.facebook.com/munichanaral" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-link btn-floating btn-lg text-white m-1" href="https://twitter.com/municipchanaral" role="button" data-mdb-ripple-color="dark" ><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-link btn-floating btn-lg text-white m-1" href="https://www.munichanaral.cl" role="button" data-mdb-ripple-color="dark" ><i class="fab fa-google"></i></a>
+            <a class="btn btn-link btn-floating btn-lg text-white m-1" href="https://www.instagram.com/muni_chanaral/?hl=es" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-link btn-floating btn-lg text-white m-1" href="https://github.com/FernandoProg/ProyectoTIS" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
         </section>
     </div>
     <div class="text-center p-3 bg-black" style="background-color: rgba(0, 0, 0, 0.2);">

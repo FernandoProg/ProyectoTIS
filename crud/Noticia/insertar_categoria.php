@@ -40,11 +40,7 @@
               <form action="Consultas/insert_categoria.php" enctype="multipart/form-data" method="POST">
                 <div class="mb-3 col-3">
                   <label class="form-label fw-bolder" >Nombre categoria:</label>
-<<<<<<< HEAD
                   <input type="text" class="form-control shadow-sm" name="insert_categoria_noticia" maxlength="100" placeholder="Cultural" required>
-=======
-                  <input type="text" class="form-control" name="insert_categoria_noticia" maxlength="100" placeholder="Cultural" required>
->>>>>>> Master
                 </div>
                 <div class="mt-4">
                   <button class="btn btn-secondary shadow-sm" type="submit">Guardar</button>

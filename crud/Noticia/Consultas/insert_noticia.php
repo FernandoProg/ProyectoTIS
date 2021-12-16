@@ -15,7 +15,7 @@
     session_start();
     $sql = "INSERT INTO noticia (nombre_usuario, titulo_noticia, fecha_noticia, bajada_noticia, lead_noticia, cuerpo_noticia, nombre_categoria, imagen_noticia) 
 
-    VALUES ('".$_SESSION['nombre_usuario']."','$titulo_noticia','$fecha_noticia','$bajada_noticia','$lead_noticia','$cuerpo_noticia','$categoria_noticia','$imagen_noticia')";
+    VALUES ('".$_SESSION['nombre_usuario']."','$titulo_noticia','$fecha_noticia','$bajada_noticia','$lead_noticia','$cuerpo_noticia','$categoria_noticia','$imagen_noticia','')";
     $result = mysqli_query($conexion, $sql);
 
     header('Location: ../index.php');

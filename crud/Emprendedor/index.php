@@ -78,7 +78,7 @@
                     ?>
                     <label class="form-label fw-bolder">Rubro:</label>
                     <select class="form-select shadow-sm" name="rubro_emprendedor">
-                        <option hidden selected>Seleccione el Rubro</option>
+                        <option hidden value="" selected>Seleccione el Rubro</option>
                         <?php while($row = mysqli_fetch_assoc($datarubro)){?>
                             <option value="<?php echo$row["nombre_rubro"]?>"><?php echo$row["nombre_rubro"]?></option>
                         <?php }?>

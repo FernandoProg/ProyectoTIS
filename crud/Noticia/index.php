@@ -78,7 +78,7 @@
                   <div class="mb-3 col-sm-12 col-md-3">
                       <!--<input type="text" class="form-control" name="insert_categoria_noticia">-->
                       <select class="form-select shadow-sm" name="insert_categoria_noticia" >
-                            <option hidden selected required>Seleccione la categoria</option>
+                            <option hidden selected value="" required>Seleccione la categoria</option>
                             <?php while($row = mysqli_fetch_assoc($datacategoria)){?>
                                 <option value="<?php echo$row["nombre_categoria"]?>"><?php echo$row["nombre_categoria"]?></option>
                             <?php }?>

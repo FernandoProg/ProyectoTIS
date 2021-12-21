@@ -45,7 +45,7 @@
                             $datalugar = mysqli_query($conexion,$lugar);
                         ?>
                         <select class="form-select shadow-sm" name="idLugar">
-                            <option hidden selected>Seleccione el lugar</option>
+                            <option hidden value="" selected>Seleccione el lugar</option>
                             <?php while($row = mysqli_fetch_assoc($datalugar)){?>
                                 <option value="<?php echo$row["id_lugar"]?>"><?php echo$row["nombre_lugar"]?></option>
                             <?php }?>

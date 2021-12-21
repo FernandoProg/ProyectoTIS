@@ -21,20 +21,20 @@
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <h1 class="text-center">Ingresar Contribución</h1>
-                    <form action="Consultas/create_contribucion.php" method="POST" enctype="multipart/form-data">
+                    <form action="Consultas/create_contribucion.php" method="POST" enctype="multipart/form-data" >
                         <div class="mb-3 col-lg-6 col-sm-12">
                             <label class="form-label fw-bolder">Nombre de la contribución:</label>
-                            <input class="form-control shadow-sm" rows="3" maxlength="50" placeholder="Creacion de areas recreativas" name="nombre_contribucion">
+                            <input class="form-control shadow-sm" rows="3" maxlength="50" placeholder="Creacion de areas recreativas" name="nombre_contribucion" required >
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-bolder">Descripción:</label>
-                            <textarea class="form-control shadow-sm" cols="30" rows="4" maxlength="1000" placeholder="Se solicita la posibilidad de mayor cantidad de areas recreativas" name="descripcion_contribucion"></textarea>
+                            <textarea class="form-control shadow-sm" cols="30" rows="4" maxlength="1000" placeholder="Se solicita la posibilidad de mayor cantidad de areas recreativas" name="descripcion_contribucion" required  ></textarea>
                         </div>
                         <div class="row">
                             <div class="mb-3 col-lg-6 col-sm-12">
                                 <label class="form-label fw-bolder">Departamento:</label>
                                 <select class="form-select shadow-sm" name="departamento">
-                                    <option hidden selected>Seleccione el departamento</option>
+                                    <option hidden selected value="" >Seleccione el departamento</option>
                                     <option value="Aseo y ornato">Aseo y ornato</option>
                                     <option value="Tránsito y transporte">Tránsito y transporte</option>
                                     <option value="Administración y Finanzas">Administración y Finanzas</option>
